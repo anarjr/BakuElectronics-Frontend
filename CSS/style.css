@@ -10,6 +10,7 @@
 }
 
 :root {
+    --page-w: 82%;   /* saytın yan boşluqları: hər tərəfdən ~9% */
     --main-color: #e30613;
     --dark-color: #222;
     --text-color: #444;
@@ -76,9 +77,10 @@ header {
 }
 
 header .container-fluid {
-    max-width: 1550px;
+    width: var(--page-w);
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 header .navbar {
@@ -255,9 +257,10 @@ header .cart-dropdown p {
 }
 
 .main-navigation .container-fluid {
-    max-width: 1550px;
+    width: var(--page-w);
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .main-navigation .nav {
@@ -369,9 +372,10 @@ header .cart-dropdown p {
 ============================== */
 
 .hero {
-    max-width: 1550px;
+    width: var(--page-w);
+    max-width: 1800px;
     margin: 26px auto 0;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .hero-grid {
@@ -513,9 +517,10 @@ header .cart-dropdown p {
 ============================== */
 
 .advantages {
-    max-width: 1550px;
+    width: var(--page-w);
+    max-width: 1800px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .advantages .row {
@@ -586,9 +591,10 @@ header .cart-dropdown p {
 .categories,
 .videos,
 .blog-section {
-    max-width: 1550px;
+    width: var(--page-w);
+    max-width: 1800px;
     margin: 65px auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 /* ==============================
@@ -810,7 +816,8 @@ header .cart-dropdown p {
 }
 
 .videos .videos-wrapper {
-    max-width: 1400px;
+    width: var(--page-w);
+    max-width: 1800px;
     margin: 0 auto;
 }
 
@@ -918,9 +925,10 @@ header .cart-dropdown p {
 ============================== */
 
 .extra-promotions {
-    max-width: 1550px;
+    width: var(--page-w);
+    max-width: 1800px;
     margin: 60px auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .extra-promotion-card {
@@ -1017,7 +1025,8 @@ footer {
 }
 
 footer .container {
-    max-width: 1400px;
+    width: var(--page-w);
+    max-width: 1800px;
 }
 
 footer h5 {
@@ -1181,6 +1190,15 @@ footer .footer-bottom p {
 
 @media (max-width: 991px) {
 
+    :root {
+        --page-w: 100%;
+    }
+
+    .advantages,
+    .extra-promotions {
+        padding: 0 15px;
+    }
+
     .top-bar {
         font-size: 15px;
     }
@@ -1298,6 +1316,10 @@ footer .footer-bottom p {
 ============================== */
 
 @media (max-width: 576px) {
+
+    .extra-promotions {
+        padding: 0 12px;
+    }
 
     .top-bar {
         padding: 6px 10px;
