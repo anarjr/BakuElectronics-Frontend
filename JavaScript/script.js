@@ -201,3 +201,84 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderCart();
 
+
+    /* ==============================
+       4. TÜND TEMA
+    ============================== */
+
+    const THEME_KEY = "be_theme";
+    const themeToggle = document.querySelector(".theme-toggle");
+
+    function applyTheme(theme) {
+        document.body.classList.toggle("dark", theme === "dark");
+
+        if (themeToggle) {
+            const icon = themeToggle.querySelector(".bi");
+            icon.classList.toggle("bi-brightness-high", theme !== "dark");
+            icon.classList.toggle("bi-moon-stars", theme === "dark");
+        }
+
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) {
+            themeColor.setAttribute("content", theme === "dark" ? "#121212" : "#ffffff");
+        }
+    }
+
+    let savedTheme = "light";
+    try {
+        savedTheme = localStorage.getItem(THEME_KEY) || "light";
+    } catch (err) { /* ignore */ }
+
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+            const next = document.body.classList.contains("dark") ? "light" : "dark";
+            applyTheme(next);
+            try {
+                localStorage.setItem(THEME_KEY, next);
+            } catch (err) { /* ignore */ }
+        });
+    }
+
+
+    /* ==============================
+       5. ABUNƏ FORMU
+    ============================== */
+
+    const newsletter = document.querySelector(".newsletter form");
+
+    if (newsletter) {
+        newsletter.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const input = newsletter.querySelector("input");
+            const button = newsletter.querySelector("button");
+
+            if (!input.value.trim()) return;
+
+            input.value = "";
+            button.textContent = "Abunə oldunuz ✓";
+            button.disabled = true;
+
+            setTimeout(function () {
+                button.textContent = "Abunə ol";
+                button.disabled = false;
+            }, 2500);
+        });
+    }
+
+
+    /* ==============================
+       6. ÇAT DÜYMƏSİ
+    ============================== */
+
+    const chat = document.querySelector(".chat-fab");
+
+    if (chat) {
+        chat.addEventListener("click", function () {
+            window.open("https://t.me/baku_electronics", "_blank");
+        });
+    }
+
+});
