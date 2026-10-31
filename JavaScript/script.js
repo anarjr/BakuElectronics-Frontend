@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* ==============================
        2. AXTARIŞ
+       (hələlik heç nə etmir, yalnız görünüşdür)
     ============================== */
 
     const searchForm = document.querySelector(".header-search");
@@ -36,12 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (searchForm) {
         searchForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            const value = searchForm.querySelector("input").value.trim();
-            if (!value) return;
-            window.open(
-                "https://www.bakuelectronics.az/axtaris-neticesi?name=" + encodeURIComponent(value),
-                "_blank"
-            );
         });
     }
 
