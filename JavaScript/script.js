@@ -276,4 +276,57 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
+    /* ==============================
+       7. VİDEO BAŞLIQLARI (YouTube-dan avtomatik)
+    ============================== */
+
+    document.querySelectorAll(".video-card").forEach(function (card) {
+        const id = card.dataset.id;
+        const title = card.querySelector("h5");
+        if (!id || !title) return;
+
+        fetch("https://www.youtube.com/oembed?format=json&url=" +
+            encodeURIComponent("https://www.youtube.com/watch?v=" + id))
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                if (data && data.title) title.textContent = data.title;
+            })
+            .catch(function () { /* internet yoxdursa standart yazı qalır */ });
+    });
+
+
+    /* ==============================
+       8. BRENDLƏR (sonsuz sürüşən zolaq)
+    ============================== */
+
+    const brandsTrack = document.querySelector(".brands-track");
+
+    if (brandsTrack) {
+        // Şəkil yoxdursa, brend adını yazı ilə göstər
+        function brandFallback(img) {
+            const span = document.createElement("span");
+            span.className = "brand-name";
+            span.textContent = img.alt;
+            img.replaceWith(span);
+        }
+
+        // Zolağı kəsilməz etmək üçün siyahını təkrarla
+        Array.from(brandsTrack.children).forEach(function (item) {
+            const copy = item.cloneNode(true);
+            copy.setAttribute("aria-hidden", "true");
+            copy.setAttribute("tabindex", "-1");
+            brandsTrack.appendChild(copy);
+        });
+
+        brandsTrack.querySelectorAll("img").forEach(function (img) {
+            if (img.complete && img.naturalWidth === 0) {
+                brandFallback(img);
+            } else {
+                img.addEventListener("error", function () { brandFallback(img); }, { once: true });
+            }
+        });
+    }
+
+
 });

@@ -809,9 +809,10 @@ header .cart-dropdown p {
 ============================== */
 
 .videos {
+    width: 100%;
     max-width: none;
-    margin: 65px 0;
-    padding: 50px 20px;
+    margin: 65px 0 0;
+    padding: 50px 20px 55px;
     background: #f4f4f4;
 }
 
@@ -858,8 +859,12 @@ header .cart-dropdown p {
     gap: var(--gap);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding-bottom: 12px;
-    scrollbar-width: thin;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+}
+
+.video-slider::-webkit-scrollbar {
+    display: none;
 }
 
 .video-card {
@@ -871,8 +876,8 @@ header .cart-dropdown p {
 
 .video-thumb {
     position: relative;
-    aspect-ratio: 3 / 2;
-    border-radius: 20px;
+    aspect-ratio: 491 / 332;
+    border-radius: 30px;
     overflow: hidden;
     background: #ddd;
 }
@@ -913,12 +918,102 @@ header .cart-dropdown p {
 }
 
 .video-card h5 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 1.4;
     color: #333;
     margin: 18px 0 0;
 }
+
+/* ==============================
+   11b. BRENDLƏR (sürüşən zolaq)
+============================== */
+
+.brands {
+    width: 100%;
+    padding: 110px 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.brands-marquee {
+    width: 100%;
+    overflow: hidden;
+}
+
+.brands-track {
+    display: flex;
+    gap: 45px;
+    width: max-content;
+    animation: brands-scroll 40s linear infinite;
+}
+
+.brands-marquee:hover .brands-track {
+    animation-play-state: paused;
+}
+
+@keyframes brands-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-50% - 22.5px)); }
+}
+
+.brand-card {
+    flex: 0 0 280px;
+    height: 124px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 28px;
+    transition: 0.3s;
+}
+
+.brand-card:hover {
+    border-color: #ccc;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.brand-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.85;
+    transition: 0.3s;
+}
+
+.brand-card:hover img {
+    filter: none;
+    opacity: 1;
+}
+
+/* Şəkil tapılmasa, brend adı yazı ilə göstərilir */
+.brand-card .brand-name {
+    color: #444;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+body.dark .brands {
+    background: #121212;
+}
+
+body.dark .brand-card {
+    background: #1e1e1e;
+    border-color: #303030;
+}
+
+body.dark .brand-card .brand-name {
+    color: #eee;
+}
+
+body.dark .brand-card img {
+    filter: grayscale(1) invert(1);
+}
+
 
 /* ==============================
    12. EXTRA PROMOTION BANNERS
@@ -933,41 +1028,77 @@ header .cart-dropdown p {
 
 .extra-promotion-card {
     position: relative;
+    display: flex;
+    align-items: stretch;
+    min-height: 340px;
     overflow: hidden;
-    border-radius: 12px;
-    min-height: 250px;
+    border-radius: 30px;
     background: var(--light-color);
 }
 
-.extra-promotion-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
+.extra-promotions .col-md-6:nth-child(1) .extra-promotion-card {
+    background: #f7e9e6;
+}
+
+.extra-promotions .col-md-6:nth-child(2) .extra-promotion-card {
+    background: #e8eef2;
 }
 
 .extra-promotion-card .content {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 10px 40px 45px;
+}
+
+/* Şəklin ağ fonu kartın rəngində əriyir */
+.extra-promotion-card img {
+    flex: 0 0 50%;
+    width: 50%;
+    height: auto;
+    order: 2;
     padding: 20px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
 }
 
 .extra-promotion-card h3 {
-    font-size: 21px;
+    font-size: 28px;
     font-weight: 700;
-    margin-bottom: 10px;
+    line-height: 1.25;
+    margin-bottom: 12px;
 }
 
 .extra-promotion-card p {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
+    margin-bottom: 26px;
 }
 
 .extra-promotion-card a {
     display: inline-block;
     background: var(--main-color);
     color: #fff;
-    border-radius: 6px;
-    padding: 10px 20px;
-    font-size: 13px;
+    border-radius: 14px;
+    padding: 14px 30px;
+    font-size: 15px;
     font-weight: 600;
+    transition: 0.3s;
+}
+
+.extra-promotion-card a:hover {
+    background: #c40510;
+}
+
+body.dark .extra-promotions .col-md-6 .extra-promotion-card {
+    background: #1e1e1e;
+}
+
+body.dark .extra-promotion-card img {
+    mix-blend-mode: normal;
+    border-radius: 20px;
 }
 
 /* ==============================
@@ -1297,6 +1428,45 @@ footer .footer-bottom p {
         flex-basis: calc((100% - var(--gap)) / 2);
     }
 
+    .extra-promotion-card {
+        flex-direction: column;
+        min-height: 0;
+        border-radius: 24px;
+    }
+
+    .extra-promotion-card img {
+        order: -1;
+        flex: none;
+        width: 100%;
+        height: 240px;
+    }
+
+    .extra-promotion-card .content {
+        padding: 10px 25px 28px;
+    }
+
+    .extra-promotion-card h3 {
+        font-size: 22px;
+    }
+
+    .brands {
+        padding: 60px 0;
+    }
+
+    .brands-track {
+        gap: 24px;
+    }
+
+    @keyframes brands-scroll {
+        from { transform: translateX(0); }
+        to   { transform: translateX(calc(-50% - 12px)); }
+    }
+
+    .brand-card {
+        flex-basis: 220px;
+        height: 100px;
+    }
+
     .advantages .advantage-item {
         justify-content: flex-start;
     }
@@ -1509,7 +1679,44 @@ footer .footer-bottom p {
     }
 
     .video-thumb {
-        border-radius: 14px;
+        border-radius: 18px;
+    }
+
+    .extra-promotion-card img {
+        height: 190px;
+    }
+
+    .extra-promotion-card .content {
+        padding: 6px 18px 22px;
+    }
+
+    .extra-promotion-card h3 {
+        font-size: 19px;
+    }
+
+    .extra-promotion-card p {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .extra-promotion-card a {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .brands {
+        padding: 40px 0;
+    }
+
+    .brand-card {
+        flex-basis: 170px;
+        height: 80px;
+        padding: 14px 20px;
+        border-radius: 20px;
+    }
+
+    .brand-card .brand-name {
+        font-size: 20px;
     }
 
     .video-play {
@@ -1520,16 +1727,8 @@ footer .footer-bottom p {
     }
 
     .video-card h5 {
-        font-size: 15px;
+        font-size: 16px;
         margin-top: 12px;
-    }
-
-    .extra-promotion-card img {
-        height: 190px;
-    }
-
-    .extra-promotion-card h3 {
-        font-size: 17px;
     }
 
     .blog-card img {
