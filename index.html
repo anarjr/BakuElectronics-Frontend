@@ -1,11 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="az">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
 
-    <title>Baku Electronics</title>
+    <title>Baku Electronics | Ana səhifə</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,131 +17,258 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="main-header">
+    <!-- ================= HEADER ================= -->
 
-        <div class="container">
+    <header>
+        <div class="container-fluid px-3 px-lg-4">
+            <nav class="navbar navbar-expand-lg">
 
-            <div class="header-content">
+                <a class="navbar-brand" href="#">Baku Electronics</a>
 
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html">Baku Electronics</a>
-                </div>
-
-                <!-- Catalog Button -->
-                <button class="catalog-btn">
-                    <i class="bi bi-grid"></i>
-                    <span>Kataloq</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#headerMenu">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Search -->
-                <div class="search-box">
-                    <input type="text" placeholder="Məhsul axtar...">
+                <div class="collapse navbar-collapse" id="headerMenu">
 
-                    <button>
-                        <i class="bi bi-search"></i>
-                    </button>
+                    <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 ms-lg-auto">
+
+                        <button class="btn btn-danger">
+                            <i class="bi bi-grid"></i>
+                            Kataloq
+                        </button>
+
+                        <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="Məhsul axtar...">
+                            <button class="btn btn-outline-secondary" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-person"></i>
+                            Giriş
+                        </a>
+
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-heart"></i>
+                            Seçilmişlər
+                        </a>
+
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-cart3"></i>
+                            Səbət
+                        </a>
+
+                    </div>
                 </div>
 
-                <!-- Cart -->
-                <div class="cart">
-                    <i class="bi bi-basket3"></i>
-                    <span>Səbətim</span>
-                </div>
-
-            </div>
-
+            </nav>
         </div>
-
     </header>
 
 
-    <!-- Navigation -->
+    <!-- ================= NAVIGATION ================= -->
+
     <nav class="main-navigation">
+        <div class="container-fluid">
+            <div class="nav">
 
-        <div class="container">
+                <a href="#">Kampaniyalar</a>
+                <a href="#">Korporativ satışlar</a>
+                <a href="#">Mağazalar</a>
+                <a href="#">Brendlər</a>
+                <a href="#">Bloq</a>
+                <a href="#">Haqqımızda</a>
+                <a href="#">Əlaqə</a>
 
-            <ul class="nav-list">
-                <li><a href="#">Kampaniyalar</a></li>
-                <li><a href="#">Korporativ satışlar</a></li>
-                <li><a href="#">Mağazalar</a></li>
-                <li><a href="#">Xidmətlər</a></li>
-                <li><a href="#">Brendlər</a></li>
-            </ul>
-
+            </div>
         </div>
-
     </nav>
 
 
-    <!-- Main Content -->
     <main>
 
-        <!-- Main Banner -->
-        <section id="main-banner">
+        <!-- ================= MAIN BANNER ================= -->
+
+        <section id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="Assets/image/Banner-slide/923_x_520-kohneni-deyish_1.jpg" alt="Kampaniya banneri">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520_12not.webp" alt="Kampaniya banneri">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520_20.webp" alt="Kampaniya banneri">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520_26_iyo.webp" alt="Kampaniya banneri">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520_haier.webp" alt="Haier kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520_lg.webp" alt="LG kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520_payız.webp" alt="Payız kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520_samsung.webp" alt="Samsung kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520-heftesonunu-dolu-dolu-yasha.webp" alt="Həftəsonu kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520-her-bir-eve-dream-lazimdir_24.webp" alt="Kampaniya banneri">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520-philips_23.webp" alt="Philips kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520-samsungdan-teklif13.webp" alt="Samsung təklifləri">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520-Tineco_payiz_copy_2.webp" alt="Tineco kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520-TRade_in_samsung_1.webp" alt="Samsung Trade In">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/923x520samsung_tv.jpg" alt="Samsung televizor">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/9234520Lefard_barand_Üeek_copy.webp" alt="Lefard kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/Acer_alana_hədiyyəli_təklif923x520.png" alt="Acer kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/BE_Çatdırılma_MainBanner_923x520 webp" alt="Çatdırılma">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/honor923x520_12.webp" alt="Honor kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/IMG_3129.webp" alt="Kampaniya banneri">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/KV_Har_şey_yolunda_payız 923_520 webp" alt="Payız kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/Midea_923x520.webp" alt="Midea kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/Payız_evinə_gəlsin923x520.webp" alt="Payız evinə gəlsin">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/veb_sayt_923_x_520_hp_temp_update.webp" alt="HP kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/Veb_sayt_temp_923_x_520_ACER.webp" alt="Acer kampaniyası">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Assets/image/Banner-slide/Veb_sayt_temp_923_x_520_duo_2.webp" alt="Kampaniya banneri">
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </section>
 
 
-            <div class="container">
+        <!-- ================= ADVANTAGES ================= -->
 
-                <div id="mainBannerSlider" class="carousel slide" data-bs-ride="carousel">
+        <section class="advantages">
 
-                    <!-- Slider Indicators -->
-                    <div class="carousel-indicators">
+            <div class="row">
 
-                        <button type="button" data-bs-target="#mainBannerSlider" data-bs-slide-to="0" class="active"
-                            aria-current="true">
-                        </button>
-
-                        <button type="button" data-bs-target="#mainBannerSlider" data-bs-slide-to="1">
-                        </button>
-
-                        <button type="button" data-bs-target="#mainBannerSlider" data-bs-slide-to="2">
-                        </button>
-
+                <div class="col-6 col-lg-3">
+                    <div class="advantage-item">
+                        <i class="bi bi-truck"></i>
+                        <div>
+                            <h5>Pulsuz çatdırılma</h5>
+                            <p>Sürətli və rahat çatdırılma</p>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Slider Images -->
-                    <div class="carousel-inner">
-
-                        <!-- Banner 1 -->
-                        <div class="carousel-item active">
-                            <img src="Assets/image/banner-1.jpg" class="d-block w-100" alt="Kampaniya banneri">
+                <div class="col-6 col-lg-3">
+                    <div class="advantage-item">
+                        <i class="bi bi-credit-card"></i>
+                        <div>
+                            <h5>Hissə-hissə ödəniş</h5>
+                            <p>Sərfəli ödəniş imkanları</p>
                         </div>
-
-                        <!-- Banner 2 -->
-                        <div class="carousel-item">
-                            <img src="Assets/image/banner-2.jpg" class="d-block w-100" alt="Yeni məhsullar">
-                        </div>
-
-                        <!-- Banner 3 -->
-                        <div class="carousel-item">
-                            <img src="Assets/image/banner-3.jpg" class="d-block w-100" alt="Xüsusi təkliflər">
-                        </div>
-
                     </div>
+                </div>
 
-                    <!-- Previous Button -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#mainBannerSlider"
-                        data-bs-slide="prev">
+                <div class="col-6 col-lg-3">
+                    <div class="advantage-item">
+                        <i class="bi bi-shield-check"></i>
+                        <div>
+                            <h5>Rəsmi zəmanət</h5>
+                            <p>Keyfiyyətə zəmanət</p>
+                        </div>
+                    </div>
+                </div>
 
-                        <span class="carousel-control-prev-icon"></span>
-
-                    </button>
-
-                    <!-- Next Button -->
-                    <button class="carousel-control-next" type="button" data-bs-target="#mainBannerSlider"
-                        data-bs-slide="next">
-
-                        <span class="carousel-control-next-icon"></span>
-
-                    </button>
-
+                <div class="col-6 col-lg-3">
+                    <div class="advantage-item">
+                        <i class="bi bi-headset"></i>
+                        <div>
+                            <h5>Müştəri dəstəyi</h5>
+                            <p>Hər zaman xidmətinizdəyik</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -147,48 +276,171 @@
         </section>
 
 
-        <!-- Advantages -->
-        <section id="advantages">
+        <!-- ================= BEST SELLERS ================= -->
 
-            <div class="container">
+        <section class="best-sellers">
 
-                <!-- Advantage 1 -->
-                <div class="advantage-item">
-                    <i class="bi bi-shield-check"></i>
+            <h2 class="section-title">Ən çox satılanlar</h2>
 
-                    <div>
-                        <h3>Arxayın al!</h3>
-                        <p>30 gün ərzində dəyişmə və qaytarma</p>
+            <div class="row g-3">
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/iPhone_17_Pro_Cosmic_Orange_1.webp" alt="iPhone 17 Pro">
+                        <h5>Apple iPhone 17 Pro Cosmic Orange</h5>
+                        <p>Smartfon</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
                     </div>
                 </div>
 
-                <!-- Advantage 2 -->
-                <div class="advantage-item">
-                    <i class="bi bi-credit-card"></i>
-
-                    <div>
-                        <h3>Hissə-hissə ödəniş</h3>
-                        <p>Endirimli qiyməti 24 aya bölmək imkanı</p>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/Samsung_Galaxy A57_8GB128GB_Gray_A576.webp" alt="Samsung Galaxy">
+                        <h5>Samsung Galaxy A57 8GB/128GB Gray</h5>
+                        <p>Smartfon</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
                     </div>
                 </div>
 
-                <!-- Advantage 3 -->
-                <div class="advantage-item">
-                    <i class="bi bi-truck"></i>
-
-                    <div>
-                        <h3>Sürətli çatdırılma</h3>
-                        <p>24 saata çatdırılma</p>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/Xiaomi_Redmi_Note_15_6GB128GB_1.webp" alt="Xiaomi Redmi Note">
+                        <h5>Xiaomi Redmi Note 15 6GB/128GB</h5>
+                        <p>Smartfon</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
                     </div>
                 </div>
 
-                <!-- Advantage 4 -->
-                <div class="advantage-item">
-                    <i class="bi bi-wallet2"></i>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/simsiz-qulaglq-apple-airpods-4-with-active-noise-cancellation-mxp93zea_1.webp" alt="AirPods 4">
+                        <h5>Apple AirPods 4 with Active Noise Cancellation</h5>
+                        <p>Qulaqlıq</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
 
-                    <div>
-                        <h3>Ödəniş rahatlığı</h3>
-                        <p>Kart, nağd və taksitlə ödəniş</p>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/Kondisioner_Midea_GP-09HRFN8-KIT_9000_BTU_Inverter_2030_m2_2.webp" alt="Midea kondisioner">
+                        <h5>Midea Inverter Kondisioner</h5>
+                        <p>Kondisioner</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/Philips_BHA53000_5.webp" alt="Philips">
+                        <h5>Philips BHA53000</h5>
+                        <p>Gözəllik və qulluq</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/Televizor_YOSHIRO_YTV-43FAG770B.jpg" alt="Yoshiro televizor">
+                        <h5>Yoshiro 43 düym televizor</h5>
+                        <p>Televizor</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/Xiaomi Smart_Band_10 Midnight Black 5.webp" alt="Xiaomi Smart Band">
+                        <h5>Xiaomi Smart Band 10 Midnight Black</h5>
+                        <p>Ağıllı saat</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/simsiz-gulaglq-apple-airpods-pro-2nd-generation-with-magsafe-case-usbc-mtjv3rua_1.webp" alt="AirPods Pro">
+                        <h5>Apple AirPods Pro 2nd Generation</h5>
+                        <p>Qulaqlıq</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/tefal-ingenio-titanium-12-1.jpg" alt="Tefal">
+                        <h5>Tefal Ingenio Titanium</h5>
+                        <p>Mətbəx</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/adpater-md3j4zma-2.webp" alt="Adapter">
+                        <h5>Apple Adapter</h5>
+                        <p>Aksesuar</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/minsk-d4-125-red-1-2.webp" alt="Minsk">
+                        <h5>Minsk D4 125 Red</h5>
+                        <p>Məhsul</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/1001334804.webp" alt="Məhsul">
+                        <h5>Məhsul</h5>
+                        <p>Digər</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/MYQY3ZMA 1.webp" alt="Apple məhsulu">
+                        <h5>Apple məhsulu</h5>
+                        <p>Aksesuar</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/1000-azn-_hədiyyə-_kartı.webp" alt="Hədiyyə kartı">
+                        <h5>1000 AZN hədiyyə kartı</h5>
+                        <p>Hədiyyə kartı</p>
+                        <div class="price">1000 ₼</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <img src="Assets/image/Products_Best selling/Kondisioner_YOSHIRO_YAC-S12OTOW_KIT_WOINS_12000_BTU_30-40_m2 Quraşdirlmasız_1.webp" alt="Yoshiro kondisioner">
+                        <h5>Yoshiro 12000 BTU Kondisioner</h5>
+                        <p>Kondisioner</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
                     </div>
                 </div>
 
@@ -197,185 +449,38 @@
         </section>
 
 
-        <!-- Best Sellers -->
-        <section id="best-sellers">
-            <div class="container">
+        <!-- ================= CAMPAIGNS ================= -->
 
-                <!-- Section Title -->
-                <div class="section-title">
-                    <h2>Ən çox satılanlar</h2>
-                    <a href="#">Hamısına bax</a>
-                </div>
+        <section class="promotions">
 
-                <!-- Product List -->
-                <div class="product-list">
+            <h2 class="section-title">Kampaniyalar</h2>
 
-                    <!-- Product 1 -->
-                    <div class="product-card">
+            <div class="row g-4">
 
-                        <div class="product-image">
-                            <img src="Assets/image/product-1.jpg" alt="Smartfon">
-                        </div>
-
-                        <div class="product-info">
-                            <h3>Smartfon</h3>
-                            <p class="product-price">599.99 AZN</p>
-                            <button>Səbətə əlavə et</button>
-                        </div>
-
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="product-card">
-
-                        <div class="product-image">
-                            <img src="Assets/image/product-2.jpg" alt="Televizor">
-                        </div>
-
-                        <div class="product-info">
-                            <h3>Televizor</h3>
-                            <p class="product-price">899.99 AZN</p>
-                            <button>Səbətə əlavə et</button>
-                        </div>
-
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="product-card">
-
-                        <div class="product-image">
-                            <img src="Assets/image/product-3.jpg" alt="Noutbuk">
-                        </div>
-
-                        <div class="product-info">
-                            <h3>Noutbuk</h3>
-                            <p class="product-price">1299.99 AZN</p>
-                            <button>Səbətə əlavə et</button>
-                        </div>
-
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="product-card">
-
-                        <div class="product-image">
-                            <img src="Assets/image/product-4.jpg" alt="Soyuducu">
-                        </div>
-
-                        <div class="product-info">
-                            <h3>Soyuducu</h3>
-                            <p class="product-price">1499.99 AZN</p>
-                            <button>Səbətə əlavə et</button>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Promotional Banners -->
-        <section id="promotions">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Kampaniyalar və xüsusi təkliflər</h2>
-                    <a href="#">Hamısına bax</a>
-                </div>
-
-                <div class="promotion-list">
-
-                    <!-- Promotion 1 -->
+                <div class="col-12 col-md-6">
                     <div class="promotion-card">
-                        <a href="#">
-                            <img src="Assets/image/promotion-1.jpg" alt="Birinci kampaniya">
-                        </a>
-                    </div>
+                        <img src="Assets/image/Banner-slide/923x520-heftesonunu-dolu-dolu-yasha.webp"
+                            alt="Həftəsonu kampaniyası">
 
-                    <!-- Promotion 2 -->
+                        <div class="promotion-content">
+                            <h3>Rahatlığınızı yeniləməyin tam vaxtıdır!</h3>
+                            <a href="https://bakuelectronics.az/kampaniyalar/heftesonunu-delu-dolu-yasha"
+                                class="btn">Ətraflı</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
                     <div class="promotion-card">
-                        <a href="#">
-                            <img src="Assets/image/promotion-2.jpg" alt="İkinci kampaniya">
-                        </a>
+                        <img src="Assets/image/Banner-slide/923x520_payız.webp"
+                            alt="Payız kampaniyası">
+
+                        <div class="promotion-content">
+                            <h3>Payızın ən xoş fürsətləri evinizə gəlir!</h3>
+                            <a href="https://bakuelectronics.az/kampaniyalar/payizda-fursetler-esir"
+                                class="btn">Ətraflı</a>
+                        </div>
                     </div>
-
-                    <!-- Promotion 3 -->
-                    <div class="promotion-card">
-                        <a href="#">
-                            <img src="Assets/image/promotion-3.jpg" alt="Üçüncü kampaniya">
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </section>
-
-
-        <!-- Product Categories -->
-        <section id="product-categories">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Məhsul kateqoriyaları</h2>
-                    <a href="#">Hamısına bax</a>
-                </div>
-
-                <div class="category-list">
-
-                    <!-- Category 1 -->
-                    <div class="category-card">
-                        <a href="#">
-                            <img src="Assets/image/category-1.jpg" alt="Smartfonlar">
-                            <h3>Smartfonlar</h3>
-                        </a>
-                    </div>
-
-                    <!-- Category 2 -->
-                    <div class="category-card">
-                        <a href="#">
-                            <img src="Assets/image/category-2.jpg" alt="Televizorlar">
-                            <h3>Televizorlar</h3>
-                        </a>
-                    </div>
-
-                    <!-- Category 3 -->
-                    <div class="category-card">
-                        <a href="#">
-                            <img src="Assets/image/category-3.jpg" alt="Noutbuklar">
-                            <h3>Noutbuklar</h3>
-                        </a>
-                    </div>
-
-                    <!-- Category 4 -->
-                    <div class="category-card">
-                        <a href="#">
-                            <img src="Assets/image/category-4.jpg" alt="Məişət texnikası">
-                            <h3>Məişət texnikası</h3>
-                        </a>
-                    </div>
-
-                    <!-- Category 5 -->
-                    <div class="category-card">
-                        <a href="#">
-                            <img src="Assets/image/category-5.jpg" alt="Kiçik məişət texnikası">
-                            <h3>Kiçik məişət texnikası</h3>
-                        </a>
-                    </div>
-
-                    <!-- Category 6 -->
-                    <div class="category-card">
-                        <a href="#">
-                            <img src="Assets/image/category-6.jpg" alt="Aksesuarlar">
-                            <h3>Aksesuarlar</h3>
-                        </a>
-                    </div>
-
                 </div>
 
             </div>
@@ -383,38 +488,107 @@
         </section>
 
 
-        <!-- YouTube Videos -->
-        <section id="youtube">
-            <div class="container">
+        <!-- ================= AUTUMN CAMPAIGN PRODUCTS ================= -->
 
-                <div class="section-title">
-                    <h2>Video icmallar</h2>
-                    <a href="#">YouTube kanalımız</a>
+        <section class="best-sellers">
+
+            <h2 class="section-title">Payızda fürsətlər əsir!</h2>
+
+            <div class="campaign-tabs">
+                <button class="active" data-category="all">Hamısı</button>
+                <button data-category="smartphones">Smartfonlar</button>
+                <button data-category="laptops">Notbuklar</button>
+                <button data-category="tablets">Planşetlər</button>
+                <button data-category="vacuum">Robot tozsoranlar</button>
+            </div>
+
+            <div class="row g-3">
+
+                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="laptops">
+                    <div class="product-card">
+                        <img src="Assets/image/Promotions/ASUS_TUFFA608UHI-TU156_90NROKS1-M00BKO_1.webp" alt="ASUS TUF Gaming">
+                        <span class="discount">600 ₼ endirim</span>
+                        <h5>Notbuk ASUS TUF Gaming FA608UHI-TU156</h5>
+                        <p>16-inch / Ryzen 7 260 / 16GB / 1TB / RTX 5050 8GB</p>
+                        <div class="price">2899.99 ₼ <span class="old-price">3499.99 ₼</span></div>
+                        <div class="installment">18 ay: 161.11 ₼</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
                 </div>
 
-                <div class="video-list">
-
-                    <!-- Video 1 -->
-                    <div class="video-card">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Baku Electronics video 1"
-                            allowfullscreen>
-                        </iframe>
+                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="tablets">
+                    <div class="product-card">
+                        <img src="Assets/image/Promotions/Planset_HONOR_Pad_X7_4GB64GB_Wi-Fi_Space_Gray_11.webp" alt="HONOR Pad X7">
+                        <span class="discount">20 ₼ endirim</span>
+                        <h5>Planşet HONOR Pad X7 4GB/64GB Wi-Fi</h5>
+                        <p>Space Gray</p>
+                        <div class="price">259.99 ₼ <span class="old-price">279.99 ₼</span></div>
+                        <div class="installment">18 ay: 14.44 ₼</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
                     </div>
+                </div>
 
-                    <!-- Video 2 -->
-                    <div class="video-card">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Baku Electronics video 2"
-                            allowfullscreen>
-                        </iframe>
+                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="laptops">
+                    <div class="product-card">
+                        <img src="Assets/image/Promotions/83K10032RK_1.webp" alt="Lenovo IdeaPad Slim 3">
+                        <span class="discount">400 ₼ endirim</span>
+                        <h5>Notbuk Lenovo IdeaPad Slim 3 15IRH10</h5>
+                        <p>15.3" WUXGA / i7-13620H / 16GB / 512GB SSD / FreeDOS</p>
+                        <div class="price">1699.99 ₼ <span class="old-price">2099.99 ₼</span></div>
+                        <div class="installment">18 ay: 94.44 ₼</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
                     </div>
+                </div>
 
-                    <!-- Video 3 -->
-                    <div class="video-card">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Baku Electronics video 3"
-                            allowfullscreen>
-                        </iframe>
+                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="smartphones">
+                    <div class="product-card">
+                        <img src="Assets/image/Promotions/Smartfon Xiaomi_Redmi_17_4GB256GB_Black_1.webp" alt="Xiaomi Redmi 17">
+                        <span class="discount">80 ₼ endirim</span>
+                        <h5>Smartfon Xiaomi Redmi 17 4GB/256GB Black</h5>
+                        <p>Smartfon</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
                     </div>
+                </div>
 
+                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="smartphones">
+                    <div class="product-card">
+                        <img src="Assets/image/Promotions/iPhone_17_Pro_Cosmic_Orange_1.webp" alt="iPhone 17 Pro">
+                        <h5>Apple iPhone 17 Pro Cosmic Orange</h5>
+                        <p>Smartfon</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="tablets">
+                    <div class="product-card">
+                        <img src="Assets/image/Promotions/Planset Apple_iPad_Air_11-inch_M4_128GB_Wi-Fi_Space_Gray 2026.webp" alt="Apple iPad Air">
+                        <h5>Apple iPad Air 11-inch M4 128GB Wi-Fi</h5>
+                        <p>Planşet</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="smartphones">
+                    <div class="product-card">
+                        <img src="Assets/image/Promotions/simsiz-qulaglq-apple-airpods-4-with-active-noise-cancellation-mxp93zea_1.webp" alt="AirPods 4">
+                        <h5>Apple AirPods 4</h5>
+                        <p>Qulaqlıq</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="smartphones">
+                    <div class="product-card">
+                        <img src="Assets/image/Promotions/simsiz-gulaglq-sony-wh-ch520-blue_1.webp" alt="Sony WH-CH520">
+                        <h5>Sony WH-CH520 Blue</h5>
+                        <p>Qulaqlıq</p>
+                        <div class="price">Qiyməti saytda</div>
+                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                    </div>
                 </div>
 
             </div>
@@ -422,65 +596,183 @@
         </section>
 
 
-        <!-- Blog -->
-        <section id="blog">
-            <div class="container">
+        <!-- ================= YOUTUBE VIDEOS ================= -->
 
-                <div class="section-title">
-                    <h2>Bloq və xəbərlər</h2>
-                    <a href="#">Bütün xəbərlər</a>
+        <section class="videos">
+
+            <h2 class="section-title">Videolarımız</h2>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/Mu6ul50SVMA" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
                 </div>
 
-                <div class="blog-list">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/LxMghdtItqs" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
 
-                    <!-- Blog 1 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/_MfbhNy8wms" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/y2r234C6xYE" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/oGEexVRIG-E" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/vu827LEHqUs" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/Oed4xkrKlg4" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/tiQWohl-4Q8" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/LxMghdtItqs" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/LxMghdtItqs" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/DsouzCVvHpg" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/yiFjFJzANr0" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/s9ST4OIudNw" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/MaCfv9Mkfgo" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/lUnsI5NlP2g" title="Baku Electronics video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EXTRA PROMOTIONS ================= -->
+
+        <section class="extra-promotions">
+
+            <div class="row g-4">
+
+                <div class="col-12 col-md-6">
+                    <div class="extra-promotion-card">
+                        <img src="https://media.bakuelectronics.az/media/news/Simsiz_qulaql%C4%B1q_HUAWEI_FreeClip_2_Rose_Gold_55038865.webp"
+                            alt="Huawei FreeClip 2">
+
+                        <div class="content">
+                            <h3>Qulaqlıqlar</h3>
+                            <p>Sevdiyin musiqini daha yaxından dinlə!</p>
+                            <a href="https://www.bakuelectronics.az/mehsul/huawei-freeclip-2-rose-gold-234822">
+                                İndi al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="extra-promotion-card">
+                        <img src="https://media.bakuelectronics.az/media/news/Midea_L1PB36-C28WM-KIT_Wi-Fi_2_1.webp"
+                            alt="Midea">
+
+                        <div class="content">
+                            <h3>Soyuq havalara Midea ilə hazırsan!</h3>
+                            <p>Midea ilə rahat qış!</p>
+                            <a href="https://www.bakuelectronics.az/axtaris-neticesi?name=Kombi+Midea+L1PB">
+                                İndi al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BLOG ================= -->
+
+        <section class="blog-section">
+
+            <h2 class="section-title">Bloq və xəbərlər</h2>
+            <p class="section-subtitle">Ən son yeniliklərdən xəbərdar ol!</p>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-md-6">
                     <article class="blog-card">
+                        <img src="Assets/image/Blog/_ai-destekli-smartfon-secimi.png"
+                            alt="AI dəstəkli smartfon seçimi">
 
-                        <a href="#">
-                            <img src="Assets/image/blog-1.jpg" alt="Texnologiya xəbərləri">
-                        </a>
-
-                        <div class="blog-info">
-                            <span>Texnologiya</span>
-                            <h3><a href="#">Yeni texnologiyalar və yeniliklər</a></h3>
-                            <p>Ən son texnologiya xəbərləri və maraqlı yeniliklərlə tanış olun.</p>
+                        <div class="blog-content">
+                            <h5>AI dəstəkli smartfon seçimi</h5>
+                            <p>Texnologiya dünyasından ən son yeniliklər.</p>
                             <a href="#">Ətraflı oxu</a>
                         </div>
-
                     </article>
+                </div>
 
-                    <!-- Blog 2 -->
+                <div class="col-12 col-md-6">
                     <article class="blog-card">
+                        <img src="Assets/image/Blog/Iphone_do1225-x-645.jpg"
+                            alt="iPhone haqqında xəbər">
 
-                        <a href="#">
-                            <img src="Assets/image/blog-2.jpg" alt="Məişət texnikası">
-                        </a>
-
-                        <div class="blog-info">
-                            <span>Məişət texnikası</span>
-                            <h3><a href="#">Ev üçün faydalı texnologiyalar</a></h3>
-                            <p>Gündəlik həyatınızı asanlaşdıran məhsulları kəşf edin.</p>
+                        <div class="blog-content">
+                            <h5>iPhone dünyasından yeniliklər</h5>
+                            <p>Smartfonlar haqqında maraqlı məlumatlar.</p>
                             <a href="#">Ətraflı oxu</a>
                         </div>
-
                     </article>
-
-                    <!-- Blog 3 -->
-                    <article class="blog-card">
-
-                        <a href="#">
-                            <img src="Assets/image/blog-3.jpg" alt="Smart cihazlar">
-                        </a>
-
-                        <div class="blog-info">
-                            <span>Smart cihazlar</span>
-                            <h3><a href="#">Ağıllı cihazların üstünlükləri</a></h3>
-                            <p>Müasir smart cihazlar haqqında ətraflı məlumat əldə edin.</p>
-                            <a href="#">Ətraflı oxu</a>
-                        </div>
-
-                    </article>
-
                 </div>
 
             </div>
@@ -490,73 +782,134 @@
     </main>
 
 
-    <!-- Footer -->
-    ```html
-    <!-- Footer -->
-    <footer class="main-footer">
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
 
         <div class="container">
 
-            <div class="footer-content">
+            <div class="row g-4">
 
-                <!-- About -->
-                <div class="footer-column">
-                    <h3>Baku Electronics</h3>
-                    <p>Texnologiya və elektronika dünyası.</p>
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <h5>Baku Electronics</h5>
+
+                    <p>
+                        Elektronika və məişət texnikası dünyasında
+                        seçimlərinizi bizimlə edin.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.facebook.com/bakuelectronics.mmc" target="_blank">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/user/BakuElectronicsMMC" target="_blank">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/bakuelectronics.az/" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/bakuelectronics/" target="_blank">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+
+                        <a href="https://t.me/baku_electronics" target="_blank">
+                            <i class="bi bi-telegram"></i>
+                        </a>
+
+                        <a href="https://open.spotify.com/intl-tr/artist/1nN7GCD0CwRGvA7q7po2Hm" target="_blank">
+                            <i class="bi bi-spotify"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@bakuelectronics" target="_blank">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+
+                        <a href="https://whatsapp.com/channel/0029Vb4c8tl0lwgzdt5Lup0O" target="_blank">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                    </div>
+
                 </div>
 
-                <!-- Customer Service -->
-                <div class="footer-column">
-                    <h3>Müştərilər üçün</h3>
+
+                <div class="col-6 col-md-6 col-lg-3">
+
+                    <h5>Alıcılara</h5>
+
                     <ul>
-                        <li><a href="#">Haqqımızda</a></li>
-                        <li><a href="#">Əlaqə</a></li>
                         <li><a href="#">Çatdırılma</a></li>
+                        <li><a href="#">Ödəniş üsulları</a></li>
+                        <li><a href="#">Zəmanət</a></li>
                         <li><a href="#">Geri qaytarılma</a></li>
-                    </ul>
-                </div>
-
-                <!-- Information -->
-                <div class="footer-column">
-                    <h3>Məlumat</h3>
-                    <ul>
-                        <li><a href="#">Kampaniyalar</a></li>
-                        <li><a href="#">Mağazalarımız</a></li>
-                        <li><a href="#">Brendlər</a></li>
                         <li><a href="#">Tez-tez verilən suallar</a></li>
                     </ul>
+
                 </div>
 
-                <!-- Contact -->
-                <div class="footer-column">
-                    <h3>Əlaqə</h3>
+
+                <div class="col-6 col-md-6 col-lg-3">
+
+                    <h5>Məlumat</h5>
+
                     <ul>
-                        <li><i class="bi bi-telephone"></i> *143</li>
-                        <li><i class="bi bi-envelope"></i> info@bakuelectronics.az</li>
-                        <li><i class="bi bi-geo-alt"></i> Bakı, Azərbaycan</li>
+                        <li><a href="#">Kampaniyalar</a></li>
+                        <li><a href="#">Mağazalar</a></li>
+                        <li><a href="#">Korporativ satışlar</a></li>
+                        <li><a href="#">Bloq və xəbərlər</a></li>
+                        <li><a href="#">Əlaqə</a></li>
                     </ul>
+
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <h5>Mobil tətbiqimiz</h5>
+
+                    <p>Baku Electronics tətbiqini yüklə.</p>
+
+                    <div class="app-links">
+
+                        <a href="https://play.google.com/store/apps/details?id=com.bakuelectronics&hl=en&pli=1"
+                            target="_blank">
+                            <img src="https://www.bakuelectronics.az/img/google-play-light.svg"
+                                alt="Google Play">
+                        </a>
+
+                        <a href="https://apps.apple.com/us/app/baku-electronics/id6444839980"
+                            target="_blank">
+                            <img src="https://www.bakuelectronics.az/img/app-store-light.svg"
+                                alt="App Store">
+                        </a>
+
+                    </div>
+
                 </div>
 
             </div>
 
-            <!-- Social Media -->
-            <div class="footer-social">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-youtube"></i></a>
-            </div>
 
-            <!-- Copyright -->
             <div class="footer-bottom">
-                <p>© 2026 Baku Electronics. Bütün hüquqlar qorunur.</p>
+                <p>© Baku Electronics. Bütün hüquqlar qorunur.</p>
             </div>
 
         </div>
 
     </footer>
 
-<script src="./JavaScript/script.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="JavaScript/script.js"></script>
+
 </body>
 
 </html>
-```
