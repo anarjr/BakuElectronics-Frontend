@@ -1,4 +1,6 @@
-
+/* ==============================
+   1. ÜMUMİ AYARLAR
+============================== */
 
 /* Bootstrap-in öz reset-i var, ona görə margin/padding sıfırlanmır */
 *,
@@ -1071,45 +1073,6 @@ header .cart-dropdown p {
 
 /* Sağ-sol oxlar */
 
-.slider-arrow {
-    position: absolute;
-    top: 28%;
-    z-index: 5;
-    width: 62px;
-    height: 62px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border: 0;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    color: var(--main-color);
-    transition: 0.3s;
-}
-
-.slider-arrow .bi {
-    font-size: 26px;
-}
-
-.slider-arrow:hover {
-    background: var(--main-color);
-    color: #fff;
-}
-
-.slider-arrow:disabled {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.slider-prev {
-    left: -31px;
-}
-
-.slider-next {
-    right: -31px;
-}
-
 /* ==============================
    11b. BRENDLƏR (sürüşən zolaq)
 ============================== */
@@ -1439,54 +1402,71 @@ footer .newsletter .btn {
     white-space: nowrap;
 }
 
-/* Zəng mərkəzi nömrəsi */
-
-footer .footer-phone {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 5px;
-    color: #222;
-    font-size: 22px;
-    font-weight: 700;
-}
+/* Sosial ikonlar + zəng mərkəzi (bir sətirdə) */
 
 footer .social-title {
     margin: 18px 0 0;
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+footer .social-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 60px;
+    margin-top: 14px;
 }
 
 footer .social-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 12px;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 24px;
 }
 
 footer .social-links a {
-    width: 38px;
-    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    transition: 0.3s;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    line-height: 1;
 }
 
 footer .social-links a img {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
-    filter: brightness(0) opacity(0.65);
-}
-
-footer .social-links a:hover {
-    background: var(--main-color);
-    border-color: var(--main-color);
+    filter: brightness(0) opacity(0.5);
+    transition: 0.3s;
 }
 
 footer .social-links a:hover img {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) opacity(1);
+}
+
+footer .footer-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #222;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+footer .footer-phone .bi {
+    font-size: 26px;
+}
+
+footer .footer-phone:hover {
+    color: var(--main-color);
 }
 
 footer .app-links {
@@ -1936,22 +1916,16 @@ footer .footer-bottom p {
     }
 
     footer .footer-phone {
-        font-size: 19px;
+        font-size: 28px;
     }
 
     footer .social-links {
-        gap: 10px;
-    }
-
-    footer .social-links a {
-        width: 34px;
-        height: 34px;
-        font-size: 15px;
+        gap: 18px;
     }
 
     footer .social-links a img {
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
     }
 
     footer .app-links img {
@@ -2379,4 +2353,195 @@ body.dark .catalog-group li a {
     .catalog-sub {
         grid-template-columns: 1fr;
     }
+}
+
+
+/* ==============================
+   21. KARTLARIN ÖLÇÜLƏRİ (bərabər)
+============================== */
+
+.video-card h5 {
+    min-height: calc(1.4em * 2);
+}
+
+.product-grid {
+    align-items: stretch;
+}
+
+.blog-card .blog-content,
+.promotion-card .promotion-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card .blog-content a {
+    margin-top: auto;
+}
+
+/* ==============================
+   22. TÜND TEMA: footer, məhsullar və qalanlar
+============================== */
+
+body.dark {
+    --light-color: #1e1e1e;
+}
+
+/* Footer */
+
+body.dark footer {
+    background: #171717;
+    color: #eee;
+}
+
+body.dark footer h5,
+body.dark footer strong,
+body.dark footer .social-title,
+body.dark footer .footer-phone,
+body.dark footer .newsletter h5 {
+    color: #fff;
+}
+
+body.dark footer p,
+body.dark footer a {
+    color: #aaa;
+}
+
+body.dark footer a:hover,
+body.dark footer .footer-phone:hover {
+    color: #fff;
+}
+
+body.dark footer .newsletter,
+body.dark footer .footer-bottom {
+    border-color: #333;
+}
+
+body.dark footer .newsletter input {
+    background: #262626;
+    border-color: #3a3a3a;
+    color: #fff;
+}
+
+body.dark footer .newsletter input::placeholder {
+    color: #888;
+}
+
+body.dark footer .social-links a img {
+    filter: brightness(0) invert(1) opacity(0.6);
+}
+
+body.dark footer .social-links a:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/* Məhsul kartları */
+
+body.dark .product-card {
+    background: #1e1e1e;
+    border: 0;
+}
+
+body.dark .product-card:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .product-img {
+    border-color: #333;
+}
+
+body.dark .compare-btn {
+    background: #f1f1f1;
+    color: #222;
+}
+
+body.dark .product-card h5,
+body.dark .product-prices .price,
+body.dark .product-prices .price-installment strong {
+    color: #f1f1f1;
+}
+
+body.dark .product-rating,
+body.dark .old-price,
+body.dark .product-prices .price-installment span {
+    color: #9a9a9a;
+}
+
+body.dark .product-prices .price-installment {
+    border-left-color: #3a3a3a;
+}
+
+body.dark .btn-cart,
+body.dark .btn-fav {
+    background: #2e2e2e;
+    color: #eee;
+}
+
+body.dark .btn-cart:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+body.dark .btn-fav:hover,
+body.dark .btn-fav.active {
+    color: var(--main-color);
+}
+
+/* Tablar */
+
+body.dark .campaign-tabs button {
+    background: #242424;
+    border: 0;
+    color: #bbb;
+}
+
+body.dark .campaign-tabs button:hover {
+    background: #2e2e2e;
+    color: #fff;
+}
+
+body.dark .campaign-tabs button.active {
+    background: #f1f1f1;
+    color: #111;
+}
+
+/* Digər hissələr */
+
+body.dark .section-title,
+body.dark .promotion-card h3,
+body.dark .extra-promotion-card h3,
+body.dark .blog-card h5,
+body.dark .advantages .advantage-item h5 {
+    color: #f1f1f1;
+}
+
+body.dark .blog-card {
+    background: #1e1e1e;
+    border-color: #303030;
+}
+
+body.dark .dropdown-menu,
+body.dark .cart-dropdown {
+    color: #eee;
+}
+
+body.dark .cart-dropdown p,
+body.dark .cart-item-info small {
+    color: #aaa;
+}
+
+body.dark header .header-search input,
+body.dark .main-navigation .nav {
+    color: #eee;
+}
+
+body.dark header .header-search input::placeholder {
+    color: #888;
+}
+
+body.dark header .header-search button {
+    color: #aaa;
+}
+
+body.dark .hero-side {
+    filter: brightness(0.9);
 }
