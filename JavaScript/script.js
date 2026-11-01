@@ -1,5 +1,5 @@
-
 "use strict"
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -156,19 +156,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.querySelectorAll(".product-card .btn").forEach(function (button) {
+    document.querySelectorAll(".product-card .btn-cart").forEach(function (button) {
         button.addEventListener("click", function () {
             const card = button.closest(".product-card");
-            const nameEl = card.querySelector("h5, h3");
+            const nameEl = card.querySelector("h5");
             const priceEl = card.querySelector(".price");
-            const imgEl = card.querySelector("img");
+            const imgEl = card.querySelector(".product-img img");
+            const label = button.querySelector("span");
 
             if (!nameEl) return;
 
             const name = nameEl.textContent.trim();
-            const price = priceEl
-                ? priceEl.firstChild.textContent.trim()
-                : "";
+            const price = priceEl ? priceEl.textContent.trim() : "";
             const img = imgEl ? imgEl.getAttribute("src") : "";
 
             const cart = loadCart();
@@ -184,13 +183,31 @@ document.addEventListener("DOMContentLoaded", function () {
             renderCart();
 
             // Qısa təsdiq
-            const oldText = button.textContent;
-            button.textContent = "Əlavə olundu ✓";
-            button.disabled = true;
-            setTimeout(function () {
-                button.textContent = oldText;
-                button.disabled = false;
-            }, 1200);
+            if (label) {
+                const oldText = label.textContent;
+                label.textContent = "Əlavə olundu ✓";
+                button.disabled = true;
+                setTimeout(function () {
+                    label.textContent = oldText;
+                    button.disabled = false;
+                }, 1200);
+            }
+        });
+    });
+
+    // Seçilmişlər (ürək) və müqayisə düymələri
+    document.querySelectorAll(".btn-fav").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const on = btn.classList.toggle("active");
+            const icon = btn.querySelector("i");
+            icon.classList.toggle("bi-heart", !on);
+            icon.classList.toggle("bi-heart-fill", on);
+        });
+    });
+
+    document.querySelectorAll(".compare-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            btn.classList.toggle("active");
         });
     });
 
@@ -274,6 +291,175 @@ document.addEventListener("DOMContentLoaded", function () {
         chat.addEventListener("click", function () {
             window.open("https://t.me/baku_electronics", "_blank");
         });
+    }
+
+
+    /* ==============================
+       6b. LİNKLƏR (səhifədən çıxarmasın)
+       false etsəniz, saytın öz linkləri yenidən işləyər.
+    ============================== */
+
+    const BLOCK_SITE_LINKS = true;
+
+    document.addEventListener("click", function (e) {
+        const link = e.target.closest("a[href]");
+        if (!link) return;
+
+        const href = link.getAttribute("href");
+
+        // "#" linkləri səhifəni yuxarı atmasın
+        if (href === "#" || href === "") {
+            e.preventDefault();
+            return;
+        }
+
+        if (!BLOCK_SITE_LINKS) return;
+
+        // bakuelectronics.az-a gedən linklər bloklanır
+        try {
+            const host = new URL(link.href, window.location.href).hostname;
+            if (host === "bakuelectronics.az" || host.endsWith(".bakuelectronics.az")) {
+                e.preventDefault();
+            }
+        } catch (err) { /* ignore */ }
+    });
+
+
+    /* ==============================
+       6c. KATALOQ MEGA-MENYUSU
+    ============================== */
+
+    const catalogBtn = document.getElementById("catalogBtn");
+    const catalogPanel = document.getElementById("catalogPanel");
+
+    if (catalogBtn && catalogPanel) {
+        const catButtons = catalogPanel.querySelectorAll(".catalog-cat");
+        const catSubs = catalogPanel.querySelectorAll(".catalog-sub");
+        const catIcon = catalogBtn.querySelector("i");
+        const catLabel = catalogBtn.querySelector("span");
+
+        function openCatalog() {
+            catalogPanel.classList.add("open");
+            catalogBtn.classList.add("open");
+            catalogBtn.setAttribute("aria-expanded", "true");
+            catIcon.className = "bi bi-x-lg";
+        }
+
+        function closeCatalog() {
+            catalogPanel.classList.remove("open");
+            catalogBtn.classList.remove("open");
+            catalogBtn.setAttribute("aria-expanded", "false");
+            catIcon.className = "bi bi-grid";
+        }
+
+        function showCategory(index) {
+            catButtons.forEach(function (b) {
+                b.classList.toggle("active", b.dataset.cat === index);
+            });
+            catSubs.forEach(function (sub) {
+                sub.classList.toggle("active", sub.dataset.cat === index);
+            });
+        }
+
+        catalogBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (catalogPanel.classList.contains("open")) {
+                closeCatalog();
+            } else {
+                openCatalog();
+            }
+        });
+
+        catButtons.forEach(function (btn) {
+            btn.addEventListener("mouseenter", function () { showCategory(btn.dataset.cat); });
+            btn.addEventListener("click", function () { showCategory(btn.dataset.cat); });
+        });
+
+        // Kənara klikləyəndə və ya Esc basanda bağla
+        document.addEventListener("click", function (e) {
+            if (!catalogPanel.contains(e.target) && !catalogBtn.contains(e.target)) {
+                closeCatalog();
+            }
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") closeCatalog();
+        });
+    }
+
+
+    /* ==============================
+       6d. VİDEO SLAYDERİ (oxlar + sürüşdürmə)
+    ============================== */
+
+    const videoSlider = document.querySelector(".video-slider");
+    const videoPrev = document.querySelector(".slider-prev");
+    const videoNext = document.querySelector(".slider-next");
+
+    if (videoSlider) {
+        function videoStep() {
+            const card = videoSlider.querySelector(".video-card");
+            if (!card) return 300;
+            const gap = parseFloat(getComputedStyle(videoSlider).columnGap) || 0;
+            return card.getBoundingClientRect().width + gap;
+        }
+
+        function updateVideoArrows() {
+            const max = videoSlider.scrollWidth - videoSlider.clientWidth - 2;
+            if (videoPrev) videoPrev.disabled = videoSlider.scrollLeft <= 2;
+            if (videoNext) videoNext.disabled = videoSlider.scrollLeft >= max;
+        }
+
+        if (videoPrev) {
+            videoPrev.addEventListener("click", function () {
+                videoSlider.scrollBy({ left: -videoStep(), behavior: "smooth" });
+            });
+        }
+
+        if (videoNext) {
+            videoNext.addEventListener("click", function () {
+                videoSlider.scrollBy({ left: videoStep(), behavior: "smooth" });
+            });
+        }
+
+        videoSlider.addEventListener("scroll", updateVideoArrows, { passive: true });
+        window.addEventListener("resize", updateVideoArrows);
+        updateVideoArrows();
+
+        // Siçanla sürüşdürmək
+        let dragStartX = 0;
+        let dragStartScroll = 0;
+        let dragging = false;
+        let moved = false;
+
+        videoSlider.addEventListener("mousedown", function (e) {
+            dragging = true;
+            moved = false;
+            dragStartX = e.pageX;
+            dragStartScroll = videoSlider.scrollLeft;
+        });
+
+        window.addEventListener("mousemove", function (e) {
+            if (!dragging) return;
+            const dx = e.pageX - dragStartX;
+            if (Math.abs(dx) > 5) moved = true;
+            videoSlider.style.scrollSnapType = "none";
+            videoSlider.scrollLeft = dragStartScroll - dx;
+        });
+
+        window.addEventListener("mouseup", function () {
+            if (!dragging) return;
+            dragging = false;
+            videoSlider.style.scrollSnapType = "";
+        });
+
+        // Sürüşdürmədən sonra təsadüfən video açılmasın
+        videoSlider.addEventListener("click", function (e) {
+            if (moved) {
+                e.preventDefault();
+                moved = false;
+            }
+        }, true);
     }
 
 

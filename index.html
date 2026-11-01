@@ -23,7 +23,7 @@
     <!-- ================= TOP BAR ================= -->
 
     <div class="top-bar">
-        <a href="https://www.bakuelectronics.az/kampaniyalar">
+        <a href="#">
             <strong>70%</strong>-dək endirimli qiyməti <strong>18 ayadək faizsiz</strong> ödə
         </a>
     </div>
@@ -37,19 +37,19 @@
 
                 <div class="nav-links">
 
-                    <a href="https://www.bakuelectronics.az/kampaniyalar" class="active">Kampaniyalar</a>
-                    <a href="https://www.bakuelectronics.az/korporativ-satishlar">Korporativ satışlar</a>
-                    <a href="https://www.bakuelectronics.az/magazalar">Mağazalar</a>
-                    <a href="https://www.bakuelectronics.az/ayliq-odenis">Aylıq ödəniş</a>
-                    <a href="https://www.bakuelectronics.az/aktiv-muqavileler">Aktiv müqavilələr</a>
-                    <a href="https://www.bakuelectronics.az/partnyorlar">Partnyorlar</a>
+                    <a href="#" class="active">Kampaniyalar</a>
+                    <a href="#">Korporativ satışlar</a>
+                    <a href="#">Mağazalar</a>
+                    <a href="#">Aylıq ödəniş</a>
+                    <a href="#">Aktiv müqavilələr</a>
+                    <a href="#">Partnyorlar</a>
 
                     <div class="dropdown">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Digər</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://www.bakuelectronics.az/arxayin-al">Arxayın al</a></li>
-                            <li><a class="dropdown-item" href="https://www.bakuelectronics.az/musteri-karti">Müştəri kartı</a></li>
-                            <li><a class="dropdown-item" href="https://www.bakuelectronics.az/zemanet">Zəmanət</a></li>
+                            <li><a class="dropdown-item" href="#">Arxayın al</a></li>
+                            <li><a class="dropdown-item" href="#">Müştəri kartı</a></li>
+                            <li><a class="dropdown-item" href="#">Zəmanət</a></li>
                         </ul>
                     </div>
 
@@ -60,8 +60,8 @@
                     <div class="dropdown">
                         <a href="#" class="dropdown-toggle lang-toggle" data-bs-toggle="dropdown" aria-expanded="false">AZ</a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="https://www.bakuelectronics.az/">AZ</a></li>
-                            <li><a class="dropdown-item" href="https://www.bakuelectronics.az/ru">RU</a></li>
+                            <li><a class="dropdown-item" href="#">AZ</a></li>
+                            <li><a class="dropdown-item" href="#">RU</a></li>
                         </ul>
                     </div>
 
@@ -83,7 +83,7 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg">
 
-                <a class="navbar-brand" href="https://www.bakuelectronics.az/">
+                <a class="navbar-brand" href="#">
                     <img src="https://media.bakuelectronics.az/media/logo/baku-electronics-logo_QJeQcxF.svg"
                         alt="Baku Electronics">
                 </a>
@@ -97,28 +97,11 @@
 
                     <div class="header-actions d-flex flex-column flex-lg-row align-items-lg-center">
 
-                        <!-- Kataloq menyusu -->
-                        <div class="dropdown">
-                            <button class="btn btn-dark btn-catalog" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="bi bi-grid"></i>
-                                Kataloq
-                            </button>
-                            <ul class="dropdown-menu catalog-menu">
-                                <li><h6 class="dropdown-header">Kateqoriyalar</h6></li>
-                                <li><a class="dropdown-item" href="#">Smartfonlar</a></li>
-                                <li><a class="dropdown-item" href="#">Notbuklar</a></li>
-                                <li><a class="dropdown-item" href="#">Planşetlər</a></li>
-                                <li><a class="dropdown-item" href="#">Kompüterlər</a></li>
-                                <li><a class="dropdown-item" href="#">Televizorlar</a></li>
-                                <li><a class="dropdown-item" href="#">Ev kinoteatrları</a></li>
-                                <li><a class="dropdown-item" href="#">Qadjetlər</a></li>
-                                <li><a class="dropdown-item" href="#">Məişət texnikası</a></li>
-                                <li><a class="dropdown-item" href="#">Kondisionerlər</a></li>
-                                <li><a class="dropdown-item" href="#">Mətbəx</a></li>
-                                <li><a class="dropdown-item" href="#">Gözəllik və qulluq</a></li>
-                            </ul>
-                        </div>
+                        <!-- Kataloq düyməsi -->
+                        <button class="btn btn-dark btn-catalog" id="catalogBtn" type="button" aria-expanded="false" aria-controls="catalogPanel">
+                            <i class="bi bi-grid"></i>
+                            <span>Kataloq</span>
+                        </button>
 
                         <form class="header-search">
                             <input class="form-control" type="search" placeholder="Məhsul axtar...">
@@ -129,7 +112,7 @@
 
                         <div class="header-icons">
 
-                            <a href="https://www.bakuelectronics.az/catalog/muqayise-et" class="icon-btn" title="Müqayisə">
+                            <a href="#" class="icon-btn" title="Müqayisə">
                                 <i class="bi bi-arrow-left-right"></i>
                             </a>
 
@@ -144,7 +127,7 @@
                                 </div>
                             </div>
 
-                            <a href="https://www.bakuelectronics.az/sevimli-mehsullar" class="icon-btn" title="Seçilmişlər">
+                            <a href="#" class="icon-btn" title="Seçilmişlər">
                                 <i class="bi bi-heart"></i>
                             </a>
 
@@ -158,6 +141,45 @@
                 </div>
 
             </nav>
+
+            <!-- Kataloq mega-menyusu -->
+            <div class="catalog-panel" id="catalogPanel">
+                <div class="catalog-cats">
+<button type="button" class="catalog-cat active" data-cat="0"><i class="bi bi-phone"></i><span>Smartfonlar və planşetlər</span></button>
+<button type="button" class="catalog-cat" data-cat="1"><i class="bi bi-laptop"></i><span>Notbuklar və kompüter texnikası</span></button>
+<button type="button" class="catalog-cat" data-cat="2"><i class="bi bi-controller"></i><span>Oyun konsolları və aksessuarlar</span></button>
+<button type="button" class="catalog-cat" data-cat="3"><i class="bi bi-tv"></i><span>TV, audio və video</span></button>
+<button type="button" class="catalog-cat" data-cat="4"><i class="bi bi-boxes"></i><span>Böyük məişət texnikası</span></button>
+<button type="button" class="catalog-cat" data-cat="5"><i class="bi bi-cup-hot"></i><span>Kiçik məişət texnikası</span></button>
+<button type="button" class="catalog-cat" data-cat="6"><i class="bi bi-thermometer-snow"></i><span>İqlim texnikası</span></button>
+<button type="button" class="catalog-cat" data-cat="7"><i class="bi bi-scissors"></i><span>Gözəllik və baxım</span></button>
+<button type="button" class="catalog-cat" data-cat="8"><i class="bi bi-car-front"></i><span>Avto və moto</span></button>
+<button type="button" class="catalog-cat" data-cat="9"><i class="bi bi-heart-pulse"></i><span>Tibbi məhsullar</span></button>
+<button type="button" class="catalog-cat" data-cat="10"><i class="bi bi-house-heart"></i><span>Ev və bağ</span></button>
+<button type="button" class="catalog-cat" data-cat="11"><i class="bi bi-lamp"></i><span>Mebel, tekstil və dekor</span></button>
+<button type="button" class="catalog-cat" data-cat="12"><i class="bi bi-cup-straw"></i><span>Qab-qacaq, tava-qazan</span></button>
+<button type="button" class="catalog-cat" data-cat="13"><i class="bi bi-balloon"></i><span>Uşaq aləmi</span></button>
+                </div>
+                <div class="catalog-subs">
+<div class="catalog-sub active" data-cat="0"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Smartfonlar</a></h6><ul><li><a href="#">Apple</a></li><li><a href="#">Samsung</a></li><li><a href="#">Xiaomi</a></li><li><a href="#">Huawei</a></li><li><a href="#">Motorola</a></li><li><a href="#">HONOR</a></li><li><a href="#">Poco</a></li><li><a href="#">Infinix</a></li><li><a href="#">Tecno</a></li><li><a href="#">Vivo</a></li><li><a href="#">Nokia</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Qulaqlıqlar</a></h6><ul><li><a href="#">Simsiz qulaqlıqlar</a></li><li><a href="#">Simli qulaqlıqlar</a></li><li><a href="#">Uşaqlar üçün qulaqlıqlar</a></li><li><a href="#">Oyun üçün qulaqlıqlar</a></li><li><a href="#">Bütün qulaqlıqlar</a></li></ul></div><div class="catalog-group"><h6><a href="#">Ev və ofis telefonları</a></h6></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Planşetlər</a></h6><ul><li><a href="#">Apple</a></li><li><a href="#">Samsung</a></li><li><a href="#">Xiaomi</a></li><li><a href="#">Lenovo</a></li><li><a href="#">Huawei</a></li><li><a href="#">Poco</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Düyməli telefonlar</a></h6><ul><li><a href="#">Energizer</a></li><li><a href="#">Nokia</a></li><li><a href="#">Panasonic</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Qol saatları</a></h6><ul><li><a href="#">Kişi saatları</a></li><li><a href="#">Qadın saatları</a></li><li><a href="#">Uşaq saatları</a></li><li><a href="#">Bütün saatlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Smart saatlar</a></h6><ul><li><a href="#">Apple</a></li><li><a href="#">Borofone</a></li><li><a href="#">Garmin</a></li><li><a href="#">Huawei</a></li><li><a href="#">Samsung</a></li><li><a href="#">Ttec</a></li><li><a href="#">Wonlex</a></li><li><a href="#">Xiaomi</a></li><li><a href="#">Smart saatlar üçün aksesuarlar</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Elektron kitablar</a></h6><ul><li><a href="#">PocketBook</a></li></ul></div><div class="catalog-group"><h6><a href="#">Aksesuarlar</a></h6><ul><li><a href="#">Telefon üçün keyslər</a></li><li><a href="#">Ekran qoruyucuları və plyonkalar</a></li><li><a href="#">Adapterlər</a></li><li><a href="#">USB-C və digər kabellər</a></li><li><a href="#">Simsiz enerji toplama cihazları</a></li><li><a href="#">Power Bank</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="1"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Notbuklar</a></h6><ul><li><a href="#">Apple</a></li><li><a href="#">ASUS</a></li><li><a href="#">Lenovo</a></li><li><a href="#">HP</a></li><li><a href="#">Acer</a></li><li><a href="#">MSI</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Printerlər və skanerlər</a></h6><ul><li><a href="#">Lazer printerlər</a></li><li><a href="#">Mürəkkəbli printerlər</a></li><li><a href="#">Skanerlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Kompüterlər</a></h6><ul><li><a href="#">Monobloklar</a></li><li><a href="#">Stolüstü kompüterlər</a></li><li><a href="#">Mini PC</a></li></ul></div><div class="catalog-group"><h6><a href="#">Kompüter aksesuarları</a></h6><ul><li><a href="#">Siçanlar</a></li><li><a href="#">Klaviaturalar</a></li><li><a href="#">Veb kameralar</a></li><li><a href="#">Çantalar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Monitorlar</a></h6><ul><li><a href="#">Oyun monitorları</a></li><li><a href="#">Ofis monitorları</a></li><li><a href="#">Bütün monitorlar</a></li></ul></div><div class="catalog-group"><h6><a href="#">Şəbəkə avadanlığı</a></h6><ul><li><a href="#">Routerlər</a></li><li><a href="#">Wi-Fi gücləndiriciləri</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="2"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Oyun konsolları</a></h6><ul><li><a href="#">PlayStation</a></li><li><a href="#">Xbox</a></li><li><a href="#">Nintendo</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Oyun aksesuarları</a></h6><ul><li><a href="#">Joystiklər</a></li><li><a href="#">Oyun qulaqlıqları</a></li><li><a href="#">Oyun klaviaturaları</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Oyunlar</a></h6><ul><li><a href="#">PlayStation oyunları</a></li><li><a href="#">Xbox oyunları</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="3"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Televizorlar</a></h6><ul><li><a href="#">Samsung</a></li><li><a href="#">LG</a></li><li><a href="#">Yoshiro</a></li><li><a href="#">TCL</a></li><li><a href="#">Hisense</a></li><li><a href="#">Bütün televizorlar</a></li></ul></div><div class="catalog-group"><h6><a href="#">TV aksesuarları</a></h6><ul><li><a href="#">Kronşteynlər</a></li><li><a href="#">Pultlar</a></li><li><a href="#">Kabellər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Səs sistemləri</a></h6><ul><li><a href="#">Soundbarlar</a></li><li><a href="#">Bluetooth kolonkalar</a></li><li><a href="#">Ev kinoteatrları</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Proyektorlar</a></h6><ul><li><a href="#">Ev proyektorları</a></li><li><a href="#">Ofis proyektorları</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="4"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Soyuducular</a></h6><ul><li><a href="#">Birqapılı</a></li><li><a href="#">İkiqapılı</a></li><li><a href="#">Side by Side</a></li></ul></div><div class="catalog-group"><h6><a href="#">Plitələr və sobalar</a></h6><ul><li><a href="#">Qaz plitələr</a></li><li><a href="#">Elektrik plitələr</a></li><li><a href="#">Sobalar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Paltaryuyan maşınlar</a></h6><ul><li><a href="#">Dik yüklənən</a></li><li><a href="#">Önə yüklənən</a></li><li><a href="#">Qurutma maşınları</a></li></ul></div><div class="catalog-group"><h6><a href="#">Davlumbazlar</a></h6></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Qabyuyan maşınlar</a></h6><ul><li><a href="#">Tam quraşdırılan</a></li><li><a href="#">Sərbəst dayanan</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="5"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Tozsoranlar</a></h6><ul><li><a href="#">Robot tozsoranlar</a></li><li><a href="#">Şaquli tozsoranlar</a></li><li><a href="#">Yuyucu tozsoranlar</a></li><li><a href="#">Bütün tozsoranlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Ütülər</a></h6><ul><li><a href="#">Buxarlı ütülər</a></li><li><a href="#">Buxar generatorları</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Mətbəx texnikası</a></h6><ul><li><a href="#">Blenderlər</a></li><li><a href="#">Qəhvə maşınları</a></li><li><a href="#">Çaydanlar</a></li><li><a href="#">Toasterlər</a></li><li><a href="#">Mikserlər</a></li><li><a href="#">Multibişiricilər</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="6"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Kondisionerlər</a></h6><ul><li><a href="#">Midea</a></li><li><a href="#">Yoshiro</a></li><li><a href="#">Samsung</a></li><li><a href="#">Bosch</a></li><li><a href="#">Bütün kondisionerlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Havanı təmizləyənlər</a></h6><ul><li><a href="#">Havatəmizləyicilər</a></li><li><a href="#">Rütubətləndiricilər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Kombilər</a></h6><ul><li><a href="#">Midea</a></li><li><a href="#">Bütün kombilər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Ventilyatorlar</a></h6></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">İstilik cihazları</a></h6><ul><li><a href="#">Yağ radiatorları</a></li><li><a href="#">Konvektorlar</a></li><li><a href="#">Elektrik sobaları</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="7"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Saç baxımı</a></h6><ul><li><a href="#">Saç qurudanlar</a></li><li><a href="#">Saç düzəldənlər</a></li><li><a href="#">Daraqlı fenlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Üz və bədən</a></h6><ul><li><a href="#">Üzqırxanlar</a></li><li><a href="#">Epilyatorlar</a></li><li><a href="#">Trimmerlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Ağız qulluğu</a></h6><ul><li><a href="#">Diş fırçaları</a></li><li><a href="#">İrriqatorlar</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="8"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Motosikletlər</a></h6><ul><li><a href="#">Minsk</a></li><li><a href="#">Bütün motosikletlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Elektrik nəqliyyat</a></h6><ul><li><a href="#">Elektrik skuterlər</a></li><li><a href="#">Elektrik velosipedlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Avto aksesuarlar</a></h6><ul><li><a href="#">Video registratorlar</a></li><li><a href="#">Avto kompressorlar</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="9"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Ölçü cihazları</a></h6><ul><li><a href="#">Tonometrlər</a></li><li><a href="#">Qlükometrlər</a></li><li><a href="#">Termometrlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Müalicə cihazları</a></h6><ul><li><a href="#">İnhalyatorlar</a></li><li><a href="#">Masajorlar</a></li></ul></div></div><div class="catalog-col"></div></div>
+<div class="catalog-sub" data-cat="10"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Bağ avadanlığı</a></h6><ul><li><a href="#">Biçən maşınlar</a></li><li><a href="#">Su nasosları</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Alətlər</a></h6><ul><li><a href="#">Drellər</a></li><li><a href="#">Perforatorlar</a></li><li><a href="#">Alət dəstləri</a></li></ul></div></div><div class="catalog-col"></div></div>
+<div class="catalog-sub" data-cat="11"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Mebel</a></h6><ul><li><a href="#">Divanlar</a></li><li><a href="#">Çarpayılar</a></li><li><a href="#">Masalar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Tekstil</a></h6><ul><li><a href="#">Yataq dəstləri</a></li><li><a href="#">Pərdələr</a></li><li><a href="#">Xalçalar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Dekor</a></h6><ul><li><a href="#">İşıqlandırma</a></li><li><a href="#">Güzgülər</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="12"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Tava və qazanlar</a></h6><ul><li><a href="#">Tava və qazan dəstləri</a></li><li><a href="#">Tavalar</a></li><li><a href="#">Qazanlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Qab-qacaq</a></h6><ul><li><a href="#">Nahar dəstləri</a></li><li><a href="#">Fincan və stəkanlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Mətbəx ləvazimatları</a></h6><ul><li><a href="#">Bıçaqlar</a></li><li><a href="#">Mətbəx təşkilatçıları</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="13"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Oyuncaqlar</a></h6><ul><li><a href="#">Konstruktorlar</a></li><li><a href="#">Kuklalar</a></li><li><a href="#">Maşınlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Uşaq nəqliyyatı</a></h6><ul><li><a href="#">Uşaq arabaları</a></li><li><a href="#">Velosipedlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Uşaq texnikası</a></h6><ul><li><a href="#">Uşaq saatları</a></li><li><a href="#">Uşaq planşetləri</a></li></ul></div></div></div>
+                </div>
+                <a class="catalog-promo" href="#">
+                    <img src="Assets/İmage/Banner-slide/923x520_payız.webp" alt="Kampaniya">
+                </a>
+            </div>
         </div>
     </header>
 
@@ -169,7 +191,7 @@
 
             <div class="hero-grid">
 
-            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500" data-bs-touch="true">
 
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-label="Slayd 1"></button>
@@ -203,157 +225,157 @@
             <div class="carousel-inner">
 
                 <div class="carousel-item active">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/heftesonunu-delu-dolu-yasha">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520-heftesonunu-dolu-dolu-yasha.webp" alt="Həftəsonu kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/axtaris-neticesi?name=Smartfon%20Apple%20iPhone%20Duo">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/Veb_sayt_temp_923_x_520_duo_2.webp" alt="Kampaniya banneri">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/samsungdan-evini-silib-supurecek-teklif">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520-samsungdan-teklif13.webp" alt="Samsung təklifləri">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/payizda-fursetler-esir">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520_payız.webp" alt="Payız kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/payiz-evine-gelir">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/Payız_evinə_gəlsin923x520.webp" alt="Payız evinə gəlsin">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/her-bir-eve-dream-lazimdir">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520-her-bir-eve-dream-lazimdir_24.webp" alt="Kampaniya banneri">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/gozellik-qullugu-serfeli-teklifler">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520_26_iyo.webp" alt="Kampaniya banneri">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/samsung-aksesuar-modellerine-ozel-teklif">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520_samsung.webp" alt="Samsung kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/acer-brendinden-xususi-teklif">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/Veb_sayt_temp_923_x_520_ACER.webp" alt="Acer kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/herkesin-birinci-secimi">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520_haier.webp" alt="Haier kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/peshakar-qulluq-mehsullarina-endirim">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520-philips_23.webp" alt="Philips kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/secilmis-notbuk-modellerine-ozel-kampaniya">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520_12not.webp" alt="Kampaniya banneri">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/motoverse-ile-hersey-yolunda">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/KV_Hər_şey_yolunda_payız_923_520_.webp" alt="Payız kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/seven-space-lefard-xususi-endirim">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923ч520Lefard_barand_üeek_copy.webp" alt="Lefard kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/lg-wash-tower-ai">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520_lg.webp" alt="LG kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/trade-in-samsung">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520-TRade_in_samsung_1.webp" alt="Samsung Trade In">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/axtardiqini-tapacaqsan">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520_20.webp" alt="Kampaniya banneri">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/midea-kombileri">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/Midea_923x520.webp" alt="Midea kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/hp-notbuklari-guc-dizayn-etibarliliq">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/veb_sayt_923_x_520_hp_temp_update.webp" alt="HP kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/hp-printer">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/IMG_3129.webp" alt="Kampaniya banneri">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/samsung-rgb-texnology">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520samsung_tv.jpg" alt="Samsung televizor">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/acer-alana-hediyyeli-teklif">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/Acer_alana_hədiyyəli_təklif923x520.png" alt="Acer kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/tineco-tozsoranlari">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923x520-Tineco_payiz_copy_2.webp" alt="Tineco kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/kampaniyalar/honor-turbo-5g">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/honor923x520_12.webp" alt="Honor kampaniyası">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/xeberler/0nlayn-sifarishler">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/BE_Çatdırılma__MainBanner_923x520.webp" alt="Çatdırılma">
                     </a>
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.bakuelectronics.az/ru/xeberler/zameni-staroe-na-novoe">
+                    <a href="#">
                         <img src="Assets/İmage/Banner-slide/923_x_520-kohneni-deyish_1.jpg" alt="Kampaniya banneri">
                     </a>
                 </div>
@@ -371,7 +393,7 @@
             </button>
 
             <!-- Yan banner (şəkil ilə əvəz edə bilərsiniz) -->
-            <a class="hero-side" href="https://www.bakuelectronics.az/kampaniyalar">
+            <a class="hero-side" href="#">
                 <span class="hero-side-top">Nağd alışda</span>
                 <span class="hero-side-big">60<small>%</small></span>
                 <span class="hero-side-sub">-dək endirimlər</span>
@@ -389,7 +411,7 @@
             <div class="row">
 
                 <div class="col-6 col-lg-3">
-                    <a href="https://www.bakuelectronics.az/arxayin-al" class="advantage-item">
+                    <a href="#" class="advantage-item">
                         <i class="bi bi-arrow-repeat"></i>
                         <div>
                             <h5>Arxayın al!</h5>
@@ -399,7 +421,7 @@
                 </div>
 
                 <div class="col-6 col-lg-3">
-                    <a href="https://www.bakuelectronics.az/nisye-alis" class="advantage-item">
+                    <a href="#" class="advantage-item">
                         <i class="bi bi-credit-card"></i>
                         <div>
                             <h5>Hissə-hissə ödəniş</h5>
@@ -409,7 +431,7 @@
                 </div>
 
                 <div class="col-6 col-lg-3">
-                    <a href="https://www.bakuelectronics.az/catdirilma-ve-odenis" class="advantage-item">
+                    <a href="#" class="advantage-item">
                         <i class="bi bi-truck"></i>
                         <div>
                             <h5>Sürətli çatdırılma</h5>
@@ -419,7 +441,7 @@
                 </div>
 
                 <div class="col-6 col-lg-3">
-                    <a href="https://www.bakuelectronics.az/catdirilma-ve-odenis" class="advantage-item">
+                    <a href="#" class="advantage-item">
                         <i class="bi bi-wallet2"></i>
                         <div>
                             <h5>Ödəniş rahatlığı</h5>
@@ -437,167 +459,296 @@
 
         <section class="best-sellers">
 
-            <h2 class="section-title">Ən çox satılanlar</h2>
+            <span class="section-label">Ən çox satılanlar</span>
+            <h2 class="section-title">Bu məhsullar hər kəsin sevimlisidir!</h2>
 
-            <div class="row g-3">
+            <div class="product-grid">
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/iPhone_17_Pro_Cosmic_Orange_1.webp" alt="iPhone 17 Pro">
-                        <h5>Apple iPhone 17 Pro Cosmic Orange</h5>
-                        <p>Smartfon</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 480 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/iPhone_17_Pro_Cosmic_Orange_1.webp" alt="iPhone 17 Pro" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Smartfon Apple iPhone 17 Pro 256GB COSMIC ORANGE</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">3599.99 ₼</s><strong class="price">3119.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>173.33 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/Samsung_Galaxy_A57_8GB128GB_Gray_A576.webp" alt="Samsung Galaxy">
-                        <h5>Samsung Galaxy A57 8GB/128GB Gray</h5>
-                        <p>Smartfon</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 280 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/Samsung_Galaxy_A57_8GB128GB_Gray_A576.webp" alt="Samsung Galaxy A57" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Smartfon Samsung Galaxy A57 8GB/128GB Gray (A576)</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">1279.99 ₼</s><strong class="price">999.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>55.55 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/Xiaomi_Redmi_Note_15_6GB128GB_1.webp" alt="Xiaomi Redmi Note">
-                        <h5>Xiaomi Redmi Note 15 6GB/128GB</h5>
-                        <p>Smartfon</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 80 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/Xiaomi_Redmi_Note_15_6GB128GB_1.webp" alt="Xiaomi Redmi Note 15" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Smartfon Xiaomi Redmi Note 15 6GB/128GB</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">599.99 ₼</s><strong class="price">519.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>28.89 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/simsiz-qulaqlq-apple-airpods-4-with-active-noise-cancellation-mxp93zea_1.webp" alt="AirPods 4">
-                        <h5>Apple AirPods 4 with Active Noise Cancellation</h5>
-                        <p>Qulaqlıq</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 150 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/simsiz-qulaqlq-apple-airpods-4-with-active-noise-cancellation-mxp93zea_1.webp" alt="AirPods 4" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Simsiz qulaqlıq Apple AirPods 4 with Active Noise Cancellation (MXP93ZE/A)</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">559.99 ₼</s><strong class="price">409.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>22.78 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/Kondisioner_Midea_GP-09HRFN8-KIT_9000_BTU_İnverter_2030_m2_2.webp" alt="Midea kondisioner">
-                        <h5>Midea Inverter Kondisioner</h5>
-                        <p>Kondisioner</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 320 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/Kondisioner_Midea_GP-09HRFN8-KIT_9000_BTU_İnverter_2030_m2_2.webp" alt="Midea kondisioner" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Kondisioner Midea GP-09HRFN8-KIT, 9000 BTU, İnverter, 20-30 m2</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">899.99 ₼</s><strong class="price">579.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>32.22 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/Philips_BHA53000_5.webp" alt="Philips">
-                        <h5>Philips BHA53000</h5>
-                        <p>Gözəllik və qulluq</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 120 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/Philips_BHA53000_5.webp" alt="Philips fen" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Daraqlı fen Philips BHA530/00, 5000 Series</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">249.99 ₼</s><strong class="price">129.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>7.22 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/Televizor_YOSHIRO_YTV-43FAG770B.jpg" alt="Yoshiro televizor">
-                        <h5>Yoshiro 43 düym televizor</h5>
-                        <p>Televizor</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 140 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/Televizor_YOSHIRO_YTV-43FAG770B.jpg" alt="Yoshiro televizor" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Televizor YOSHIRO YTV-43FAG770B</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">579.99 ₼</s><strong class="price">439.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>24.44 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/Xiaomi_Smart_Band_10_Midnight_Black_5.webp" alt="Xiaomi Smart Band">
-                        <h5>Xiaomi Smart Band 10 Midnight Black</h5>
-                        <p>Ağıllı saat</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 20 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/Xiaomi_Smart_Band_10_Midnight_Black_5.webp" alt="Xiaomi Smart Band 10" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Xiaomi Smart Band 10 Midnight Black</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">129.99 ₼</s><strong class="price">109.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>6.11 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/simsiz-qulaqlq-apple-airpods-pro-2nd-generation-with-magsafe-case-usbc-mtjv3rua_1.webp" alt="AirPods Pro">
-                        <h5>Apple AirPods Pro 2nd Generation</h5>
-                        <p>Qulaqlıq</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 160 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/simsiz-qulaqlq-apple-airpods-pro-2nd-generation-with-magsafe-case-usbc-mtjv3rua_1.webp" alt="AirPods Pro 2" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Simsiz qulaqlıq Apple AirPods Pro (2nd generation) with MagSafe Case (USB-C) - MTJV3RU/A</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">759.99 ₼</s><strong class="price">599.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>33.33 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/tefal-ingenio-titanium-12-1.jpg" alt="Tefal">
-                        <h5>Tefal Ingenio Titanium</h5>
-                        <p>Mətbəx</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 350 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/tefal-ingenio-titanium-12-1.jpg" alt="Tefal Ingenio" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Tava və qazan dəsti Tefal Ingenio Preference Titanium 6X Böyük Set 12 parça</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">799.99 ₼</s><strong class="price">449.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>25.00 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/adpater-md3j4zma-2.webp" alt="Adapter">
-                        <h5>Apple Adapter</h5>
-                        <p>Aksesuar</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 10 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/adpater-md3j4zma-2.webp" alt="Apple adapter" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Adapter Apple 20W USB-C (MD3J4ZM/A)</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">79.99 ₼</s><strong class="price">69.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>3.89 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/minsk-d4-125-red-1-2.webp" alt="Minsk">
-                        <h5>Minsk D4 125 Red</h5>
-                        <p>Məhsul</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 300 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/minsk-d4-125-red-1-2.webp" alt="Minsk D4 125" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Motosiklet MINSK D4 125 RED</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">2299 ₼</s><strong class="price">1999 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>111.06 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/1001334804.webp" alt="Məhsul">
-                        <h5>Məhsul</h5>
-                        <p>Digər</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/1001334804.webp" alt="Məhsul" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Məhsul</h5>
+                    <div class="product-prices"><div class="price-main"><strong class="price">Qiyməti saytda</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/MYQY3ZMA_1.webp" alt="Apple məhsulu">
-                        <h5>Apple məhsulu</h5>
-                        <p>Aksesuar</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 10 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/MYQY3ZMA_1.webp" alt="Apple EarPods" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Qulaqlıq Apple EarPods (USB-C) - MYQY3ZM/A</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">69.99 ₼</s><strong class="price">59.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>3.33 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/1000-azn-_hədiyyə-_kartı.webp" alt="Hədiyyə kartı">
-                        <h5>1000 AZN hədiyyə kartı</h5>
-                        <p>Hədiyyə kartı</p>
-                        <div class="price">1000 ₼</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/1000-azn-_hədiyyə-_kartı.webp" alt="Hədiyyə kartı" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Baku Electronics Hədiyyə kartı 1000 AZN</h5>
+                    <div class="product-prices"><div class="price-main"><strong class="price">1000 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Products_Best selling/Kondisioner_YOSHIRO_YAC-S12OT0W_KIT_WOINS_12000_BTU_30-40_m2_Quraşdırılmasız_1.webp" alt="Yoshiro kondisioner">
-                        <h5>Yoshiro 12000 BTU Kondisioner</h5>
-                        <p>Kondisioner</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">- 150 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Products_Best selling/Kondisioner_YOSHIRO_YAC-S12OT0W_KIT_WOINS_12000_BTU_30-40_m2_Quraşdırılmasız_1.webp" alt="Yoshiro kondisioner" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Kondisioner YOSHIRO YAC-S12OT0W KIT W/O/INS, 12000 BTU, 30-40 m2 (Quraşdırılmasız)</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">699.99 ₼</s><strong class="price">549.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>30.55 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
@@ -621,7 +772,7 @@
 
                         <div class="promotion-content">
                             <h3>Rahatlığınızı yeniləməyin tam vaxtıdır!</h3>
-                            <a href="https://www.bakuelectronics.az/kampaniyalar/heftesonunu-delu-dolu-yasha"
+                            <a href="#"
                                 class="btn">Ətraflı</a>
                         </div>
                     </div>
@@ -634,7 +785,7 @@
 
                         <div class="promotion-content">
                             <h3>Payızın ən xoş fürsətləri evinizə gəlir!</h3>
-                            <a href="https://www.bakuelectronics.az/kampaniyalar/payizda-fursetler-esir"
+                            <a href="#"
                                 class="btn">Ətraflı</a>
                         </div>
                     </div>
@@ -649,6 +800,7 @@
 
         <section class="best-sellers">
 
+            <span class="section-label">Kampaniya</span>
             <h2 class="section-title">Payızda fürsətlər əsir!</h2>
 
             <div class="campaign-tabs">
@@ -660,92 +812,149 @@
                 <button data-category="vacuum">Robot tozsoranlar</button>
             </div>
 
-            <div class="row g-3">
+            <div class="product-grid">
 
-                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="laptops">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Promotions/ASUS_TUFFA608UHI-TU156_90NR0KS1-M00BK0_1.webp" alt="ASUS TUF Gaming">
-                        <span class="discount">600 ₼ endirim</span>
-                        <h5>Notbuk ASUS TUF Gaming FA608UHI-TU156</h5>
-                        <p>16-inch / Ryzen 7 260 / 16GB / 1TB / RTX 5050 8GB</p>
-                        <div class="price">2899.99 ₼ <span class="old-price">3499.99 ₼</span></div>
-                        <div class="installment">18 ay: 161.11 ₼</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card campaign-product" data-category="laptops">
+                    <div class="product-img">
+                        <span class="discount-badge">- 600 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Promotions/ASUS_TUFFA608UHI-TU156_90NR0KS1-M00BK0_1.webp" alt="ASUS TUF Gaming" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Notbuk ASUS TUF Gaming FA608UHI-TU156</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">3499.99 ₼</s><strong class="price">2899.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>161.11 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="tablets">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Promotions/Planşet_HONOR_Pad_X7_4GB64GB_Wi-Fi_Space_Gray_11.webp" alt="HONOR Pad X7">
-                        <span class="discount">20 ₼ endirim</span>
-                        <h5>Planşet HONOR Pad X7 4GB/64GB Wi-Fi</h5>
-                        <p>Space Gray</p>
-                        <div class="price">259.99 ₼ <span class="old-price">279.99 ₼</span></div>
-                        <div class="installment">18 ay: 14.44 ₼</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card campaign-product" data-category="tablets">
+                    <div class="product-img">
+                        <span class="discount-badge">- 20 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Promotions/Planşet_HONOR_Pad_X7_4GB64GB_Wi-Fi_Space_Gray_11.webp" alt="HONOR Pad X7" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Planşet HONOR Pad X7 4GB/64GB Wi-Fi Space Gray</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">279.99 ₼</s><strong class="price">259.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>14.44 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="laptops">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Promotions/83K10032RK_1.webp" alt="Lenovo IdeaPad Slim 3">
-                        <span class="discount">400 ₼ endirim</span>
-                        <h5>Notbuk Lenovo IdeaPad Slim 3 15IRH10</h5>
-                        <p>15.3" WUXGA / i7-13620H / 16GB / 512GB SSD / FreeDOS</p>
-                        <div class="price">1699.99 ₼ <span class="old-price">2099.99 ₼</span></div>
-                        <div class="installment">18 ay: 94.44 ₼</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card campaign-product" data-category="laptops">
+                    <div class="product-img">
+                        <span class="discount-badge">- 400 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Promotions/83K10032RK_1.webp" alt="Lenovo IdeaPad Slim 3" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Notbuk Lenovo IdeaPad Slim 3 15IRH10</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">2099.99 ₼</s><strong class="price">1699.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>94.44 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="smartphones">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Promotions/Smartfon_Xiaomi_Redmi_17_4GB256GB_Black_1.webp" alt="Xiaomi Redmi 17">
-                        <span class="discount">80 ₼ endirim</span>
-                        <h5>Smartfon Xiaomi Redmi 17 4GB/256GB Black</h5>
-                        <p>Smartfon</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card campaign-product" data-category="smartphones">
+                    <div class="product-img">
+                        <span class="discount-badge">- 80 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Promotions/Smartfon_Xiaomi_Redmi_17_4GB256GB_Black_1.webp" alt="Xiaomi Redmi 17" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Smartfon Xiaomi Redmi 17 4GB/256GB Black</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">649.99 ₼</s><strong class="price">569.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>31.67 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="smartphones">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Promotions/iPhone_17_Pro_Cosmic_Orange_1.webp" alt="iPhone 17 Pro">
-                        <h5>Apple iPhone 17 Pro Cosmic Orange</h5>
-                        <p>Smartfon</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card campaign-product" data-category="smartphones">
+                    <div class="product-img">
+                        <span class="discount-badge">- 480 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Promotions/iPhone_17_Pro_Cosmic_Orange_1.webp" alt="iPhone 17 Pro" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Smartfon Apple iPhone 17 Pro 256GB COSMIC ORANGE</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">3599.99 ₼</s><strong class="price">3119.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>173.33 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="tablets">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Promotions/Planşet_Apple_iPad_Air_11-inch_M4_128GB_Wi-Fi_Space_Gray_2026.webp" alt="Apple iPad Air">
-                        <h5>Apple iPad Air 11-inch M4 128GB Wi-Fi</h5>
-                        <p>Planşet</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card campaign-product" data-category="tablets">
+                    <div class="product-img">
+                        <span class="discount-badge">- 100 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Promotions/Planşet_Apple_iPad_Air_11-inch_M4_128GB_Wi-Fi_Space_Gray_2026.webp" alt="iPad Air" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Planşet Apple iPad Air 11-inch M4 128GB Wi-Fi Space Gray (2026)</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">2259.99 ₼</s><strong class="price">2159.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>120.00 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="headphones">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Promotions/simsiz-qulaqlq-apple-airpods-4-with-active-noise-cancellation-mxp93zea_1.webp" alt="AirPods 4">
-                        <h5>Apple AirPods 4</h5>
-                        <p>Qulaqlıq</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card campaign-product" data-category="headphones">
+                    <div class="product-img">
+                        <span class="discount-badge">- 150 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Promotions/simsiz-qulaqlq-apple-airpods-4-with-active-noise-cancellation-mxp93zea_1.webp" alt="AirPods 4" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Simsiz qulaqlıq Apple AirPods 4 with Active Noise Cancellation (MXP93ZE/A)</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">559.99 ₼</s><strong class="price">409.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>22.78 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 campaign-product" data-category="headphones">
-                    <div class="product-card">
-                        <img src="Assets/İmage/Promotions/simsiz-qulaqlq-sony-wh-ch520-blue_1.webp" alt="Sony WH-CH520">
-                        <h5>Sony WH-CH520 Blue</h5>
-                        <p>Qulaqlıq</p>
-                        <div class="price">Qiyməti saytda</div>
-                        <button class="btn btn-outline-danger">Səbətə əlavə et</button>
+                <div class="product-card campaign-product" data-category="headphones">
+                    <div class="product-img">
+                        <span class="discount-badge">- 40 ₼</span>
+                        <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                        <img src="Assets/İmage/Promotions/simsiz-qulaqlq-sony-wh-ch520-blue_1.webp" alt="Sony WH-CH520" loading="lazy">
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bi bi-star-fill"></i> 0</span>
+                        <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                    </div>
+                    <h5>Simsiz qulaqlıq SONY WH-CH520 Blue</h5>
+                    <div class="product-prices"><div class="price-main"><s class="old-price">109.99 ₼</s><strong class="price">69.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>3.89 ₼</strong></div></div>
+                    <div class="product-actions">
+                        <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                        <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
 
@@ -769,13 +978,19 @@
                     class="btn btn-danger">Kanalımıza keçid et</a>
             </div>
 
-            <div class="video-slider">
+            <div class="video-slider-wrap">
+
+                <button class="slider-arrow slider-prev" type="button" aria-label="Əvvəlki videolar">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+
+                <div class="video-slider">
 
                 <a class="video-card" data-id="Mu6ul50SVMA" href="https://www.youtube.com/watch?v=Mu6ul50SVMA" target="_blank" rel="noopener">
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/Mu6ul50SVMA/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Mu6ul50SVMA/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -785,7 +1000,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/LxMghdtItqs/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/LxMghdtItqs/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -795,7 +1010,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/_MfbhNy8wms/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/_MfbhNy8wms/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -805,7 +1020,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/y2r234C6xYE/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/y2r234C6xYE/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -815,7 +1030,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/oGEexVRIG-E/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/oGEexVRIG-E/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -825,7 +1040,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/vu827LEHqUs/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/vu827LEHqUs/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -835,7 +1050,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/Oed4xkrKlg4/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Oed4xkrKlg4/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -845,7 +1060,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/tiQWohl-4Q8/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/tiQWohl-4Q8/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -855,7 +1070,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/DsouzCVvHpg/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/DsouzCVvHpg/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -865,7 +1080,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/yiFjFJzANr0/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/yiFjFJzANr0/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -875,7 +1090,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/s9ST4OIudNw/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/s9ST4OIudNw/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -885,7 +1100,7 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/MaCfv9Mkfgo/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/MaCfv9Mkfgo/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
@@ -895,11 +1110,17 @@
                     <div class="video-thumb">
                         <img src="https://img.youtube.com/vi/lUnsI5NlP2g/maxresdefault.jpg"
                             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/lUnsI5NlP2g/mqdefault.jpg'"
-                            alt="Baku Electronics video" loading="lazy">
+                            alt="Baku Electronics video" loading="lazy" draggable="false">
                         <span class="video-play"><i class="bi bi-play-fill"></i></span>
                     </div>
                     <h5>Baku Electronics video</h5>
                 </a>
+
+            </div>
+
+                <button class="slider-arrow slider-next" type="button" aria-label="Növbəti videolar">
+                    <i class="bi bi-arrow-right"></i>
+                </button>
 
             </div>
 
@@ -913,55 +1134,55 @@
         <section class="brands">
             <div class="brands-marquee">
                 <div class="brands-track">
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=samsung" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/Samsung-Symbol.png" alt="Samsung">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=sony" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/Sony.jpg" alt="Sony">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=tefal" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/tefal_nQ6dUE6.png" alt="Tefal">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=ttec" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/TTEC.jpg" alt="ttec">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=yoshiro" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/YOSHIRO_2_vqP8Tah.png" alt="Yoshiro">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=zwilling" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/Zwilling.jpeg" alt="Zwilling">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=apple" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/apple.jpg" alt="Apple">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=bosch" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/bosch.jpg" alt="Bosch">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=braun" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/BRAUN-logo.jpg" alt="Braun">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=delonghi" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/delonghi.jpg" alt="De'Longhi">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=ecovacs" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/ecovacs-logo-vector.png" alt="Ecovacs">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=karcher" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/Karcher-Logo.png" alt="Karcher">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=kenwood" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/Kenwood-logo.png" alt="Kenwood">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=midea" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/midea.jpg" alt="Midea">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=moulinex" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/Moulinex.jpg" alt="Moulinex">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=nb" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/nb_logo_original_150dpi_1.png" alt="NB">
                     </a>
-                    <a class="brand-card" href="https://www.bakuelectronics.az/axtaris-neticesi?name=rowenta" target="_blank" rel="noopener">
+                    <a class="brand-card" href="#">
                         <img src="Assets/İmage/Brands/Rowenta-Logo.png" alt="Rowenta">
                     </a>
                 </div>
@@ -983,7 +1204,7 @@
                         <div class="content">
                             <h3>Qulaqlıqlar</h3>
                             <p>Sevdiyin musiqini daha yaxından dinlə!</p>
-                            <a href="https://www.bakuelectronics.az/mehsul/huawei-freeclip-2-rose-gold-234822">
+                            <a href="#">
                                 İndi al
                             </a>
                         </div>
@@ -998,7 +1219,7 @@
                         <div class="content">
                             <h3>Soyuq havalara Midea ilə hazırsan!</h3>
                             <p>Midea ilə rahat qış!</p>
-                            <a href="https://www.bakuelectronics.az/axtaris-neticesi?name=Kombi+Midea+L1PB">
+                            <a href="#">
                                 İndi al
                             </a>
                         </div>
@@ -1027,7 +1248,7 @@
                         <div class="blog-content">
                             <h5>AI dəstəkli smartfon seçimi</h5>
                             <p>Texnologiya dünyasından ən son yeniliklər.</p>
-                            <a href="https://www.bakuelectronics.az/xeberler">Ətraflı oxu</a>
+                            <a href="#">Ətraflı oxu</a>
                         </div>
                     </article>
                 </div>
@@ -1040,7 +1261,7 @@
                         <div class="blog-content">
                             <h5>iPhone dünyasından yeniliklər</h5>
                             <p>Smartfonlar haqqında maraqlı məlumatlar.</p>
-                            <a href="https://www.bakuelectronics.az/xeberler">Ətraflı oxu</a>
+                            <a href="#">Ətraflı oxu</a>
                         </div>
                     </article>
                 </div>
@@ -1128,15 +1349,15 @@
                     <h5>Alıcılara</h5>
 
                     <ul>
-                        <li><a href="https://www.bakuelectronics.az/nisye-alis">Nisyə alış</a></li>
-                        <li><a href="https://www.bakuelectronics.az/magazalar">Mağazalar</a></li>
-                        <li><a href="https://www.bakuelectronics.az/servis-merkezleri">Servis mərkəzləri</a></li>
-                        <li><a href="https://www.bakuelectronics.az/catdirilma-ve-odenis">Çatdırılma və ödəniş</a></li>
-                        <li><a href="https://www.bakuelectronics.az/zemanet">Zəmanət</a></li>
-                        <li><a href="https://www.bakuelectronics.az/xidmetler">Xidmətlər</a></li>
-                        <li><a href="https://www.bakuelectronics.az/qaytarilma-ve-imtina-sertleri">Qaytarılma və imtina şərtləri</a></li>
-                        <li><a href="https://www.bakuelectronics.az/muraciet-ve-sikayetler">Müraciət və şikayətlər</a></li>
-                        <li><a href="https://www.bakuelectronics.az/arxayin-al">Arxayın al</a></li>
+                        <li><a href="#">Nisyə alış</a></li>
+                        <li><a href="#">Mağazalar</a></li>
+                        <li><a href="#">Servis mərkəzləri</a></li>
+                        <li><a href="#">Çatdırılma və ödəniş</a></li>
+                        <li><a href="#">Zəmanət</a></li>
+                        <li><a href="#">Xidmətlər</a></li>
+                        <li><a href="#">Qaytarılma və imtina şərtləri</a></li>
+                        <li><a href="#">Müraciət və şikayətlər</a></li>
+                        <li><a href="#">Arxayın al</a></li>
                     </ul>
 
                 </div>
@@ -1147,11 +1368,11 @@
                     <h5>Məlumat</h5>
 
                     <ul>
-                        <li><a href="https://www.bakuelectronics.az/kampaniyalar">Kampaniyalar</a></li>
-                        <li><a href="https://www.bakuelectronics.az/musteri-karti">Müştəri kartı</a></li>
-                        <li><a href="https://www.bakuelectronics.az/brend-siyahi">Brendlər</a></li>
-                        <li><a href="https://www.bakuelectronics.az/xeberler">Bloq və xəbərlər</a></li>
-                        <li><a href="https://www.bakuelectronics.az/mexfilik-siyaseti">Məxfilik siyasəti</a></li>
+                        <li><a href="#">Kampaniyalar</a></li>
+                        <li><a href="#">Müştəri kartı</a></li>
+                        <li><a href="#">Brendlər</a></li>
+                        <li><a href="#">Bloq və xəbərlər</a></li>
+                        <li><a href="#">Məxfilik siyasəti</a></li>
                     </ul>
 
                 </div>
@@ -1162,9 +1383,9 @@
                     <h5>Şirkət</h5>
 
                     <ul>
-                        <li><a href="https://www.bakuelectronics.az/haqqimizda">Haqqımızda</a></li>
-                        <li><a href="https://careers.bakuelectronics.az/az/vacancies">Karyera portalı</a></li>
-                        <li><a href="https://www.bakuelectronics.az/korporativ-satishlar">Korporativ satışlar</a></li>
+                        <li><a href="#">Haqqımızda</a></li>
+                        <li><a href="#">Karyera portalı</a></li>
+                        <li><a href="#">Korporativ satışlar</a></li>
                     </ul>
 
                 </div>
@@ -1192,7 +1413,7 @@
 
                 </div>
 
-                <a href="https://www.bakuelectronics.az/mexfilik-siyaseti">Məxfilik siyasəti</a>
+                <a href="#">Məxfilik siyasəti</a>
 
             </div>
 

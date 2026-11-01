@@ -1,6 +1,4 @@
-/* ==============================
-   1. ÜMUMİ AYARLAR
-============================== */
+
 
 /* Bootstrap-in öz reset-i var, ona görə margin/padding sıfırlanmır */
 *,
@@ -55,9 +53,8 @@ section {
     background: #000;
     color: #fff;
     text-align: center;
-    padding: 7px 15px;
-    font-size: 19px;
-    font-weight: 400;
+    padding: 5px 15px;
+    font-size: 20px;
     line-height: 1.3;
 }
 
@@ -77,6 +74,7 @@ header {
 }
 
 header .container-fluid {
+    position: relative;
     width: var(--page-w);
     max-width: 1800px;
     margin: 0 auto;
@@ -84,13 +82,13 @@ header .container-fluid {
 }
 
 header .navbar {
-    padding: 22px 0 24px;
+    padding: 26px 0 12px;
 }
 
 header .navbar-brand {
     display: flex;
     align-items: center;
-    margin: 0 16px 0 0;
+    margin: 0 18px 0 0;
     padding: 0;
 }
 
@@ -101,7 +99,7 @@ header .navbar-brand img {
 
 header .header-actions {
     flex: 1;
-    gap: 14px;
+    gap: 18px;
 }
 
 header .bi {
@@ -113,23 +111,31 @@ header .bi {
 header .btn-catalog {
     display: flex;
     align-items: center;
-    gap: 9px;
-    height: 62px;
-    padding: 0 24px;
+    gap: 10px;
+    height: 63px;
+    padding: 0 26px;
     background: #2b2b2b;
     border: 0;
     border-radius: 20px;
     color: #fff;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
+    white-space: nowrap;
+    box-shadow: none;
+    transition: background 0.3s;
 }
 
-header .btn-catalog:hover {
-    background: var(--main-color);
+header .btn-catalog:hover,
+header .btn-catalog:focus,
+header .btn-catalog:active,
+header .btn-catalog.open {
+    background: #3a3a3a;
+    color: #fff;
+    box-shadow: none;
 }
 
 header .btn-catalog .bi {
-    font-size: 21px;
+    font-size: 22px;
 }
 
 /* Axtarış */
@@ -141,12 +147,12 @@ header .header-search {
 
 header .header-search input {
     width: 100%;
-    height: 62px;
+    height: 63px;
     padding: 0 64px 0 26px;
     background: #f4f4f4;
     border: 0;
     border-radius: 20px;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 header .header-search input:focus {
@@ -170,17 +176,18 @@ header .header-search button {
 header .header-icons {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 header .icon-btn {
+    position: relative;
     width: 62px;
     height: 62px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #f4f4f4;
-    border-radius: 18px;
+    border-radius: 20px;
     color: #222;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     transition: 0.3s;
@@ -195,42 +202,13 @@ header .icon-btn .bi {
     font-size: 24px;
 }
 
-/* Kataloq menyusu */
-
-header .catalog-menu {
-    min-width: 240px;
-    padding: 8px 0;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-header .catalog-menu .dropdown-header {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #999;
-}
-
-header .catalog-menu .dropdown-item {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 8px 18px;
-}
-
-header .catalog-menu .dropdown-item:hover,
-header .catalog-menu .dropdown-item:focus {
-    background: #fff0f0;
-    color: var(--main-color);
-}
-
 /* Səbət açılan paneli */
 
 header .cart-dropdown {
     min-width: 300px;
     padding: 18px;
     border: 1px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
@@ -269,9 +247,9 @@ header .cart-dropdown p {
     align-items: center;
     justify-content: space-between;
     gap: 28px;
-    height: 56px;
+    height: 54px;
     margin-top: 0;
-    padding: 0 28px;
+    padding: 0 32px;
     background: #f4f4f4;
     border-radius: 30px;
 }
@@ -292,7 +270,7 @@ header .cart-dropdown p {
 
 .main-navigation a {
     color: #777;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     white-space: nowrap;
     transition: color 0.3s;
@@ -374,7 +352,7 @@ header .cart-dropdown p {
 .hero {
     width: var(--page-w);
     max-width: 1800px;
-    margin: 26px auto 0;
+    margin: 25px auto 0;
     padding: 0;
 }
 
@@ -573,10 +551,17 @@ header .cart-dropdown p {
    6. ÜMUMİ SECTION BAŞLIQLARI
 ============================== */
 
+.section-label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--main-color);
+    font-size: 15px;
+}
+
 .section-title {
-    font-size: 27px;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
 .section-subtitle {
@@ -601,89 +586,221 @@ header .cart-dropdown p {
    7. MƏHSUL KARTLARI
 ============================== */
 
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 34px;
+    row-gap: 24px;
+}
+
 .product-card {
-    height: 100%;
-    padding: 17px;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    background: #fff;
     position: relative;
-    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    padding: 0 25px 25px;
+    background: #f4f4f4;
+    border-radius: 40px;
+    transition: box-shadow 0.3s;
 }
 
 .product-card:hover {
-    border-color: #ccc;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
 }
 
-.product-card img {
+/* Ağ şəkil qutusu kartın yuxarı kənarından çıxır */
+
+.product-img {
+    position: relative;
+    height: 272px;
+    margin: -48px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 30px;
+}
+
+.product-img img {
     width: 100%;
-    height: 190px;
+    height: 100%;
+    padding: 26px;
     object-fit: contain;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    z-index: 2;
+    padding: 7px 12px;
+    background: #ec2227;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.compare-btn {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f6f6;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    transition: 0.3s;
+}
+
+.compare-btn:hover,
+.compare-btn.active,
+.btn-fav.active {
+    color: var(--main-color);
+}
+
+.compare-btn .bi {
+    font-size: 20px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 15px;
+}
+
+.product-rating span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.product-rating .bi-star-fill {
+    color: #ec2227;
+    font-size: 17px;
+}
+
+.product-rating .bi-chat-dots-fill {
+    color: #f4a5a8;
+    font-size: 17px;
+}
+
+.product-card h5 {
+    min-height: 46px;
+    margin: 0 0 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #222;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.product-prices {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: auto;
     margin-bottom: 18px;
 }
 
-.product-card h5,
-.product-card h3 {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.5;
-    min-height: 42px;
-    margin-bottom: 12px;
+.product-prices .price-main,
+.product-prices .price-installment {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2px;
 }
 
-.product-card p {
-    color: #777;
-    font-size: 12px;
-    margin-bottom: 8px;
+.product-prices .price-installment {
+    padding-left: 18px;
+    border-left: 1px solid #d6d6d6;
 }
 
-.product-card .price {
-    font-size: 19px;
+.product-prices .price-installment span {
+    color: #8a8a8a;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.product-prices .price-installment strong,
+.product-prices .price {
+    color: #222;
+    font-size: 22px;
     font-weight: 700;
-    color: var(--dark-color);
+    line-height: 1.15;
+    white-space: nowrap;
 }
 
-.product-card .old-price {
-    color: #999;
-    font-size: 13px;
+.old-price {
+    color: #8a8a8a;
+    font-size: 15px;
+    line-height: 1.2;
     text-decoration: line-through;
-    margin-left: 7px;
 }
 
-.product-card .discount {
-    display: inline-block;
-    background: #fff0f0;
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-cart {
+    flex: 1;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-cart:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.btn-cart:disabled {
+    opacity: 0.8;
+}
+
+.btn-fav {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    transition: 0.3s;
+}
+
+.btn-fav:hover {
     color: var(--main-color);
-    padding: 5px 8px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 10px;
 }
 
-.product-card .installment {
-    color: #777;
-    font-size: 12px;
-    margin-top: 8px;
-}
-
-.product-card .btn {
-    width: 100%;
-    margin-top: 12px;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 10px;
-}
-
-.product-card .bi-heart {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+.product-card .bi {
     font-size: 20px;
-    color: #777;
-    cursor: pointer;
 }
 
 /* ==============================
@@ -691,13 +808,13 @@ header .cart-dropdown p {
 ============================== */
 
 .promotions .row {
-    row-gap: 20px;
+    row-gap: 24px;
 }
 
 .promotion-card {
     height: 100%;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 30px;
     background: var(--light-color);
     transition: 0.3s;
 }
@@ -706,35 +823,38 @@ header .cart-dropdown p {
     transform: translateY(-4px);
 }
 
+/* Şəkillər 923x520 nisbətində, kəsilmədən */
 .promotion-card img {
     width: 100%;
-    height: 230px;
+    height: auto;
+    aspect-ratio: 923 / 520;
     object-fit: cover;
 }
 
 .promotion-card .promotion-content {
-    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 28px 26px;
 }
 
 .promotion-card h3 {
-    font-size: 18px;
+    margin: 0;
+    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.promotion-card p {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 15px;
+    line-height: 1.3;
 }
 
 .promotion-card .btn {
+    flex: 0 0 auto;
+    padding: 13px 26px;
     background: var(--main-color);
+    border: 0;
+    border-radius: 14px;
     color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 /* ==============================
@@ -777,29 +897,38 @@ header .cart-dropdown p {
     align-items: center;
     gap: 12px;
     overflow-x: auto;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding-bottom: 6px;
+    margin-bottom: 34px;
+    scrollbar-width: none;
+}
+
+.campaign-tabs::-webkit-scrollbar {
+    display: none;
 }
 
 .campaign-tabs button {
-    border: 1px solid var(--border-color);
-    background: #fff;
-    padding: 10px 20px;
-    border-radius: 7px;
-    font-size: 13px;
+    padding: 14px 28px;
+    background: #f4f4f4;
+    border: 0;
+    border-radius: 18px;
+    color: #555;
+    font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
     transition: 0.3s;
 }
 
-.campaign-tabs button:hover,
-.campaign-tabs button.active {
-    background: var(--main-color);
-    color: #fff;
-    border-color: var(--main-color);
+.campaign-tabs button:hover {
+    background: #e9e9e9;
+    color: #222;
 }
 
-/* Tab filtri üçün: JS bu sinfi əlavə edib-çıxaracaq */
+.campaign-tabs button.active {
+    background: #2b2b2b;
+    color: #fff;
+}
+
+/* Tab filtri: JS bu sinfi əlavə edib-çıxarır */
 .campaign-product.hidden {
     display: none;
 }
@@ -851,7 +980,11 @@ header .cart-dropdown p {
     color: #fff;
 }
 
-/* Yana sürüşən sıra */
+/* Slayder */
+
+.video-slider-wrap {
+    position: relative;
+}
 
 .video-slider {
     --gap: 38px;
@@ -861,10 +994,17 @@ header .cart-dropdown p {
     scroll-snap-type: x mandatory;
     padding-bottom: 4px;
     scrollbar-width: none;
+    cursor: grab;
 }
 
 .video-slider::-webkit-scrollbar {
     display: none;
+}
+
+.video-slider.dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
 }
 
 .video-card {
@@ -918,11 +1058,56 @@ header .cart-dropdown p {
 }
 
 .video-card h5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 18px 0 0;
+    color: #333;
     font-size: 22px;
     font-weight: 600;
     line-height: 1.4;
-    color: #333;
-    margin: 18px 0 0;
+}
+
+/* Sağ-sol oxlar */
+
+.slider-arrow {
+    position: absolute;
+    top: 28%;
+    z-index: 5;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    color: var(--main-color);
+    transition: 0.3s;
+}
+
+.slider-arrow .bi {
+    font-size: 26px;
+}
+
+.slider-arrow:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.slider-arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.slider-prev {
+    left: -31px;
+}
+
+.slider-next {
+    right: -31px;
 }
 
 /* ==============================
@@ -945,7 +1130,7 @@ header .cart-dropdown p {
     display: flex;
     gap: 45px;
     width: max-content;
-    animation: brands-scroll 40s linear infinite;
+    animation: brands-scroll 120s linear infinite;
 }
 
 .brands-marquee:hover .brands-track {
@@ -1013,7 +1198,6 @@ body.dark .brand-card .brand-name {
 body.dark .brand-card img {
     filter: grayscale(1) invert(1);
 }
-
 
 /* ==============================
    12. EXTRA PROMOTION BANNERS
@@ -1106,14 +1290,16 @@ body.dark .extra-promotion-card img {
 ============================== */
 
 .blog-section .row {
-    row-gap: 22px;
+    row-gap: 24px;
 }
 
 .blog-card {
     height: 100%;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: 30px;
     transition: 0.3s;
 }
 
@@ -1122,26 +1308,35 @@ body.dark .extra-promotion-card img {
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
 }
 
+/* Şəkillər bərabər nisbətdə (1225x645), kəsilmədən */
 .blog-card img {
     width: 100%;
-    height: 230px;
+    height: auto;
+    aspect-ratio: 1225 / 645;
     object-fit: cover;
 }
 
 .blog-card .blog-content {
-    padding: 18px;
+    flex: 1;
+    padding: 22px 26px 26px;
 }
 
 .blog-card h5 {
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.5;
     margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
 .blog-card p {
     color: #777;
-    font-size: 13px;
+    font-size: 15px;
+}
+
+.blog-card .blog-content a {
+    color: var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
 }
 
 /* ==============================
@@ -1149,32 +1344,34 @@ body.dark .extra-promotion-card img {
 ============================== */
 
 footer {
-    background: #171717;
-    color: #fff;
-    padding: 55px 20px 25px;
     margin-top: 70px;
+    padding: 55px 20px 25px;
+    background: #f4f4f4;
+    color: #222;
 }
 
 footer .container {
     width: var(--page-w);
     max-width: 1800px;
+    padding: 0;
 }
 
 footer h5 {
+    margin-bottom: 20px;
+    color: #222;
     font-size: 16px;
     font-weight: 700;
-    margin-bottom: 20px;
 }
 
 footer p,
 footer a {
-    color: #bbb;
-    font-size: 13px;
+    color: #666;
+    font-size: 14px;
     line-height: 1.9;
 }
 
 footer a:hover {
-    color: #fff;
+    color: var(--main-color);
 }
 
 footer ul {
@@ -1197,13 +1394,13 @@ footer .newsletter {
     gap: 20px;
     padding-bottom: 35px;
     margin-bottom: 35px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #ddd;
 }
 
 footer .newsletter h5 {
-    font-size: 20px;
     margin: 0;
-    color: #fff;
+    color: #222;
+    font-size: 20px;
 }
 
 footer .newsletter form {
@@ -1214,32 +1411,32 @@ footer .newsletter form {
 }
 
 footer .newsletter input {
-    background: #2a2a2a;
-    border: 1px solid #444;
-    border-radius: 6px;
-    color: #fff;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    color: #222;
     font-size: 14px;
 }
 
 footer .newsletter input::placeholder {
-    color: #888;
+    color: #999;
 }
 
 footer .newsletter input:focus {
-    background: #2a2a2a;
+    background: #fff;
     border-color: var(--main-color);
-    color: #fff;
+    color: #222;
     box-shadow: none;
 }
 
 footer .newsletter .btn {
     background: var(--main-color);
     border-color: var(--main-color);
-    border-radius: 6px;
-    font-size: 13px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
-    color: #fff;
 }
 
 /* Zəng mərkəzi nömrəsi */
@@ -1248,10 +1445,10 @@ footer .footer-phone {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #fff;
+    margin-top: 5px;
+    color: #222;
     font-size: 22px;
     font-weight: 700;
-    margin-top: 5px;
 }
 
 footer .social-title {
@@ -1271,9 +1468,8 @@ footer .social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #555;
+    border: 1px solid #ccc;
     border-radius: 50%;
-    font-size: 17px;
     transition: 0.3s;
 }
 
@@ -1281,12 +1477,16 @@ footer .social-links a img {
     width: 18px;
     height: 18px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) opacity(0.65);
 }
 
 footer .social-links a:hover {
     background: var(--main-color);
     border-color: var(--main-color);
+}
+
+footer .social-links a:hover img {
+    filter: brightness(0) invert(1);
 }
 
 footer .app-links {
@@ -1306,9 +1506,9 @@ footer .footer-bottom {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    border-top: 1px solid #444;
     margin-top: 35px;
     padding-top: 20px;
+    border-top: 1px solid #ddd;
 }
 
 footer .footer-bottom p {
@@ -1411,9 +1611,6 @@ footer .footer-bottom p {
         font-size: 23px;
     }
 
-    .product-card img {
-        height: 160px;
-    }
 
     .videos {
         margin: 45px 0;
@@ -1608,37 +1805,12 @@ footer .footer-bottom p {
         padding: 0 12px;
     }
 
-    .product-card {
-        padding: 10px;
-    }
 
-    .product-card img {
-        height: 125px;
-        margin-bottom: 10px;
-    }
 
-    .product-card h5,
-    .product-card h3 {
-        font-size: 12px;
-        min-height: 52px;
-    }
 
-    .product-card .price {
-        font-size: 15px;
-    }
 
-    .product-card .old-price {
-        font-size: 11px;
-    }
 
-    .product-card .btn {
-        font-size: 11px;
-        padding: 8px 5px;
-    }
 
-    .promotion-card img {
-        height: 180px;
-    }
 
     .promotion-card .promotion-content {
         padding: 13px;
@@ -1731,9 +1903,6 @@ footer .footer-bottom p {
         margin-top: 12px;
     }
 
-    .blog-card img {
-        height: 180px;
-    }
 
     .blog-card .blog-content {
         padding: 13px;
@@ -1794,7 +1963,6 @@ footer .footer-bottom p {
         text-align: center;
     }
 }
-
 
 /* ==============================
    17. SƏBƏT PANELİ (JS ilə)
@@ -1955,17 +2123,6 @@ body.dark header .catalog-menu .dropdown-item:hover {
     background: #2d2d2d;
 }
 
-body.dark .product-card,
-body.dark .blog-card,
-body.dark .campaign-tabs button {
-    background: #1e1e1e;
-    border-color: #303030;
-    color: #eee;
-}
-
-body.dark .product-card .price {
-    color: #fff;
-}
 
 body.dark .promotion-card,
 body.dark .extra-promotion-card {
@@ -1995,4 +2152,231 @@ body.dark .hero-grid .carousel-control-next {
 
 body.dark .top-bar {
     background: #1e1e1e;
+}
+
+
+
+/* ==============================
+   20. KATALOQ MEGA-MENYUSU
+============================== */
+
+.catalog-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1500;
+    grid-template-columns: 304px minmax(0, 1fr) 320px;
+    column-gap: 24px;
+    height: 640px;
+    max-height: calc(100vh - 150px);
+    padding: 26px 24px 26px 26px;
+    background: #f4f4f4;
+    border-radius: 30px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+}
+
+.catalog-panel.open {
+    display: grid;
+}
+
+/* Sol: kateqoriyalar */
+
+.catalog-cats {
+    overflow-y: auto;
+    padding-right: 22px;
+    border-right: 1px solid #cfcfcf;
+    scrollbar-width: thin;
+}
+
+.catalog-cat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 13px 14px;
+    background: none;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.catalog-cat i {
+    flex: 0 0 24px;
+    color: #555;
+    font-size: 22px;
+}
+
+.catalog-cat:hover,
+.catalog-cat.active {
+    background: #e4e4e4;
+}
+
+/* Orta: alt kateqoriyalar */
+
+.catalog-subs {
+    overflow-y: auto;
+    padding: 0 10px 0 14px;
+    scrollbar-width: thin;
+}
+
+.catalog-sub {
+    display: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 30px;
+    align-items: start;
+}
+
+.catalog-sub.active {
+    display: grid;
+}
+
+.catalog-group {
+    margin-bottom: 26px;
+}
+
+.catalog-group h6 {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.catalog-group h6 a {
+    color: #222;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.catalog-group ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.catalog-group li a {
+    display: block;
+    padding: 7px 0;
+    color: #777;
+    font-size: 16px;
+    line-height: 1.35;
+    transition: color 0.2s;
+}
+
+.catalog-group a:hover {
+    color: var(--main-color);
+}
+
+/* Sağ: kampaniya şəkli */
+
+.catalog-promo {
+    align-self: start;
+    display: block;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.catalog-promo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Seçilmişlər / müqayisə düymələri (JS ilə) */
+
+.btn-fav.active i {
+    color: var(--main-color);
+}
+
+.compare-btn.active {
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* Tünd tema */
+
+body.dark .catalog-panel {
+    background: #1e1e1e;
+}
+
+body.dark .catalog-cats {
+    border-right-color: #3a3a3a;
+}
+
+body.dark .catalog-cat,
+body.dark .catalog-group h6 a {
+    color: #eee;
+}
+
+body.dark .catalog-cat i {
+    color: #bbb;
+}
+
+body.dark .catalog-cat:hover,
+body.dark .catalog-cat.active {
+    background: #2d2d2d;
+}
+
+body.dark .catalog-group li a {
+    color: #aaa;
+}
+
+/* Planşet və telefon */
+
+@media (max-width: 991px) {
+
+    .catalog-panel {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: calc(100vh - 130px);
+        padding: 16px;
+        overflow-y: auto;
+        border-radius: 22px;
+    }
+
+    .catalog-cats {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding: 0 0 12px;
+        margin-bottom: 14px;
+        border-right: 0;
+        border-bottom: 1px solid #cfcfcf;
+    }
+
+    .catalog-cat {
+        flex: 0 0 auto;
+        width: auto;
+        margin: 0;
+        padding: 10px 14px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .catalog-subs {
+        overflow: visible;
+        padding: 0;
+    }
+
+    .catalog-sub {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+    }
+
+    .catalog-promo {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .catalog-sub {
+        grid-template-columns: 1fr;
+    }
 }
