@@ -2433,3 +2433,261 @@ html.theme-transition *::after {
         font-size: 26px;
     }
 }
+
+/* ==============================
+   15. RESPONSIVE - MOBİL (≤ 576px)
+============================== */
+
+@media (max-width: 576px) {
+
+    :root {
+        --topbar-h: 26px;
+    }
+
+    .top-bar {
+        padding: 0 8px;
+        font-size: 11px;
+    }
+
+    .page-container {
+        padding: 0 12px;
+    }
+
+    header .container-fluid {
+        padding: 0 12px;
+    }
+
+    header .navbar-brand img {
+        width: 42px;
+        height: 42px;
+    }
+
+    header .btn-catalog,
+    header .header-search input {
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    header .icon-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    .breadcrumbs {
+        flex-wrap: nowrap;
+        padding: 14px 0 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+
+    .breadcrumbs::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Qalereya */
+
+    .gallery-main {
+        height: 340px;
+        border-radius: 22px;
+    }
+
+    .gallery-main img {
+        padding: 16px;
+    }
+
+    .gallery-arrow {
+        display: none;
+    }
+
+    .thumb {
+        flex-basis: 62px;
+        width: 62px;
+        height: 62px;
+        border-radius: 14px;
+    }
+
+    /* Məlumat */
+
+    .product-title {
+        font-size: 19px;
+    }
+
+    .product-meta {
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .price-current {
+        font-size: 30px;
+    }
+
+    .price-old {
+        font-size: 16px;
+    }
+
+    .action-row {
+        grid-template-columns: 1fr;
+    }
+
+    .action-side {
+        display: grid;
+        grid-template-columns: 1fr 56px 56px;
+    }
+
+    .quick-row {
+        grid-template-columns: 1fr;
+    }
+
+    .installment {
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    .term-box,
+    .down-box {
+        padding: 14px;
+    }
+
+    .term-list {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        padding-top: 12px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .term-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .term-btn {
+        flex: 0 0 auto;
+        min-width: 52px;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .pay-value {
+        font-size: 22px;
+    }
+
+    .buy-list {
+        max-height: 268px;
+    }
+
+    .buy-item {
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .btn-together {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+    .call-card {
+        flex-wrap: wrap;
+    }
+
+    .btn-call {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Xüsusiyyətlər */
+
+    .specs {
+        margin-top: 34px;
+        padding: 18px 14px;
+        border-radius: 22px;
+    }
+
+    .specs-table {
+        grid-template-columns: 1fr;
+    }
+
+    .spec-name {
+        flex-basis: 42%;
+    }
+
+    /* Oxşar məhsullar */
+
+    .similar {
+        margin-top: 44px;
+    }
+
+    .similar-head .section-title {
+        font-size: 20px;
+    }
+
+    .sim-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .similar-track {
+        --gap: 16px;
+        --per-view: 1.25;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    /* Footer */
+
+    footer {
+        padding: 35px 15px 20px;
+        margin-top: 45px;
+    }
+
+    footer h5 {
+        font-size: 14px;
+    }
+
+    footer p,
+    footer a {
+        font-size: 12px;
+    }
+
+    footer .newsletter h5 {
+        font-size: 17px;
+    }
+
+    footer .newsletter form {
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    footer .footer-phone {
+        font-size: 28px;
+    }
+
+    footer .social-links {
+        gap: 18px;
+    }
+
+    footer .social-links a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer .app-links img {
+        width: 115px;
+    }
+
+    footer .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chat-fab {
+        right: 14px;
+        bottom: 14px;
+        width: 56px;
+        height: 56px;
+        font-size: 22px;
+    }
+}
