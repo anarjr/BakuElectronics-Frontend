@@ -537,3 +537,102 @@ body.dark .catalog-group li a {
 .breadcrumbs span {
     color: #222;
 }
+
+/* ==============================
+   4. QALEREYA
+============================== */
+
+.gallery {
+    position: sticky;
+    top: var(--sticky-top);
+}
+
+.gallery-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 540px;
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    object-fit: contain;
+    transition: opacity 0.25s ease;
+}
+
+.gallery-main img.fade {
+    opacity: 0;
+}
+
+.gallery-thumbs-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.gallery-thumbs {
+    flex: 1;
+    display: flex;
+    gap: 12px;
+    padding: 4px 2px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.gallery-thumbs::-webkit-scrollbar {
+    display: none;
+}
+
+.thumb {
+    flex: 0 0 74px;
+    width: 74px;
+    height: 74px;
+    padding: 6px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.thumb:hover {
+    border-color: #bbb;
+}
+
+.thumb.active {
+    border: 2px solid #222;
+}
+
+.gallery-arrow {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--soft-bg);
+    border: 0;
+    border-radius: 10px;
+    color: #444;
+    font-size: 13px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.gallery-arrow:hover {
+    background: #e6e6e6;
+    color: #000;
+}
