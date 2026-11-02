@@ -1223,3 +1223,561 @@ body.dark .catalog-group li a {
     background: #1f9d55;
     color: #fff;
 }
+
+/* ==============================
+   8. RƏYLƏR, ZƏNG ET
+============================== */
+
+.acc-card,
+.call-card {
+    background: var(--soft-bg);
+    border-radius: 18px;
+}
+
+.call-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 12px;
+    padding: 14px 16px;
+}
+
+.acc-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 14px 16px;
+    background: transparent;
+    border: 0;
+    text-align: left;
+}
+
+.acc-icon {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 14px;
+    color: #444;
+    font-size: 18px;
+}
+
+.acc-title {
+    flex: 1;
+}
+
+.acc-title strong {
+    display: block;
+    font-size: 16px;
+}
+
+.acc-title small {
+    color: #777;
+    font-size: 11px;
+}
+
+.acc-plus {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: transform 0.25s;
+}
+
+.acc-card.open .acc-plus {
+    transform: rotate(45deg);
+}
+
+.acc-body {
+    max-height: 0;
+    padding: 0 16px;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.acc-card.open .acc-body {
+    max-height: 420px;
+    padding: 0 16px 16px;
+}
+
+.acc-empty {
+    margin: 0 0 12px;
+    color: #777;
+    font-size: 13px;
+}
+
+.review-form {
+    padding: 14px;
+    background: #fff;
+    border-radius: 14px;
+}
+
+.review-form h6 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.star-input {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.star-input button {
+    padding: 2px;
+    background: none;
+    border: 0;
+    color: #bbb;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.star-input button.on {
+    color: #f5a623;
+}
+
+.review-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--soft-bg);
+    border: 0;
+    border-radius: 10px;
+    font-size: 13px;
+    resize: vertical;
+    outline: none;
+}
+
+.btn-send {
+    margin-top: 10px;
+    padding: 10px 22px;
+    background: #222;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-send:hover {
+    background: var(--main-color);
+}
+
+.btn-call {
+    padding: 11px 20px;
+    background: #222;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.btn-call:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* ==============================
+   9. XÜSUSİYYƏTLƏR
+============================== */
+
+.specs {
+    margin-top: 48px;
+    padding: 24px 28px;
+    background: var(--soft-bg);
+    border-radius: 28px;
+}
+
+.specs-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.specs-head h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.specs-table {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 56px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e4e4e4;
+    font-size: 12.5px;
+    line-height: 1.4;
+}
+
+.spec-name {
+    flex: 0 0 38%;
+    color: #333;
+}
+
+.spec-value {
+    flex: 1;
+    color: #222;
+    text-align: right;
+}
+
+.spec-extra {
+    display: none;
+}
+
+.specs-table.show-all .spec-extra {
+    display: flex;
+}
+
+.specs-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 18px auto 0;
+    background: none;
+    border: 0;
+    color: #222;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.specs-toggle i {
+    transition: transform 0.25s;
+}
+
+.specs-toggle[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+/* ==============================
+   10. OXŞAR MƏHSULLAR
+============================== */
+
+.section-label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--main-color);
+    font-size: 15px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.similar {
+    margin-top: 64px;
+    overflow: hidden;
+}
+
+.similar-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.similar-head .section-title {
+    margin-bottom: 0;
+    font-size: 26px;
+}
+
+.similar-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.sim-arrow {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe3e4;
+    border: 0;
+    border-radius: 14px;
+    color: var(--main-color);
+    font-size: 16px;
+    transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.sim-arrow:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.sim-arrow:disabled {
+    opacity: 0.45;
+    cursor: default;
+    background: #ffe3e4;
+    color: var(--main-color);
+}
+
+.similar-viewport {
+    overflow: hidden;
+    padding-bottom: 6px;
+}
+
+.similar-track {
+    --gap: 34px;
+    --per-view: 4;
+    display: flex;
+    gap: var(--gap);
+    will-change: transform;
+    transition: transform 0.5s ease;
+}
+
+.similar-track .product-card {
+    flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+    min-width: 0;
+}
+
+.similar-track.dragging {
+    transition: none;
+}
+
+.similar-track .btn-cart {
+    padding: 0 10px;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.similar-track .btn-cart span {
+    white-space: nowrap;
+}
+
+/* Məhsul kartları (home page ilə eyni) */
+
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    padding: 0 25px 25px;
+    background: #f4f4f4;
+    border-radius: 40px;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* Ağ şəkil qutusu kartın yuxarı kənarından çıxır */
+
+.product-img {
+    position: relative;
+    height: 272px;
+    margin: -48px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 30px;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    padding: 26px;
+    object-fit: contain;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    z-index: 2;
+    padding: 7px 12px;
+    background: #ec2227;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.compare-btn {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f6f6;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    transition: 0.3s;
+}
+
+.compare-btn:hover,
+.compare-btn.active,
+.btn-fav.active {
+    color: var(--main-color);
+}
+
+.compare-btn .bi {
+    font-size: 20px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 15px;
+}
+
+.product-rating span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.product-rating .bi-star-fill {
+    color: #ec2227;
+    font-size: 17px;
+}
+
+.product-rating .bi-chat-dots-fill {
+    color: #f4a5a8;
+    font-size: 17px;
+}
+
+.product-card h5 {
+    min-height: 46px;
+    margin: 0 0 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #222;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.product-prices {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: auto;
+    margin-bottom: 18px;
+}
+
+.product-prices .price-main,
+.product-prices .price-installment {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.product-prices .price-installment {
+    padding-left: 18px;
+    border-left: 1px solid #d6d6d6;
+}
+
+.product-prices .price-installment span {
+    color: #8a8a8a;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.product-prices .price-installment strong,
+.product-prices .price {
+    color: #222;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.old-price {
+    color: #8a8a8a;
+    font-size: 15px;
+    line-height: 1.2;
+    text-decoration: line-through;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-cart {
+    flex: 1;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-cart:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.btn-cart:disabled {
+    opacity: 0.8;
+}
+
+.btn-fav {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    transition: 0.3s;
+}
+
+.btn-fav:hover {
+    color: var(--main-color);
+}
+
+.product-card .bi {
+    font-size: 20px;
+}
+
+
+.product-card h5 {
+    min-height: calc(1.4em * 2);
+}
