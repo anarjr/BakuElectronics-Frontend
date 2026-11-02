@@ -464,6 +464,10 @@ document.addEventListener("DOMContentLoaded", function () {
             dragging = false;
             videoSlider.classList.remove("dragging");
             videoSlider.style.scrollSnapType = "";
+            if (moved) {
+                videoSlider.dataset.justDragged = "1";
+                setTimeout(function () { delete videoSlider.dataset.justDragged; }, 50);
+            }
         });
 
         // Sürüşdürmədən sonra təsadüfən video açılmasın
@@ -473,6 +477,74 @@ document.addEventListener("DOMContentLoaded", function () {
                 moved = false;
             }
         }, true);
+    }
+
+
+    /* ==============================
+       6e. VİDEO MODALI (karta klikləyəndə açılır)
+    ============================== */
+
+    const videoModal = document.getElementById("videoModal");
+
+    if (videoModal) {
+        const modalPlayer = videoModal.querySelector(".video-modal-player");
+
+        function openVideo(card) {
+            const file = card.dataset.video;
+            const ytId = card.dataset.id;
+
+            modalPlayer.textContent = "";
+
+            if (file) {
+                // Öz videomuz (Assets/Videos)
+                const video = document.createElement("video");
+                video.src = encodeURI(file);
+                video.controls = true;
+                video.autoplay = true;
+                video.playsInline = true;
+                modalPlayer.appendChild(video);
+            } else if (ytId) {
+                // Video faylı yoxdursa, YouTube-dan oxut
+                const frame = document.createElement("iframe");
+                frame.src = "https://www.youtube.com/embed/" + ytId + "?autoplay=1&rel=0";
+                frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+                frame.allowFullscreen = true;
+                modalPlayer.appendChild(frame);
+            } else {
+                return;
+            }
+
+            videoModal.classList.add("open");
+            videoModal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+        }
+
+        function closeVideo() {
+            videoModal.classList.remove("open");
+            videoModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+            modalPlayer.textContent = "";   // videonu dayandırır
+        }
+
+        document.querySelectorAll(".video-card").forEach(function (card) {
+            card.addEventListener("click", function (e) {
+                e.preventDefault();
+                // sürüşdürmədən sonrakı təsadüfi klik sayılmasın
+                if (card.closest(".video-slider").dataset.justDragged === "1") return;
+                openVideo(card);
+            });
+        });
+
+        videoModal.addEventListener("click", function (e) {
+            // kənara (qara fona) və ya X düyməsinə klik
+            if (e.target === videoModal || e.target.closest(".video-modal-close")) {
+                closeVideo();
+            }
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && videoModal.classList.contains("open")) closeVideo();
+        });
     }
 
 
