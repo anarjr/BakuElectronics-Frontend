@@ -2598,3 +2598,57 @@ body.dark .main-navigation .nav-links a:not(.dropdown-item):hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.14);
 }
+
+
+/* ==============================
+   24. SLAYD: sağda növbəti slaydın bir hissəsi görünür
+============================== */
+
+.hero-grid {
+    display: block;
+    --peek: 398px;      /* sağda görünən hissə (360px + 38px boşluq) */
+    --hero-gap: 38px;
+}
+
+#mainCarousel.hero-peek {
+    width: 100%;
+    touch-action: pan-y;
+    cursor: grab;
+    user-select: none;
+}
+
+#mainCarousel.hero-peek .carousel-inner {
+    display: flex;
+    gap: var(--hero-gap);
+    overflow: visible;
+    border-radius: 0;
+    height: auto;
+    will-change: transform;
+}
+
+#mainCarousel.hero-peek .carousel-item {
+    display: block;
+    float: none;
+    margin: 0;
+    flex: 0 0 calc(100% - var(--peek));
+    width: calc(100% - var(--peek));
+    transition: none;
+}
+
+#mainCarousel.hero-peek .carousel-item img {
+    border-radius: 30px;
+    -webkit-user-drag: none;
+}
+
+/* kənardan kənara görünən zolaq */
+#mainCarousel.hero-peek {
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+@media (max-width: 991px) {
+    .hero-grid {
+        --peek: 0px;
+        --hero-gap: 16px;
+    }
+}

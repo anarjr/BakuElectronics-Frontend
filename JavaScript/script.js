@@ -1,6 +1,3 @@
-"use strict"
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ==============================
@@ -602,49 +599,130 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ==============================
-       9. ƏSAS SLAYD (siçanla tutub çəkmək)
+       9. ƏSAS SLAYD (sağda növbəti slaydın bir hissəsi görünür)
     ============================== */
 
     const heroCarousel = document.querySelector("#mainCarousel");
 
-    if (heroCarousel && window.bootstrap) {
-        const heroInstance = bootstrap.Carousel.getOrCreateInstance(heroCarousel, {
-            interval: 4500,
-            pause: false,
-            ride: "carousel",
-            wrap: true
+    if (heroCarousel) {
+        const heroInner = heroCarousel.querySelector(".carousel-inner");
+        const heroPrev = document.querySelector("[data-hero='prev']");
+        const heroNext = document.querySelector("[data-hero='next']");
+        const realCount = heroInner.children.length;
+
+        // Sonuncu slaydın sağında 1-ci slaydın hissəsi görünsün deyə klon
+        const firstClone = heroInner.children[0].cloneNode(true);
+        firstClone.classList.remove("active");
+        firstClone.setAttribute("aria-hidden", "true");
+        heroInner.appendChild(firstClone);
+
+        let index = 0;
+        let offset = 0;        // sürüşdürmə zamanı əlavə yerdəyişmə
+        let timer = null;
+        let animating = false;
+
+        function stepSize() {
+            const first = heroInner.children[0];
+            const gap = parseFloat(getComputedStyle(heroInner).columnGap) || 0;
+            return first.getBoundingClientRect().width + gap;
+        }
+
+        function render(animate) {
+            heroInner.style.transition = animate ? "transform 0.6s ease" : "none";
+            heroInner.style.transform = "translate3d(" + (-index * stepSize() + offset) + "px,0,0)";
+        }
+
+        function goNext() {
+            if (animating) return;
+            animating = true;
+            index += 1;
+            render(true);
+        }
+
+        function goPrev() {
+            if (animating) return;
+            animating = true;
+            if (index === 0) {
+                index = realCount;      // klona (=1-ci slayd) gizli keç
+                render(false);
+                void heroInner.offsetWidth;
+            }
+            index -= 1;
+            render(true);
+        }
+
+        heroInner.addEventListener("transitionend", function (e) {
+            if (e.target !== heroInner) return;
+            animating = false;
+            if (index >= realCount) {   // klona çatdıq → əsl 1-ci slayda sıçra
+                index = 0;
+                render(false);
+            }
         });
 
-        let heroStartX = 0;
-        let heroDown = false;
-        let heroMoved = false;
+        function restartTimer() {
+            clearInterval(timer);
+            timer = setInterval(goNext, 4500);
+        }
+
+        if (heroNext) heroNext.addEventListener("click", function () { goNext(); restartTimer(); });
+        if (heroPrev) heroPrev.addEventListener("click", function () { goPrev(); restartTimer(); });
+        window.addEventListener("resize", function () { render(false); });
+
+        // Siçan / barmaqla tutub çəkmək
+        let startX = 0;
+        let down = false;
+        let moved = false;
 
         heroCarousel.addEventListener("dragstart", function (e) { e.preventDefault(); });
 
         heroCarousel.addEventListener("pointerdown", function (e) {
-            if (e.pointerType !== "mouse" || e.button !== 0) return;
-            heroDown = true;
-            heroMoved = false;
-            heroStartX = e.clientX;
+            if (e.pointerType === "mouse" && e.button !== 0) return;
+            if (e.target.closest(".carousel-control-prev, .carousel-control-next")) return;
+            if (animating) return;
+            down = true;
+            moved = false;
+            startX = e.clientX;
+            clearInterval(timer);
         });
 
-        window.addEventListener("pointerup", function (e) {
-            if (!heroDown) return;
-            heroDown = false;
-            const dx = e.clientX - heroStartX;
-            if (Math.abs(dx) > 50) {
-                heroMoved = true;
-                if (dx < 0) heroInstance.next(); else heroInstance.prev();
-            }
+        window.addEventListener("pointermove", function (e) {
+            if (!down) return;
+            const dx = e.clientX - startX;
+            if (Math.abs(dx) > 5) moved = true;
+            if (!moved) return;
+            // başda/sonda boşluğa çəkməsin
+            if (index === 0 && dx > 0) { offset = dx * 0.25; } else { offset = dx; }
+            render(false);
         });
+
+        function release(e) {
+            if (!down) return;
+            down = false;
+            const dx = e.clientX - startX;
+            offset = 0;
+            if (moved && dx <= -60) {
+                goNext();
+            } else if (moved && dx >= 60) {
+                goPrev();
+            } else {
+                render(true);
+            }
+            restartTimer();
+        }
+        window.addEventListener("pointerup", release);
+        window.addEventListener("pointercancel", release);
 
         heroCarousel.addEventListener("click", function (e) {
-            if (heroMoved) {
+            if (moved) {
                 e.preventDefault();
                 e.stopPropagation();
-                heroMoved = false;
+                moved = false;
             }
         }, true);
+
+        render(false);
+        restartTimer();
     }
 
 
