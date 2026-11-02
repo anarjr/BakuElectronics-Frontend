@@ -1093,7 +1093,22 @@ header .cart-dropdown p {
     display: flex;
     gap: 45px;
     width: max-content;
-    animation: brands-scroll 120s linear infinite;
+    will-change: transform;
+}
+
+.brands-marquee {
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.brands-marquee.dragging {
+    cursor: grabbing;
+}
+
+.brands-marquee img {
+    -webkit-user-drag: none;
+    pointer-events: none;
 }
 
 .brands-marquee:hover .brands-track {
@@ -2544,4 +2559,42 @@ body.dark header .header-search button {
 
 body.dark .hero-side {
     filter: brightness(0.9);
+}
+
+
+/* ==============================
+   23. TEMA KEÇİDİ, QARANLIQ KARTLAR, NAVBAR HOVER
+============================== */
+
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+    transition: background-color 0.5s ease, color 0.5s ease,
+                border-color 0.5s ease, box-shadow 0.5s ease,
+                fill 0.5s ease !important;
+}
+
+body.dark .product-img {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+body.dark .product-img img {
+    mix-blend-mode: normal;
+}
+
+.main-navigation .nav-links a:not(.dropdown-item) {
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: color 0.25s, background-color 0.25s;
+}
+
+.main-navigation .nav-links a:not(.dropdown-item):hover {
+    color: var(--main-color);
+    background: rgba(227, 6, 19, 0.08);
+}
+
+body.dark .main-navigation .nav-links a:not(.dropdown-item):hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
 }

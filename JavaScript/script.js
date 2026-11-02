@@ -1,6 +1,3 @@
-"use strict"
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ==============================
@@ -221,7 +218,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const THEME_KEY = "be_theme";
     const themeToggle = document.querySelector(".theme-toggle");
 
-    function applyTheme(theme) {
+    function applyTheme(theme, animate) {
+        if (animate) {
+            const root = document.documentElement;
+            root.classList.add("theme-transition");
+            clearTimeout(applyTheme.timer);
+            applyTheme.timer = setTimeout(function () {
+                root.classList.remove("theme-transition");
+            }, 600);
+        }
         document.body.classList.toggle("dark", theme === "dark");
 
         if (themeToggle) {
@@ -246,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (themeToggle) {
         themeToggle.addEventListener("click", function () {
             const next = document.body.classList.contains("dark") ? "light" : "dark";
-            applyTheme(next);
+            applyTheme(next, true);
             try {
                 localStorage.setItem(THEME_KEY, next);
             } catch (err) { /* ignore */ }
@@ -432,7 +437,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let dragging = false;
         let moved = false;
 
+        // Brauzerin öz şəkil/link sürükləməsi qarşısı alınsın
+        videoSlider.addEventListener("dragstart", function (e) { e.preventDefault(); });
+
         videoSlider.addEventListener("mousedown", function (e) {
+            e.preventDefault();
+            videoSlider.classList.add("dragging");
             dragging = true;
             moved = false;
             dragStartX = e.pageX;
@@ -450,6 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("mouseup", function () {
             if (!dragging) return;
             dragging = false;
+            videoSlider.classList.remove("dragging");
             videoSlider.style.scrollSnapType = "";
         });
 
@@ -512,6 +523,77 @@ document.addEventListener("DOMContentLoaded", function () {
                 img.addEventListener("error", function () { brandFallback(img); }, { once: true });
             }
         });
+
+        // Avtomatik sürüşmə + əllə tutub dartmaq
+        const brandsBox = brandsTrack.parentElement;
+        const SPEED = 40;            // px / saniyə
+        let pos = 0;                 // cari yerdəyişmə (mənfi)
+        let hovering = false;
+        let grabbing = false;
+        let brandMoved = false;
+        let startX = 0;
+        let startPos = 0;
+        let last = performance.now();
+
+        function half() {
+            const gap = parseFloat(getComputedStyle(brandsTrack).columnGap) || 0;
+            return (brandsTrack.scrollWidth + gap) / 2;
+        }
+
+        function wrap() {
+            const h = half();
+            if (!h) return;
+            while (pos <= -h) pos += h;
+            while (pos > 0) pos -= h;
+        }
+
+        function frame(now) {
+            const dt = Math.min((now - last) / 1000, 0.1);
+            last = now;
+            if (!hovering && !grabbing) pos -= SPEED * dt;
+            wrap();
+            brandsTrack.style.transform = "translate3d(" + pos + "px,0,0)";
+            requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+
+        brandsBox.addEventListener("mouseenter", function () { hovering = true; });
+        brandsBox.addEventListener("mouseleave", function () { hovering = false; });
+        brandsBox.addEventListener("dragstart", function (e) { e.preventDefault(); });
+
+        brandsBox.addEventListener("pointerdown", function (e) {
+            if (e.pointerType === "mouse" && e.button !== 0) return;
+            grabbing = true;
+            brandMoved = false;
+            startX = e.clientX;
+            startPos = pos;
+            brandsBox.classList.add("dragging");
+            brandsBox.setPointerCapture(e.pointerId);
+        });
+
+        brandsBox.addEventListener("pointermove", function (e) {
+            if (!grabbing) return;
+            const dx = e.clientX - startX;
+            if (Math.abs(dx) > 5) brandMoved = true;
+            pos = startPos + dx;
+        });
+
+        function release(e) {
+            if (!grabbing) return;
+            grabbing = false;
+            brandsBox.classList.remove("dragging");
+            if (brandsBox.hasPointerCapture(e.pointerId)) brandsBox.releasePointerCapture(e.pointerId);
+        }
+        brandsBox.addEventListener("pointerup", release);
+        brandsBox.addEventListener("pointercancel", release);
+
+        brandsBox.addEventListener("click", function (e) {
+            if (brandMoved) {
+                e.preventDefault();
+                e.stopPropagation();
+                brandMoved = false;
+            }
+        }, true);
     }
 
 
