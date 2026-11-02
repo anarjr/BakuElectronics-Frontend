@@ -2652,3 +2652,81 @@ body.dark .main-navigation .nav-links a:not(.dropdown-item):hover {
         --hero-gap: 16px;
     }
 }
+
+
+/* ==============================
+   25. KAMPANİYA BAŞLIĞI + TAB PİLİ (sağda)
+============================== */
+
+.campaign-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 34px;
+}
+
+.campaign-head .section-title {
+    margin-bottom: 0;
+}
+
+.campaign-head .campaign-tabs {
+    flex: 0 0 auto;
+    min-width: 0;
+    margin: 0;
+    padding: 6px;
+    gap: 4px;
+    background: #f4f4f4;
+    border-radius: 40px;
+}
+
+.campaign-head .campaign-tabs button {
+    padding: 12px clamp(12px, 1.5vw, 28px);
+    background: transparent;
+    border-radius: 30px;
+    color: #888;
+    font-size: clamp(14px, 1.1vw, 16px);
+    font-weight: 500;
+}
+
+.campaign-head .campaign-tabs button:hover {
+    background: transparent;
+    color: #222;
+}
+
+.campaign-head .campaign-tabs button.active {
+    background: transparent;
+    color: #111;
+    font-weight: 700;
+}
+
+body.dark .campaign-head .campaign-tabs {
+    background: #242424;
+}
+
+body.dark .campaign-head .campaign-tabs button,
+body.dark .campaign-head .campaign-tabs button:hover {
+    background: transparent;
+    color: #aaa;
+}
+
+body.dark .campaign-head .campaign-tabs button:hover,
+body.dark .campaign-head .campaign-tabs button.active {
+    color: #fff;
+}
+
+@media (max-width: 1199px) {
+    .campaign-head {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .campaign-head .section-title {
+        font-size: 24px;
+    }
+
+    .campaign-head .campaign-tabs {
+        overflow-x: auto;
+    }
+}
