@@ -1,3 +1,6 @@
+"use strict"
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ==============================
@@ -592,6 +595,54 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault();
                 e.stopPropagation();
                 brandMoved = false;
+            }
+        }, true);
+    }
+
+
+
+    /* ==============================
+       9. ƏSAS SLAYD (siçanla tutub çəkmək)
+    ============================== */
+
+    const heroCarousel = document.querySelector("#mainCarousel");
+
+    if (heroCarousel && window.bootstrap) {
+        const heroInstance = bootstrap.Carousel.getOrCreateInstance(heroCarousel, {
+            interval: 4500,
+            pause: false,
+            ride: "carousel",
+            wrap: true
+        });
+
+        let heroStartX = 0;
+        let heroDown = false;
+        let heroMoved = false;
+
+        heroCarousel.addEventListener("dragstart", function (e) { e.preventDefault(); });
+
+        heroCarousel.addEventListener("pointerdown", function (e) {
+            if (e.pointerType !== "mouse" || e.button !== 0) return;
+            heroDown = true;
+            heroMoved = false;
+            heroStartX = e.clientX;
+        });
+
+        window.addEventListener("pointerup", function (e) {
+            if (!heroDown) return;
+            heroDown = false;
+            const dx = e.clientX - heroStartX;
+            if (Math.abs(dx) > 50) {
+                heroMoved = true;
+                if (dx < 0) heroInstance.next(); else heroInstance.prev();
+            }
+        });
+
+        heroCarousel.addEventListener("click", function (e) {
+            if (heroMoved) {
+                e.preventDefault();
+                e.stopPropagation();
+                heroMoved = false;
             }
         }, true);
     }
