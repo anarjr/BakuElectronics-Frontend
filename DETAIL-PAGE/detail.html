@@ -274,6 +274,87 @@
                                 </button>
                             </div>
 
+                            <!-- Nisyə kalkulyatoru -->
+                            <div class="installment" id="installment">
+
+                                <div class="bank-tabs">
+                                    <button class="bank-tab active" type="button" data-bank="nisye">
+                                        Nisyə al <span class="bank-dot bank-dot-nisye"><i class="bi bi-credit-card"></i></span>
+                                    </button>
+                                    <button class="bank-tab" type="button" data-bank="birbank">
+                                        Birbank <span class="bank-dot bank-dot-birbank"></span>
+                                    </button>
+                                    <button class="bank-tab" type="button" data-bank="bolkart">
+                                        Bolkart <span class="bank-dot bank-dot-bolkart"><i class="bi bi-brightness-high-fill"></i></span>
+                                    </button>
+                                    <button class="bank-tab" type="button" data-bank="tamkart">
+                                        Tamkart <span class="bank-dot bank-dot-tamkart">tam.</span>
+                                    </button>
+                                </div>
+
+                                <div class="term-box">
+                                    <h6>Müddət</h6>
+                                    <div class="term-list" id="termList">
+                                        <button class="term-btn" type="button" data-months="3">
+                                            <span class="term-badge">0%</span>
+                                            <span class="term-label">3 ay</span>
+                                        </button>
+                                        <button class="term-btn" type="button" data-months="6">
+                                            <span class="term-badge">0%</span>
+                                            <span class="term-label">6 ay</span>
+                                        </button>
+                                        <button class="term-btn" type="button" data-months="9">
+                                            <span class="term-badge">0%</span>
+                                            <span class="term-label">9 ay</span>
+                                        </button>
+                                        <button class="term-btn" type="button" data-months="12">
+                                            <span class="term-badge">0%</span>
+                                            <span class="term-label">12 ay</span>
+                                        </button>
+                                        <button class="term-btn" type="button" data-months="15">
+                                            <span class="term-label">15 ay</span>
+                                        </button>
+                                        <button class="term-btn active" type="button" data-months="18">
+                                            <span class="term-label">18 ay</span>
+                                        </button>
+                                        <button class="term-btn" type="button" data-months="21">
+                                            <span class="term-label">21 ay</span>
+                                        </button>
+                                        <button class="term-btn" type="button" data-months="24">
+                                            <span class="term-label">24 ay</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="pay-summary">
+                                    <div>
+                                        <span class="pay-label">Aylıq ödəniş:</span>
+                                        <strong class="pay-value" id="monthlyPay">39.33 <i class="azn">₼</i></strong>
+                                    </div>
+                                    <div class="pay-total">
+                                        <span class="pay-label">Yekun qiymət:</span>
+                                        <strong class="pay-value" id="totalPrice">707.99 <i class="azn">₼</i></strong>
+                                    </div>
+                                </div>
+
+                                <div class="down-box">
+                                    <h6>İlkin ödəniş</h6>
+                                    <div class="down-control">
+                                        <button class="down-btn" type="button" id="downMinus" aria-label="Azalt"><i class="bi bi-dash"></i></button>
+                                        <div class="down-field">
+                                            <input type="number" id="downPayment" value="0" min="0" max="669" step="10" inputmode="numeric">
+                                            <i class="azn">₼</i>
+                                        </div>
+                                        <button class="down-btn" type="button" id="downPlus" aria-label="Artır"><i class="bi bi-plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <p class="installment-note">
+                                    <strong>Qeyd:</strong> Tarif yalnız onlayn alış-veriş zamanı keçərlidir.
+                                    Sifarişin rəsmiləşdirilməsi zamanı 10%-ə qədər xidmət haqqı əlavə oluna bilər.
+                                </p>
+                            </div>
+
                             <!-- (davamı sonrakı commitlərdə) -->
 
                         </div>
