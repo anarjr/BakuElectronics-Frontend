@@ -575,7 +575,6 @@ header .cart-dropdown p {
 
 .best-sellers,
 .promotions,
-.categories,
 .videos,
 .blog-section {
     width: var(--page-w);
@@ -860,37 +859,6 @@ header .cart-dropdown p {
 }
 
 /* ==============================
-   9. KATEQORİYALAR
-============================== */
-
-.categories .category-card {
-    display: block;
-    text-align: center;
-    padding: 18px;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    height: 100%;
-    transition: 0.3s;
-}
-
-.categories .category-card:hover {
-    border-color: var(--main-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-}
-
-.categories .category-card img {
-    width: 100%;
-    height: 130px;
-    object-fit: contain;
-    margin-bottom: 12px;
-}
-
-.categories .category-card h5 {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-/* ==============================
    10. CAMPAIGN TABS
 ============================== */
 
@@ -1109,15 +1077,6 @@ header .cart-dropdown p {
 .brands-marquee img {
     -webkit-user-drag: none;
     pointer-events: none;
-}
-
-.brands-marquee:hover .brands-track {
-    animation-play-state: paused;
-}
-
-@keyframes brands-scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(calc(-50% - 22.5px)); }
 }
 
 .brand-card {
@@ -1649,10 +1608,7 @@ footer .footer-bottom p {
         gap: 24px;
     }
 
-    @keyframes brands-scroll {
-        from { transform: translateX(0); }
-        to   { transform: translateX(calc(-50% - 12px)); }
-    }
+    
 
     .brand-card {
         flex-basis: 220px;
@@ -1665,7 +1621,6 @@ footer .footer-bottom p {
 
     .best-sellers,
     .promotions,
-    .categories,
     .videos,
     .blog-section {
         margin: 45px auto;
@@ -1793,7 +1748,6 @@ footer .footer-bottom p {
 
     .best-sellers,
     .promotions,
-    .categories,
     .videos,
     .blog-section {
         margin: 35px auto;
@@ -1815,17 +1769,8 @@ footer .footer-bottom p {
         font-size: 16px;
     }
 
-    .categories .category-card {
-        padding: 10px;
-    }
 
-    .categories .category-card img {
-        height: 90px;
-    }
 
-    .categories .category-card h5 {
-        font-size: 12px;
-    }
 
     .videos {
         margin: 35px 0;
@@ -2883,5 +2828,447 @@ body.dark .video-modal-footer {
     .video-modal-footer {
         font-size: 15px;
         margin-top: 14px;
+    }
+}
+
+
+/* ==============================
+   27. HEADER: yapışqan, real saytdakı kimi
+============================== */
+
+header {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #ececec;
+}
+
+header .navbar {
+    padding: 12px 0;
+}
+
+header .btn-catalog,
+header .header-search input {
+    height: 62px;
+}
+
+header .header-search input::placeholder {
+    color: #999;
+}
+
+body.dark header {
+    border-bottom-color: #2a2a2a;
+}
+
+@media (max-width: 991px) {
+    header .navbar-collapse {
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+}
+
+
+/* ==============================
+   28. MƏHSUL KARTLARI: responsive + dizayn
+============================== */
+
+.product-card {
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-img img {
+    transition: transform 0.4s;
+}
+
+.product-card:hover .product-img img {
+    transform: scale(1.05);
+}
+
+.discount-badge {
+    box-shadow: 0 4px 10px rgba(236, 34, 39, 0.28);
+}
+
+.product-prices {
+    flex-wrap: wrap;
+    row-gap: 8px;
+}
+
+.btn-cart:focus-visible,
+.btn-fav:focus-visible,
+.compare-btn:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+}
+
+.btn-fav.active {
+    background: #ffe9e9;
+}
+
+body.dark .btn-fav.active {
+    background: #3a2326;
+}
+
+/* 1300-1499: 4 sütun, amma sıx */
+@media (max-width: 1499px) {
+    .product-grid {
+        column-gap: 20px;
+    }
+
+    .product-card {
+        padding: 0 16px 18px;
+    }
+
+    .product-img {
+        height: 240px;
+    }
+
+    .product-prices {
+        gap: 14px;
+    }
+
+    .product-prices .price-installment {
+        padding-left: 14px;
+    }
+
+    .product-prices .price-installment strong,
+    .product-prices .price {
+        font-size: 18px;
+    }
+
+    .btn-cart,
+    .btn-fav {
+        height: 50px;
+    }
+
+    .btn-fav {
+        flex-basis: 50px;
+        width: 50px;
+    }
+}
+
+/* 1100-1299: 3 sütun */
+@media (max-width: 1299px) {
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 24px;
+    }
+
+    .product-card {
+        padding: 0 22px 22px;
+    }
+
+    .product-img {
+        height: 260px;
+    }
+
+    .product-prices .price-installment strong,
+    .product-prices .price {
+        font-size: 20px;
+    }
+}
+
+/* planşet: 2 sütun */
+@media (max-width: 1099px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
+    }
+}
+
+/* telefon: 2 sıx sütun */
+@media (max-width: 575px) {
+    .product-grid {
+        column-gap: 12px;
+        row-gap: 14px;
+    }
+
+    .product-card {
+        margin-top: 36px;
+        padding: 0 12px 14px;
+        border-radius: 24px;
+    }
+
+    .product-img {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin: -36px 0 12px;
+        border-radius: 20px;
+    }
+
+    .product-img img {
+        padding: 12px;
+    }
+
+    .discount-badge {
+        top: 10px;
+        left: 8px;
+        padding: 4px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+    }
+
+    .compare-btn {
+        top: 8px;
+        right: 8px;
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+    }
+
+    .compare-btn .bi {
+        font-size: 15px;
+    }
+
+    .product-card h5 {
+        min-height: 38px;
+        margin-bottom: 10px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .product-prices {
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 12px;
+    }
+
+    .product-prices .price-installment {
+        padding-left: 0;
+        border-left: 0;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    .product-prices .price-installment span,
+    .old-price {
+        font-size: 12px;
+    }
+
+    .product-prices .price {
+        font-size: 17px;
+    }
+
+    .product-prices .price-installment strong {
+        font-size: 13px;
+    }
+
+    .product-actions {
+        gap: 6px;
+    }
+
+    .btn-cart {
+        height: 40px;
+        gap: 6px;
+        border-radius: 12px;
+        font-size: 12px;
+    }
+
+    .btn-fav {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+        border-radius: 12px;
+    }
+
+    .product-card .bi {
+        font-size: 16px;
+    }
+}
+
+/* çox dar ekran: 1 sütun */
+@media (max-width: 359px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==============================
+   29. KAMPANİYA KARTLARI
+============================== */
+
+.promotion-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.promotion-card img {
+    transition: transform 0.5s;
+}
+
+.promotion-card > a,
+.promotion-card {
+    overflow: hidden;
+}
+
+.promotion-card:hover img {
+    transform: scale(1.03);
+}
+
+.promotion-card .promotion-content {
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--light-color);
+    position: relative;
+}
+
+.promotion-card h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.promotion-card .btn:hover {
+    background: #c40510;
+    color: #fff;
+}
+
+@media (max-width: 576px) {
+    .promotion-card {
+        border-radius: 22px;
+    }
+
+    .promotion-card .promotion-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .promotion-card .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+
+/* ==============================
+   30. VİDEO SLAYDERİ: oxlar
+============================== */
+
+.video-slider-wrap .slider-prev,
+.video-slider-wrap .slider-next {
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    color: var(--main-color);
+    font-size: 26px;
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.video-slider-wrap .slider-prev { left: -31px; }
+.video-slider-wrap .slider-next { right: -31px; }
+
+.video-slider-wrap .slider-prev:hover,
+.video-slider-wrap .slider-next:hover {
+    transform: translateY(-50%) scale(1.06);
+}
+
+.video-slider-wrap .slider-prev:disabled,
+.video-slider-wrap .slider-next:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.dark .video-slider-wrap .slider-prev,
+body.dark .video-slider-wrap .slider-next {
+    background: #242424;
+}
+
+@media (max-width: 991px) {
+    .video-slider-wrap .slider-prev,
+    .video-slider-wrap .slider-next {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        font-size: 20px;
+    }
+
+    .video-slider-wrap .slider-prev { left: 8px; }
+    .video-slider-wrap .slider-next { right: 8px; }
+}
+
+
+/* ==============================
+   31. ÜST NAVİQASİYA: dar ekranlarda daşmasın
+============================== */
+
+.main-navigation .nav-tools {
+    flex: 0 0 auto;
+}
+
+.main-navigation .nav-links {
+    min-width: 0;
+}
+
+@media (max-width: 1299px) {
+    .main-navigation .nav {
+        gap: 18px;
+        padding: 0 22px;
+        overflow: visible;
+    }
+
+    .main-navigation .nav-links {
+        flex: 1 1 auto;
+        gap: 28px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .main-navigation .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-navigation .nav-links > a,
+    .main-navigation .nav-links .dropdown {
+        flex: 0 0 auto;
+    }
+}
+
+/* telefon: tema və dil düymələri gizlənməsin, sadəcə kiçilsin */
+@media (max-width: 576px) {
+    .main-navigation .nav-tools {
+        display: flex;
+        gap: 12px;
+    }
+
+    .main-navigation .theme-toggle {
+        width: 52px;
+        height: 30px;
+    }
+
+    .main-navigation .theme-toggle .theme-knob {
+        width: 22px;
+        height: 22px;
+    }
+
+    body.dark .main-navigation .theme-toggle .theme-knob {
+        left: 26px;
+    }
+
+    .main-navigation .theme-toggle .bi {
+        right: 8px;
+        font-size: 13px;
+    }
+
+    body.dark .main-navigation .theme-toggle .bi {
+        left: 8px;
     }
 }
