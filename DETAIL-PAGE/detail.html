@@ -31,7 +31,109 @@
 
     <!-- ================= HEADER ================= -->
 
-    <!-- (növbəti commit) -->
+    <header>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+
+                <a class="navbar-brand" href="#">
+                    <img src="https://media.bakuelectronics.az/media/logo/baku-electronics-logo_QJeQcxF.svg"
+                        alt="Baku Electronics">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#headerMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="headerMenu">
+
+                    <div class="header-actions d-flex flex-column flex-lg-row align-items-lg-center">
+
+                        <!-- Kataloq düyməsi -->
+                        <button class="btn btn-dark btn-catalog" id="catalogBtn" type="button" aria-expanded="false">
+                            <i class="bi bi-grid"></i>
+                            <span>Kataloq</span>
+                        </button>
+
+                        <form class="header-search">
+                            <input class="form-control" type="search" placeholder="Məhsul axtar...">
+                            <button type="submit" aria-label="Axtar">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+
+                        <div class="header-icons">
+
+                            <a href="#" class="icon-btn" title="Müqayisə">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </a>
+
+                            <!-- Səbət açılan paneli -->
+                            <div class="dropdown">
+                                <a href="#" class="icon-btn" title="Səbət" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-cart3"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end cart-dropdown">
+                                    <h6>Səbətim</h6>
+                                    <p>Sizin hal-hazırda səbətdə məhsulunuz yoxdur.</p>
+                                </div>
+                            </div>
+
+                            <a href="#" class="icon-btn" title="Seçilmişlər">
+                                <i class="bi bi-heart"></i>
+                            </a>
+
+                            <a href="#" class="icon-btn" title="Giriş">
+                                <i class="bi bi-person"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </nav>
+
+            <!-- Kataloq mega-menyusu -->
+            <div class="catalog-panel" id="catalogPanel">
+                <div class="catalog-cats">
+<button type="button" class="catalog-cat active" data-cat="0"><i class="bi bi-phone"></i><span>Smartfonlar və planşetlər</span></button>
+<button type="button" class="catalog-cat" data-cat="1"><i class="bi bi-laptop"></i><span>Notbuklar və kompüter texnikası</span></button>
+<button type="button" class="catalog-cat" data-cat="2"><i class="bi bi-controller"></i><span>Oyun konsolları və aksessuarlar</span></button>
+<button type="button" class="catalog-cat" data-cat="3"><i class="bi bi-tv"></i><span>TV, audio və video</span></button>
+<button type="button" class="catalog-cat" data-cat="4"><i class="bi bi-boxes"></i><span>Böyük məişət texnikası</span></button>
+<button type="button" class="catalog-cat" data-cat="5"><i class="bi bi-cup-hot"></i><span>Kiçik məişət texnikası</span></button>
+<button type="button" class="catalog-cat" data-cat="6"><i class="bi bi-thermometer-snow"></i><span>İqlim texnikası</span></button>
+<button type="button" class="catalog-cat" data-cat="7"><i class="bi bi-scissors"></i><span>Gözəllik və baxım</span></button>
+<button type="button" class="catalog-cat" data-cat="8"><i class="bi bi-car-front"></i><span>Avto və moto</span></button>
+<button type="button" class="catalog-cat" data-cat="9"><i class="bi bi-heart-pulse"></i><span>Tibbi məhsullar</span></button>
+<button type="button" class="catalog-cat" data-cat="10"><i class="bi bi-house-heart"></i><span>Ev və bağ</span></button>
+<button type="button" class="catalog-cat" data-cat="11"><i class="bi bi-lamp"></i><span>Mebel, tekstil və dekor</span></button>
+<button type="button" class="catalog-cat" data-cat="12"><i class="bi bi-cup-straw"></i><span>Qab-qacaq, tava-qazan</span></button>
+<button type="button" class="catalog-cat" data-cat="13"><i class="bi bi-balloon"></i><span>Uşaq aləmi</span></button>
+                </div>
+                <div class="catalog-subs">
+<div class="catalog-sub active" data-cat="0"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Smartfonlar</a></h6><ul><li><a href="#">Apple</a></li><li><a href="#">Samsung</a></li><li><a href="#">Xiaomi</a></li><li><a href="#">Huawei</a></li><li><a href="#">Motorola</a></li><li><a href="#">HONOR</a></li><li><a href="#">Poco</a></li><li><a href="#">Infinix</a></li><li><a href="#">Tecno</a></li><li><a href="#">Vivo</a></li><li><a href="#">Nokia</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Qulaqlıqlar</a></h6><ul><li><a href="#">Simsiz qulaqlıqlar</a></li><li><a href="#">Simli qulaqlıqlar</a></li><li><a href="#">Uşaqlar üçün qulaqlıqlar</a></li><li><a href="#">Oyun üçün qulaqlıqlar</a></li><li><a href="#">Bütün qulaqlıqlar</a></li></ul></div><div class="catalog-group"><h6><a href="#">Ev və ofis telefonları</a></h6></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Planşetlər</a></h6><ul><li><a href="#">Apple</a></li><li><a href="#">Samsung</a></li><li><a href="#">Xiaomi</a></li><li><a href="#">Lenovo</a></li><li><a href="#">Huawei</a></li><li><a href="#">Poco</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Düyməli telefonlar</a></h6><ul><li><a href="#">Energizer</a></li><li><a href="#">Nokia</a></li><li><a href="#">Panasonic</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Qol saatları</a></h6><ul><li><a href="#">Kişi saatları</a></li><li><a href="#">Qadın saatları</a></li><li><a href="#">Uşaq saatları</a></li><li><a href="#">Bütün saatlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Smart saatlar</a></h6><ul><li><a href="#">Apple</a></li><li><a href="#">Borofone</a></li><li><a href="#">Garmin</a></li><li><a href="#">Huawei</a></li><li><a href="#">Samsung</a></li><li><a href="#">Ttec</a></li><li><a href="#">Wonlex</a></li><li><a href="#">Xiaomi</a></li><li><a href="#">Smart saatlar üçün aksesuarlar</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Elektron kitablar</a></h6><ul><li><a href="#">PocketBook</a></li></ul></div><div class="catalog-group"><h6><a href="#">Aksesuarlar</a></h6><ul><li><a href="#">Telefon üçün keyslər</a></li><li><a href="#">Ekran qoruyucuları və plyonkalar</a></li><li><a href="#">Adapterlər</a></li><li><a href="#">USB-C və digər kabellər</a></li><li><a href="#">Simsiz enerji toplama cihazları</a></li><li><a href="#">Power Bank</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="1"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Notbuklar</a></h6><ul><li><a href="#">Apple</a></li><li><a href="#">ASUS</a></li><li><a href="#">Lenovo</a></li><li><a href="#">HP</a></li><li><a href="#">Acer</a></li><li><a href="#">MSI</a></li><li><a href="#">Bütün brendlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Printerlər və skanerlər</a></h6><ul><li><a href="#">Lazer printerlər</a></li><li><a href="#">Mürəkkəbli printerlər</a></li><li><a href="#">Skanerlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Kompüterlər</a></h6><ul><li><a href="#">Monobloklar</a></li><li><a href="#">Stolüstü kompüterlər</a></li><li><a href="#">Mini PC</a></li></ul></div><div class="catalog-group"><h6><a href="#">Kompüter aksesuarları</a></h6><ul><li><a href="#">Siçanlar</a></li><li><a href="#">Klaviaturalar</a></li><li><a href="#">Veb kameralar</a></li><li><a href="#">Çantalar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Monitorlar</a></h6><ul><li><a href="#">Oyun monitorları</a></li><li><a href="#">Ofis monitorları</a></li><li><a href="#">Bütün monitorlar</a></li></ul></div><div class="catalog-group"><h6><a href="#">Şəbəkə avadanlığı</a></h6><ul><li><a href="#">Routerlər</a></li><li><a href="#">Wi-Fi gücləndiriciləri</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="2"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Oyun konsolları</a></h6><ul><li><a href="#">PlayStation</a></li><li><a href="#">Xbox</a></li><li><a href="#">Nintendo</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Oyun aksesuarları</a></h6><ul><li><a href="#">Joystiklər</a></li><li><a href="#">Oyun qulaqlıqları</a></li><li><a href="#">Oyun klaviaturaları</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Oyunlar</a></h6><ul><li><a href="#">PlayStation oyunları</a></li><li><a href="#">Xbox oyunları</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="3"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Televizorlar</a></h6><ul><li><a href="#">Samsung</a></li><li><a href="#">LG</a></li><li><a href="#">Yoshiro</a></li><li><a href="#">TCL</a></li><li><a href="#">Hisense</a></li><li><a href="#">Bütün televizorlar</a></li></ul></div><div class="catalog-group"><h6><a href="#">TV aksesuarları</a></h6><ul><li><a href="#">Kronşteynlər</a></li><li><a href="#">Pultlar</a></li><li><a href="#">Kabellər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Səs sistemləri</a></h6><ul><li><a href="#">Soundbarlar</a></li><li><a href="#">Bluetooth kolonkalar</a></li><li><a href="#">Ev kinoteatrları</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Proyektorlar</a></h6><ul><li><a href="#">Ev proyektorları</a></li><li><a href="#">Ofis proyektorları</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="4"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Soyuducular</a></h6><ul><li><a href="#">Birqapılı</a></li><li><a href="#">İkiqapılı</a></li><li><a href="#">Side by Side</a></li></ul></div><div class="catalog-group"><h6><a href="#">Plitələr və sobalar</a></h6><ul><li><a href="#">Qaz plitələr</a></li><li><a href="#">Elektrik plitələr</a></li><li><a href="#">Sobalar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Paltaryuyan maşınlar</a></h6><ul><li><a href="#">Dik yüklənən</a></li><li><a href="#">Önə yüklənən</a></li><li><a href="#">Qurutma maşınları</a></li></ul></div><div class="catalog-group"><h6><a href="#">Davlumbazlar</a></h6></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Qabyuyan maşınlar</a></h6><ul><li><a href="#">Tam quraşdırılan</a></li><li><a href="#">Sərbəst dayanan</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="5"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Tozsoranlar</a></h6><ul><li><a href="#">Robot tozsoranlar</a></li><li><a href="#">Şaquli tozsoranlar</a></li><li><a href="#">Yuyucu tozsoranlar</a></li><li><a href="#">Bütün tozsoranlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Ütülər</a></h6><ul><li><a href="#">Buxarlı ütülər</a></li><li><a href="#">Buxar generatorları</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Mətbəx texnikası</a></h6><ul><li><a href="#">Blenderlər</a></li><li><a href="#">Qəhvə maşınları</a></li><li><a href="#">Çaydanlar</a></li><li><a href="#">Toasterlər</a></li><li><a href="#">Mikserlər</a></li><li><a href="#">Multibişiricilər</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="6"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Kondisionerlər</a></h6><ul><li><a href="#">Midea</a></li><li><a href="#">Yoshiro</a></li><li><a href="#">Samsung</a></li><li><a href="#">Bosch</a></li><li><a href="#">Bütün kondisionerlər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Havanı təmizləyənlər</a></h6><ul><li><a href="#">Havatəmizləyicilər</a></li><li><a href="#">Rütubətləndiricilər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Kombilər</a></h6><ul><li><a href="#">Midea</a></li><li><a href="#">Bütün kombilər</a></li></ul></div><div class="catalog-group"><h6><a href="#">Ventilyatorlar</a></h6></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">İstilik cihazları</a></h6><ul><li><a href="#">Yağ radiatorları</a></li><li><a href="#">Konvektorlar</a></li><li><a href="#">Elektrik sobaları</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="7"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Saç baxımı</a></h6><ul><li><a href="#">Saç qurudanlar</a></li><li><a href="#">Saç düzəldənlər</a></li><li><a href="#">Daraqlı fenlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Üz və bədən</a></h6><ul><li><a href="#">Üzqırxanlar</a></li><li><a href="#">Epilyatorlar</a></li><li><a href="#">Trimmerlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Ağız qulluğu</a></h6><ul><li><a href="#">Diş fırçaları</a></li><li><a href="#">İrriqatorlar</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="8"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Motosikletlər</a></h6><ul><li><a href="#">Minsk</a></li><li><a href="#">Bütün motosikletlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Elektrik nəqliyyat</a></h6><ul><li><a href="#">Elektrik skuterlər</a></li><li><a href="#">Elektrik velosipedlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Avto aksesuarlar</a></h6><ul><li><a href="#">Video registratorlar</a></li><li><a href="#">Avto kompressorlar</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="9"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Ölçü cihazları</a></h6><ul><li><a href="#">Tonometrlər</a></li><li><a href="#">Qlükometrlər</a></li><li><a href="#">Termometrlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Müalicə cihazları</a></h6><ul><li><a href="#">İnhalyatorlar</a></li><li><a href="#">Masajorlar</a></li></ul></div></div><div class="catalog-col"></div></div>
+<div class="catalog-sub" data-cat="10"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Bağ avadanlığı</a></h6><ul><li><a href="#">Biçən maşınlar</a></li><li><a href="#">Su nasosları</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Alətlər</a></h6><ul><li><a href="#">Drellər</a></li><li><a href="#">Perforatorlar</a></li><li><a href="#">Alət dəstləri</a></li></ul></div></div><div class="catalog-col"></div></div>
+<div class="catalog-sub" data-cat="11"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Mebel</a></h6><ul><li><a href="#">Divanlar</a></li><li><a href="#">Çarpayılar</a></li><li><a href="#">Masalar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Tekstil</a></h6><ul><li><a href="#">Yataq dəstləri</a></li><li><a href="#">Pərdələr</a></li><li><a href="#">Xalçalar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Dekor</a></h6><ul><li><a href="#">İşıqlandırma</a></li><li><a href="#">Güzgülər</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="12"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Tava və qazanlar</a></h6><ul><li><a href="#">Tava və qazan dəstləri</a></li><li><a href="#">Tavalar</a></li><li><a href="#">Qazanlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Qab-qacaq</a></h6><ul><li><a href="#">Nahar dəstləri</a></li><li><a href="#">Fincan və stəkanlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Mətbəx ləvazimatları</a></h6><ul><li><a href="#">Bıçaqlar</a></li><li><a href="#">Mətbəx təşkilatçıları</a></li></ul></div></div></div>
+<div class="catalog-sub" data-cat="13"><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Oyuncaqlar</a></h6><ul><li><a href="#">Konstruktorlar</a></li><li><a href="#">Kuklalar</a></li><li><a href="#">Maşınlar</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Uşaq nəqliyyatı</a></h6><ul><li><a href="#">Uşaq arabaları</a></li><li><a href="#">Velosipedlər</a></li></ul></div></div><div class="catalog-col"><div class="catalog-group"><h6><a href="#">Uşaq texnikası</a></h6><ul><li><a href="#">Uşaq saatları</a></li><li><a href="#">Uşaq planşetləri</a></li></ul></div></div></div>
+                </div>
+                <a class="catalog-promo" href="#">
+                    <img src="Assets/İmage/Banner-slide/923x520_payız.webp" alt="Kampaniya">
+                </a>
+            </div>
+        </div>
+    </header>
 
 
     <!-- ================= MAIN ================= -->
