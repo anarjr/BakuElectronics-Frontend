@@ -855,3 +855,371 @@ body.dark .catalog-group li a {
     color: #777;
     font-size: 12px;
 }
+
+/* ==============================
+   6. NİSYƏ KALKULYATORU
+============================== */
+
+.installment {
+    margin-top: 16px;
+    padding: 18px;
+    background: var(--soft-bg);
+    border-radius: 24px;
+}
+
+.bank-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.bank-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 34px;
+    padding: 0 8px 0 14px;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    color: #444;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.bank-tab:hover {
+    border-color: #ccc;
+}
+
+.bank-tab.active {
+    background: #fff;
+    border-color: #222;
+    color: #000;
+}
+
+.bank-dot {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.bank-dot-nisye {
+    background: #e8e8e8;
+    color: #444;
+}
+
+.bank-dot-birbank {
+    background: var(--main-color);
+    box-shadow: inset 0 0 0 6px var(--main-color), inset 0 0 0 9px #fff;
+}
+
+.bank-dot-bolkart {
+    background: #ffd400;
+    color: #222;
+    font-size: 12px;
+}
+
+.bank-dot-tamkart {
+    width: auto;
+    padding: 0 7px;
+    border-radius: 11px;
+    background: #222;
+    color: #fff;
+    font-size: 9px;
+}
+
+/* Müddət */
+
+.term-box,
+.down-box {
+    padding: 18px;
+    background: #fff;
+    border-radius: 18px;
+}
+
+.term-box h6,
+.down-box h6 {
+    margin: 0 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.term-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 12px;
+}
+
+.term-btn {
+    position: relative;
+    min-width: 46px;
+    height: 32px;
+    padding: 0 8px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    color: #444;
+    font-size: 10px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.term-btn:hover {
+    border-color: #999;
+}
+
+.term-btn.active {
+    background: var(--main-color);
+    border-color: var(--main-color);
+    color: #fff;
+}
+
+.term-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1px 6px;
+    background: var(--main-color);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.pay-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 18px 4px 16px;
+}
+
+.pay-total {
+    text-align: right;
+}
+
+.pay-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #666;
+    font-size: 11px;
+}
+
+.pay-value {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.pay-value .azn {
+    color: var(--main-color);
+}
+
+/* İlkin ödəniş */
+
+.down-control {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.down-btn {
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    color: #333;
+    font-size: 18px;
+    transition: border-color 0.2s, opacity 0.2s;
+}
+
+.down-btn:hover {
+    border-color: #888;
+}
+
+.down-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.down-field {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #ddd;
+}
+
+.down-field input {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 0;
+    background: transparent;
+    border: 0;
+    color: #555;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+.down-field input::-webkit-outer-spin-button,
+.down-field input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.down-field .azn {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.installment-note {
+    margin: 16px 2px 0;
+    color: #888;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.installment-note strong {
+    color: #333;
+}
+
+/* ==============================
+   7. MƏHSULUN YANINDA AL
+============================== */
+
+.block-label {
+    margin: 22px 0 10px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.buy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 292px;
+    padding: 8px;
+    background: var(--soft-bg);
+    border-radius: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c8c8c8 transparent;
+}
+
+.buy-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.buy-list::-webkit-scrollbar-thumb {
+    background: #c8c8c8;
+    border-radius: 6px;
+}
+
+.buy-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 14px;
+}
+
+.buy-img {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.buy-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.buy-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.buy-info h6 {
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buy-prices {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.buy-prices s {
+    color: #999;
+    font-size: 11px;
+}
+
+.buy-prices strong {
+    font-size: 13px;
+}
+
+.buy-installment {
+    padding-left: 8px;
+    border-left: 1px solid #ddd;
+    color: #888;
+    font-size: 10px;
+}
+
+.buy-installment b {
+    color: #222;
+    font-size: 12px;
+}
+
+.btn-together {
+    flex: 0 0 auto;
+    padding: 9px 14px;
+    background: #ececec;
+    border: 0;
+    border-radius: 10px;
+    color: #222;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-together:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.btn-together.added {
+    background: #1f9d55;
+    color: #fff;
+}
