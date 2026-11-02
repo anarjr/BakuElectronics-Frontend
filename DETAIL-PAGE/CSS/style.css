@@ -2344,3 +2344,92 @@ html.theme-transition *::after {
     transition: background-color 0.5s ease, color 0.5s ease,
                 border-color 0.5s ease, box-shadow 0.5s ease !important;
 }
+/* ==============================
+   14. RESPONSIVE - PLANŞET (≤ 991px)
+============================== */
+
+@media (max-width: 991px) {
+
+    :root {
+        --page-w: 100%;
+        --topbar-h: 28px;
+    }
+
+    .top-bar {
+        font-size: 14px;
+    }
+
+    .page-container {
+        padding: 0 15px;
+    }
+
+    header .container-fluid {
+        padding: 0 15px;
+    }
+
+    header .navbar {
+        padding: 10px 0;
+    }
+
+    header .navbar-brand img {
+        width: 46px;
+        height: 46px;
+    }
+
+    header .navbar-collapse {
+        padding: 15px 0 0;
+    }
+
+    header .header-actions {
+        gap: 12px;
+    }
+
+    header .cart-dropdown {
+        min-width: 100%;
+    }
+
+    /* Qalereya artıq yapışmır */
+
+    .gallery {
+        position: static;
+    }
+
+    .gallery-main {
+        height: 460px;
+    }
+
+    .product-title {
+        font-size: 22px;
+    }
+
+    .price-current {
+        font-size: 32px;
+    }
+
+    .specs {
+        padding: 22px;
+    }
+
+    .specs-table {
+        column-gap: 36px;
+    }
+
+    .similar-track {
+        --gap: 24px;
+        --per-view: 3;
+    }
+
+    /* Footer */
+
+    footer {
+        padding: 45px 15px 25px;
+    }
+
+    .chat-fab {
+        right: 20px;
+        bottom: 20px;
+        width: 64px;
+        height: 64px;
+        font-size: 26px;
+    }
+}
