@@ -103,11 +103,32 @@
                             <span>Kataloq</span>
                         </button>
 
-                        <form class="header-search">
-                            <input class="form-control" type="search" placeholder="Məhsul axtar...">
+                        <form class="header-search" role="search">
+                            <input class="form-control" type="search" placeholder="Məhsul axtar..." autocomplete="off"
+                                aria-controls="searchPanel" aria-expanded="false">
                             <button type="submit" aria-label="Axtar">
                                 <i class="bi bi-search"></i>
                             </button>
+
+                            <!-- Axtarış paneli (JS doldurur) -->
+                            <div class="search-panel" id="searchPanel">
+                                <div class="search-col">
+                                    <h6 class="search-title" data-role="popular-title">Ən çox axtarılan</h6>
+                                    <ul class="search-list" data-role="popular"></ul>
+
+                                    <h6 class="search-title" data-role="cats-title">Kateqoriyalar</h6>
+                                    <ul class="search-list" data-role="cats"></ul>
+                                </div>
+
+                                <div class="search-col">
+                                    <h6 class="search-title">Məhsullar</h6>
+                                    <div class="search-products" data-role="products"></div>
+
+                                    <a class="search-promo" href="#">
+                                        <img src="Assets/İmage/Banner-slide/923x520-heftesonunu-dolu-dolu-yasha.webp" alt="Kampaniya">
+                                    </a>
+                                </div>
+                            </div>
                         </form>
 
                         <div class="header-icons">

@@ -3272,3 +3272,245 @@ body.dark .video-slider-wrap .slider-next {
         left: 8px;
     }
 }
+
+
+/* ==============================
+   32. AXTARIŞ PANELİ
+============================== */
+
+.search-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    z-index: 1600;
+    width: min(100%, 680px);
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    column-gap: 22px;
+    padding: 22px;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+    scrollbar-width: thin;
+}
+
+.search-panel.open {
+    display: grid;
+}
+
+.search-col {
+    min-width: 0;
+}
+
+.search-title {
+    margin: 0 0 10px;
+    color: #222;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.search-list {
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.search-list li + li {
+    border-top: 1px solid #ececec;
+}
+
+.search-list a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 2px;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.search-list a:hover {
+    color: var(--main-color);
+}
+
+.search-list .bi {
+    flex: 0 0 auto;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.search-list span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.search-products {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.search-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px 8px 8px;
+    background: #f5f5f5;
+    border-radius: 14px;
+    transition: background 0.2s;
+}
+
+.search-product:hover {
+    background: #ededed;
+}
+
+.search-product .sp-img {
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.search-product .sp-img img {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    object-fit: contain;
+}
+
+.search-product .sp-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-product .sp-info small {
+    color: #999;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.search-product .sp-info b {
+    overflow: hidden;
+    color: #222;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.search-product .sp-price {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.search-product .sp-price s {
+    color: #aaa;
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.search-product .sp-price strong {
+    color: #222;
+    font-size: 14px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.search-empty {
+    margin: 0;
+    padding: 18px 8px;
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+}
+
+.search-promo {
+    display: block;
+    height: 112px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.search-promo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.search-promo:hover img {
+    transform: scale(1.04);
+}
+
+/* Planşet və telefon: panel xananın altında, axının içində açılır */
+@media (max-width: 991px) {
+    .search-panel {
+        position: static;
+        width: 100%;
+        max-height: none;
+        margin-top: 10px;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 18px;
+        box-shadow: none;
+    }
+
+    .search-list {
+        margin-bottom: 16px;
+    }
+
+    .search-promo {
+        display: none;
+    }
+}
+
+/* Tünd tema */
+
+body.dark .search-panel {
+    background: #1e1e1e;
+}
+
+body.dark .search-title,
+body.dark .search-product .sp-info b,
+body.dark .search-product .sp-price strong {
+    color: #f1f1f1;
+}
+
+body.dark .search-list a {
+    color: #ddd;
+}
+
+body.dark .search-list a:hover {
+    color: #fff;
+}
+
+body.dark .search-list li + li {
+    border-top-color: #333;
+}
+
+body.dark .search-product {
+    background: #2a2a2a;
+}
+
+body.dark .search-product:hover {
+    background: #333;
+}
+
+body.dark .search-product .sp-img {
+    background: #3a3a3a;
+}

@@ -549,6 +549,220 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ==============================
+       6f. AXTARIŞ PANELİ (xanaya klikləyəndə açılır)
+    ============================== */
+
+    const searchBox = document.querySelector(".header-search");
+    const searchInput = searchBox ? searchBox.querySelector("input") : null;
+    const searchPanel = document.getElementById("searchPanel");
+
+    if (searchBox && searchInput && searchPanel) {
+        const popularEl = searchPanel.querySelector('[data-role="popular"]');
+        const popularTitle = searchPanel.querySelector('[data-role="popular-title"]');
+        const catsEl = searchPanel.querySelector('[data-role="cats"]');
+        const catsTitle = searchPanel.querySelector('[data-role="cats-title"]');
+        const productsEl = searchPanel.querySelector('[data-role="products"]');
+
+        // Təkliflər (istədiyiniz kimi dəyişə bilərsiniz)
+        const POPULAR = ["iPhone 17 Pro", "Samsung Galaxy", "Notbuk ASUS"];
+        const CATEGORIES = ["Smartfonlar və planşetlər", "Notbuklar", "Soyuducular", "Televizorlar", "Kondisionerlər"];
+
+        let products = null;
+
+        // Məhsulları səhifədəki kartlardan götürür (təkrar adlar atılır)
+        function getProducts() {
+            if (products) return products;
+            const seen = {};
+            products = [];
+            document.querySelectorAll(".product-card").forEach(function (card) {
+                const nameEl = card.querySelector("h5");
+                if (!nameEl) return;
+                const name = nameEl.textContent.trim();
+                if (!name || seen[name]) return;
+                seen[name] = true;
+                const priceEl = card.querySelector(".price");
+                const oldEl = card.querySelector(".old-price");
+                const imgEl = card.querySelector(".product-img img");
+                // "Simsiz qulaqlıq ..." üçün kateqoriya "Qulaqlıq" olsun
+                const words = name.split(" ");
+                let type = words[0];
+                if (type.toLowerCase() === "simsiz" && words[1]) {
+                    type = words[1].charAt(0).toUpperCase() + words[1].slice(1);
+                }
+                products.push({
+                    name: name,
+                    type: type,
+                    price: priceEl ? priceEl.textContent.trim() : "",
+                    old: oldEl ? oldEl.textContent.trim() : "",
+                    img: imgEl ? imgEl.getAttribute("src") : ""
+                });
+            });
+            return products;
+        }
+
+        // Boş sorğuda: müxtəlif növlərdən 3 məhsul
+        function featured(all) {
+            const out = [];
+            const types = {};
+            all.forEach(function (p) {
+                if (out.length < 3 && !types[p.type]) {
+                    types[p.type] = true;
+                    out.push(p);
+                }
+            });
+            return out;
+        }
+
+        function makeSuggestion(text, onPick) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = "#";
+            const icon = document.createElement("i");
+            icon.className = "bi bi-search";
+            const span = document.createElement("span");
+            span.textContent = text;
+            a.appendChild(icon);
+            a.appendChild(span);
+            a.addEventListener("click", function (e) {
+                e.preventDefault();
+                onPick(text);
+            });
+            li.appendChild(a);
+            return li;
+        }
+
+        function makeProduct(p) {
+            const a = document.createElement("a");
+            a.className = "search-product";
+            a.href = "#";
+
+            const imgWrap = document.createElement("span");
+            imgWrap.className = "sp-img";
+            if (p.img) {
+                const img = document.createElement("img");
+                img.src = p.img;
+                img.alt = "";
+                imgWrap.appendChild(img);
+            }
+
+            const info = document.createElement("span");
+            info.className = "sp-info";
+            const type = document.createElement("small");
+            type.textContent = p.type;
+            const name = document.createElement("b");
+            name.textContent = p.name;
+            info.appendChild(type);
+            info.appendChild(name);
+
+            const price = document.createElement("span");
+            price.className = "sp-price";
+            if (p.old) {
+                const old = document.createElement("s");
+                old.textContent = p.old;
+                price.appendChild(old);
+            }
+            const now = document.createElement("strong");
+            now.textContent = p.price;
+            price.appendChild(now);
+
+            a.appendChild(imgWrap);
+            a.appendChild(info);
+            a.appendChild(price);
+            a.addEventListener("click", closeSearch);
+            return a;
+        }
+
+        function pick(text) {
+            searchInput.value = text;
+            renderSearch();
+            searchInput.focus();
+        }
+
+        function renderSearch() {
+            const q = searchInput.value.trim().toLowerCase();
+            const all = getProducts();
+            const tokens = q ? q.split(/\s+/) : [];
+
+            // Sol: təkliflər
+            const pop = q
+                ? all.map(function (p) { return p.name; }).filter(function (n) {
+                    const l = n.toLowerCase();
+                    return tokens.every(function (t) { return l.indexOf(t) !== -1; });
+                }).slice(0, 3)
+                : POPULAR;
+
+            popularEl.textContent = "";
+            pop.forEach(function (t) { popularEl.appendChild(makeSuggestion(t, pick)); });
+            popularTitle.hidden = popularEl.hidden = pop.length === 0;
+            popularTitle.textContent = q ? "Təkliflər" : "Ən çox axtarılan";
+
+            // Sol: kateqoriyalar
+            const cats = q
+                ? CATEGORIES.filter(function (c) { return c.toLowerCase().indexOf(q) !== -1; })
+                : CATEGORIES.slice(0, 3);
+
+            catsEl.textContent = "";
+            cats.forEach(function (c) { catsEl.appendChild(makeSuggestion(c, closeSearch)); });
+            catsTitle.hidden = catsEl.hidden = cats.length === 0;
+
+            // Sağ: məhsullar
+            const found = q
+                ? all.filter(function (p) {
+                    const l = p.name.toLowerCase();
+                    return tokens.every(function (t) { return l.indexOf(t) !== -1; });
+                }).slice(0, 3)
+                : featured(all);
+
+            productsEl.textContent = "";
+            if (found.length === 0) {
+                const empty = document.createElement("p");
+                empty.className = "search-empty";
+                empty.textContent = "Heç nə tapılmadı";
+                productsEl.appendChild(empty);
+            } else {
+                found.forEach(function (p) { productsEl.appendChild(makeProduct(p)); });
+            }
+        }
+
+        function openSearch() {
+            renderSearch();
+            searchPanel.classList.add("open");
+            searchInput.setAttribute("aria-expanded", "true");
+        }
+
+        function closeSearch() {
+            searchPanel.classList.remove("open");
+            searchInput.setAttribute("aria-expanded", "false");
+        }
+
+        searchInput.addEventListener("focus", openSearch);
+        searchInput.addEventListener("click", function () {
+            if (!searchPanel.classList.contains("open")) openSearch();
+        });
+        searchInput.addEventListener("input", function () {
+            if (document.activeElement === searchInput) openSearch();
+        });
+        searchBox.addEventListener("submit", closeSearch);
+
+        // composedPath: siyahı yenidən qurulsa belə, klikin xananın içində olduğu bilinir
+        document.addEventListener("click", function (e) {
+            if (e.composedPath().indexOf(searchBox) === -1) closeSearch();
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key !== "Escape" || !searchPanel.classList.contains("open")) return;
+            e.preventDefault();   // type="search" Esc ilə mətni silməsin
+            closeSearch();
+        });
+
+        // Kataloq açılanda axtarış bağlansın
+        if (typeof catalogBtn !== "undefined" && catalogBtn) {
+            catalogBtn.addEventListener("click", closeSearch);
+        }
+    }
+
+
+    /* ==============================
        7. VİDEO BAŞLIQLARI (YouTube-dan avtomatik)
     ============================== */
 
