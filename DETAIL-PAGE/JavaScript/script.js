@@ -263,4 +263,91 @@ document.addEventListener("DOMContentLoaded", function () {
 
     calculate();
 
+
+    /* ==============================
+       3. AÇILAN BLOKLAR, XÜSUSİYYƏTLƏR, RƏY FORMU
+    ============================== */
+
+    // Rəylər blokunu aç / bağla
+    $$(".acc-card").forEach(function (card) {
+        const head = $(".acc-head", card);
+        if (!head) return;
+
+        head.addEventListener("click", function () {
+            const open = card.classList.toggle("open");
+            head.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+    });
+
+    // "0 rəy" linki Rəylər blokunu açır
+    const reviewsLink = $(".product-reviews-link");
+    const reviewsCard = $("#reviewsCard");
+
+    if (reviewsLink && reviewsCard) {
+        reviewsLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            reviewsCard.classList.add("open");
+            $(".acc-head", reviewsCard).setAttribute("aria-expanded", "true");
+            reviewsCard.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    }
+
+    // Xüsusiyyətlər: "Hamısını göstər"
+    const specsTable = $("#specsTable");
+    const specsToggle = $("#specsToggle");
+
+    if (specsTable && specsToggle) {
+        const label = $("span", specsToggle);
+
+        specsToggle.addEventListener("click", function () {
+            const open = specsTable.classList.toggle("show-all");
+            specsToggle.setAttribute("aria-expanded", open ? "true" : "false");
+            label.textContent = open ? "Daha az göstər" : "Hamısını göstər";
+        });
+    }
+
+    // Rəy formu: ulduzlar
+    const reviewForm = $("#reviewForm");
+    const starInput = $("#starInput");
+
+    if (reviewForm && starInput) {
+        const starButtons = $$("button", starInput);
+        let rating = 0;
+
+        function paintStars(count) {
+            starButtons.forEach(function (btn, i) {
+                const on = i < count;
+                btn.classList.toggle("on", on);
+                const icon = $("i", btn);
+                icon.classList.toggle("bi-star-fill", on);
+                icon.classList.toggle("bi-star", !on);
+            });
+        }
+
+        starButtons.forEach(function (btn) {
+            const value = parseInt(btn.dataset.value, 10);
+            btn.addEventListener("mouseenter", function () { paintStars(value); });
+            btn.addEventListener("click", function () {
+                rating = value;
+                paintStars(rating);
+            });
+        });
+
+        starInput.addEventListener("mouseleave", function () { paintStars(rating); });
+
+        reviewForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            if (rating === 0) {
+                showToast("Zəhmət olmasa ulduz seçin");
+                return;
+            }
+
+            showToast("Rəyiniz göndərildi. Təşəkkür edirik!");
+            reviewForm.reset();
+            rating = 0;
+            paintStars(0);
+        });
+    }
+
 });
