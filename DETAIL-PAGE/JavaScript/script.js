@@ -631,4 +631,132 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderCart();
 
+
+    /* ==============================
+       5. KATALOQ MEGA-MENYUSU
+    ============================== */
+
+    const catalogBtn = $("#catalogBtn");
+    const catalogPanel = $("#catalogPanel");
+
+    if (catalogBtn && catalogPanel) {
+        const catButtons = $$(".catalog-cat", catalogPanel);
+        const catSubs = $$(".catalog-sub", catalogPanel);
+        const catIcon = $("i", catalogBtn);
+
+        function openCatalog() {
+            catalogPanel.classList.add("open");
+            catalogBtn.classList.add("open");
+            catalogBtn.setAttribute("aria-expanded", "true");
+            catIcon.className = "bi bi-x-lg";
+        }
+
+        function closeCatalog() {
+            catalogPanel.classList.remove("open");
+            catalogBtn.classList.remove("open");
+            catalogBtn.setAttribute("aria-expanded", "false");
+            catIcon.className = "bi bi-grid";
+        }
+
+        function showCategory(index) {
+            catButtons.forEach(function (b) {
+                b.classList.toggle("active", b.dataset.cat === index);
+            });
+            catSubs.forEach(function (sub) {
+                sub.classList.toggle("active", sub.dataset.cat === index);
+            });
+        }
+
+        catalogBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (catalogPanel.classList.contains("open")) {
+                closeCatalog();
+            } else {
+                openCatalog();
+            }
+        });
+
+        catButtons.forEach(function (btn) {
+            btn.addEventListener("mouseenter", function () { showCategory(btn.dataset.cat); });
+            btn.addEventListener("click", function () { showCategory(btn.dataset.cat); });
+        });
+
+        // Kənara klikləyəndə və ya Esc basanda bağla
+        document.addEventListener("click", function (e) {
+            if (!catalogPanel.contains(e.target) && !catalogBtn.contains(e.target)) {
+                closeCatalog();
+            }
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") closeCatalog();
+        });
+    }
+
+
+    /* ==============================
+       6. TÜND TEMA (əsas səhifədəki seçimlə eyni)
+    ============================== */
+
+    const THEME_KEY = "be_theme";
+
+    function applyTheme(theme, animate) {
+        const root = document.documentElement;
+
+        if (animate) {
+            root.classList.add("theme-transition");
+            setTimeout(function () { root.classList.remove("theme-transition"); }, 600);
+        }
+
+        document.body.classList.toggle("dark", theme === "dark");
+
+        const themeColor = $('meta[name="theme-color"]');
+        if (themeColor) {
+            themeColor.setAttribute("content", theme === "dark" ? "#121212" : "#ffffff");
+        }
+    }
+
+    let savedTheme = "light";
+    try {
+        savedTheme = localStorage.getItem(THEME_KEY) || "light";
+    } catch (err) { /* ignore */ }
+
+    applyTheme(savedTheme, false);
+
+    // Başqa səhifədə / tabda tema dəyişəndə burada da dəyişsin
+    window.addEventListener("storage", function (e) {
+        if (e.key === THEME_KEY && e.newValue) applyTheme(e.newValue, true);
+    });
+
+
+    /* ==============================
+       7. "#" LİNKLƏR SƏHİFƏNİ YUXARI ATMASIN
+    ============================== */
+
+    document.addEventListener("click", function (e) {
+        const link = e.target.closest("a[href]");
+        if (!link) return;
+
+        const href = link.getAttribute("href");
+        if (href === "#" || href === "") e.preventDefault();
+    });
+
+    // Axtarış hələlik heç nə etmir
+    const searchForm = $(".header-search");
+
+    if (searchForm) {
+        searchForm.addEventListener("submit", function (e) { e.preventDefault(); });
+    }
+
+    // Abunə formu
+    const newsletterForm = $(".newsletter form");
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            showToast("Abunə olduğunuz üçün təşəkkürlər!");
+            newsletterForm.reset();
+        });
+    }
+
 });
