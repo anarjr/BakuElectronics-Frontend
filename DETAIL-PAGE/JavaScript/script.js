@@ -350,4 +350,285 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
+    /* ==============================
+       4. SƏBƏT, SEÇİLMİŞLƏR, MÜQAYİSƏ, PAYLAŞ
+    ============================== */
+
+    const CART_KEY = "be_cart";
+    const cartPanel = $(".cart-dropdown");
+    const cartToggle = cartPanel ? $(".icon-btn", cartPanel.parentElement) : null;
+
+    // Səbət paneli silmə düyməsinə basanda bağlanmasın
+    if (cartToggle) cartToggle.setAttribute("data-bs-auto-close", "outside");
+
+    function loadCart() {
+        try {
+            return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+        } catch (err) {
+            return [];
+        }
+    }
+
+    function saveCart(cart) {
+        try {
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        } catch (err) { /* yadda saxlamaq mümkün olmadı */ }
+    }
+
+    function renderCart() {
+        if (!cartPanel) return;
+
+        const cart = loadCart();
+        const totalQty = cart.reduce(function (sum, item) { return sum + item.qty; }, 0);
+
+        cartPanel.textContent = "";
+
+        const title = document.createElement("h6");
+        title.textContent = "Səbətim";
+        cartPanel.appendChild(title);
+
+        if (cart.length === 0) {
+            const empty = document.createElement("p");
+            empty.textContent = "Sizin hal-hazırda səbətdə məhsulunuz yoxdur.";
+            cartPanel.appendChild(empty);
+        } else {
+            const list = document.createElement("div");
+            list.className = "cart-list";
+
+            cart.forEach(function (item, index) {
+                const row = document.createElement("div");
+                row.className = "cart-item";
+
+                const img = document.createElement("img");
+                img.src = item.img;
+                img.alt = item.name;
+
+                const info = document.createElement("div");
+                info.className = "cart-item-info";
+
+                const name = document.createElement("span");
+                name.className = "cart-item-name";
+                name.textContent = item.name;
+
+                const meta = document.createElement("small");
+                meta.textContent = item.price + " × " + item.qty;
+
+                info.appendChild(name);
+                info.appendChild(meta);
+
+                const remove = document.createElement("button");
+                remove.type = "button";
+                remove.className = "cart-item-remove";
+                remove.setAttribute("aria-label", "Sil");
+                remove.innerHTML = '<i class="bi bi-x-lg"></i>';
+                remove.addEventListener("click", function () {
+                    const current = loadCart();
+                    current.splice(index, 1);
+                    saveCart(current);
+                    renderCart();
+                });
+
+                row.appendChild(img);
+                row.appendChild(info);
+                row.appendChild(remove);
+                list.appendChild(row);
+            });
+
+            cartPanel.appendChild(list);
+
+            const clear = document.createElement("button");
+            clear.type = "button";
+            clear.className = "cart-clear";
+            clear.textContent = "Səbəti təmizlə";
+            clear.addEventListener("click", function () {
+                saveCart([]);
+                renderCart();
+            });
+            cartPanel.appendChild(clear);
+        }
+
+        // İkonun üzərindəki say
+        if (cartToggle) {
+            let badge = $(".cart-count", cartToggle);
+            if (totalQty > 0) {
+                if (!badge) {
+                    badge = document.createElement("span");
+                    badge.className = "cart-count";
+                    cartToggle.appendChild(badge);
+                }
+                badge.textContent = totalQty;
+            } else if (badge) {
+                badge.remove();
+            }
+        }
+    }
+
+    function addToCart(name, price, img) {
+        const cart = loadCart();
+        const existing = cart.find(function (item) { return item.name === name; });
+
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({ name: name, price: price, img: img, qty: 1 });
+        }
+
+        saveCart(cart);
+        renderCart();
+    }
+
+    // Düyməyə qısa müddətli "əlavə olundu" vəziyyəti
+    function flashButton(button, label, text) {
+        const old = label.textContent;
+        label.textContent = text;
+        button.classList.add("added");
+        button.disabled = true;
+        setTimeout(function () {
+            label.textContent = old;
+            button.classList.remove("added");
+            button.disabled = false;
+        }, 1300);
+    }
+
+    const productName = $(".product-title").textContent.trim();
+
+    function mainProductImage() {
+        return mainImage ? mainImage.getAttribute("src") : "";
+    }
+
+    // Əsas "Səbətə əlavə et"
+    const addToCartBtn = $("#addToCart");
+
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener("click", function () {
+            addToCart(productName, fmt(PRICE) + " ₼", mainProductImage());
+            flashButton(addToCartBtn, $("span", addToCartBtn), "Əlavə olundu ✓");
+            showToast("Məhsul səbətə əlavə olundu");
+        });
+    }
+
+    // Bir kliklə al: səbətə atır və paneli açır
+    const oneClickBuy = $("#oneClickBuy");
+
+    if (oneClickBuy) {
+        oneClickBuy.addEventListener("click", function () {
+            addToCart(productName, fmt(PRICE) + " ₼", mainProductImage());
+            showToast("Sürətli sifariş: məhsul səbətə əlavə olundu");
+            if (cartToggle && window.bootstrap) {
+                bootstrap.Dropdown.getOrCreateInstance(cartToggle).show();
+            }
+        });
+    }
+
+    // Məhsulun yanında al: "+ Birlikdə al"
+    $$(".buy-item").forEach(function (item) {
+        const button = $(".btn-together", item);
+
+        button.addEventListener("click", function () {
+            const img = $(".buy-img img", item);
+            addToCart(item.dataset.name, item.dataset.price + " ₼", img ? img.getAttribute("src") : "");
+            button.classList.add("added");
+            button.textContent = "Əlavə olundu ✓";
+            button.disabled = true;
+            showToast("Aksesuar səbətə əlavə olundu");
+            setTimeout(function () {
+                button.classList.remove("added");
+                button.textContent = "+ Birlikdə al";
+                button.disabled = false;
+            }, 1300);
+        });
+    });
+
+    // Oxşar məhsul kartlarındakı düymələr
+    $$(".product-card .btn-cart").forEach(function (button) {
+        button.addEventListener("click", function () {
+            const card = button.closest(".product-card");
+            const nameEl = $("h5", card);
+            const priceEl = $(".price", card);
+            const imgEl = $(".product-img img", card);
+            if (!nameEl) return;
+
+            addToCart(
+                nameEl.textContent.trim(),
+                priceEl ? priceEl.textContent.trim() : "",
+                imgEl ? imgEl.getAttribute("src") : ""
+            );
+            flashButton(button, $("span", button), "Əlavə olundu ✓");
+        });
+    });
+
+    // Seçilmişlər (ürək)
+    function toggleHeart(btn) {
+        const on = btn.classList.toggle("active");
+        const icon = $("i", btn);
+        icon.classList.toggle("bi-heart", !on);
+        icon.classList.toggle("bi-heart-fill", on);
+        return on;
+    }
+
+    const favBtn = $("#favBtn");
+
+    if (favBtn) {
+        favBtn.addEventListener("click", function () {
+            showToast(toggleHeart(favBtn) ? "Seçilmişlərə əlavə olundu" : "Seçilmişlərdən çıxarıldı");
+        });
+    }
+
+    $$(".product-card .btn-fav").forEach(function (btn) {
+        btn.addEventListener("click", function () { toggleHeart(btn); });
+    });
+
+    // Müqayisə
+    const compareBtn = $("#compareBtn");
+
+    if (compareBtn) {
+        compareBtn.addEventListener("click", function () {
+            const on = compareBtn.classList.toggle("active");
+            showToast(on ? "Müqayisəyə əlavə olundu" : "Müqayisədən çıxarıldı");
+        });
+    }
+
+    $$(".product-card .compare-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () { btn.classList.toggle("active"); });
+    });
+
+    // Paylaş: telefonda paylaşma pəncərəsi, kompüterdə linki köçürür
+    const shareBtn = $("#shareBtn");
+
+    if (shareBtn) {
+        shareBtn.addEventListener("click", function () {
+            const url = window.location.href;
+
+            if (navigator.share) {
+                navigator.share({ title: productName, url: url }).catch(function () { /* ləğv edildi */ });
+                return;
+            }
+
+            function copied() { showToast("Link köçürüldü"); }
+
+            function fallbackCopy() {
+                const area = document.createElement("textarea");
+                area.value = url;
+                document.body.appendChild(area);
+                area.select();
+                try {
+                    document.execCommand("copy");
+                    copied();
+                } catch (err) {
+                    showToast("Linki köçürmək alınmadı");
+                }
+                area.remove();
+            }
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(url).then(copied).catch(fallbackCopy);
+            } else {
+                fallbackCopy();
+            }
+        });
+    }
+
+    renderCart();
+
 });
