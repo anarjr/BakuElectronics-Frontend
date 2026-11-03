@@ -3520,3 +3520,129 @@ body.dark .similar-track .compare-btn {
 .similar-head {
     margin-bottom: 18px;
 }
+
+
+/* ==============================
+   23. HEADER / NAV (real ölçülər)
+============================== */
+
+.main-navigation a.dropdown-toggle::after,
+.main-navigation .lang-toggle::after {
+    content: "\F282";
+    font-family: "bootstrap-icons";
+    margin-left: 5px;
+    border: 0;
+    font-size: 11px;
+    font-weight: 400;
+    vertical-align: -1px;
+}
+
+header {
+    box-shadow: none;
+}
+
+.breadcrumbs {
+    font-size: 11.5px;
+}
+
+.breadcrumbs span {
+    font-weight: 700;
+}
+
+.product-title {
+    font-size: 31.5px;
+}
+
+.product-code {
+    color: #222;
+    font-size: 14px;
+}
+
+.price-current {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.quick-row {
+    margin-top: 20px;
+}
+
+body.dark .product-code {
+    color: #f1f1f1;
+}
+
+@media (min-width: 992px) {
+
+    .main-navigation .nav {
+        height: 45px;
+        gap: 20px;
+        padding: 0 21px 0 14px;
+        border-radius: 24px;
+    }
+
+    .main-navigation .nav-links {
+        gap: 11px;
+    }
+
+    .main-navigation .nav-tools {
+        gap: 20px;
+    }
+
+    .main-navigation a {
+        font-size: 14px;
+    }
+
+    .main-navigation .nav-links a:not(.dropdown-item) {
+        padding: 5px 12px;
+    }
+
+    .main-navigation .theme-toggle {
+        width: 50px;
+        height: 28px;
+        border-radius: 16px;
+    }
+
+    .main-navigation .theme-toggle .theme-knob {
+        top: 3px;
+        left: 3px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .main-navigation .theme-toggle .bi {
+        right: 8px;
+        font-size: 12px;
+    }
+
+    body.dark .main-navigation .theme-toggle {
+        background: #161616;
+    }
+
+    body.dark .main-navigation .theme-toggle .theme-knob {
+        left: 25px;
+        background: #fff;
+    }
+
+    body.dark .main-navigation .theme-toggle .bi {
+        left: 8px;
+        color: #ddd;
+    }
+
+    header .header-actions {
+        gap: 15px;
+    }
+
+    header .btn-catalog {
+        gap: 6px;
+        padding: 0 20px;
+        font-size: 17.5px;
+    }
+
+    header .header-icons {
+        gap: 8px;
+    }
+
+    .detail-row {
+        --bs-gutter-x: 31px;
+    }
+}
