@@ -1948,32 +1948,44 @@ body.dark .catalog-group li a {
    11. FOOTER
 ============================== */
 
-
 footer {
-    margin-top: 70px;
-    padding: 55px 20px 25px;
+    margin-top: 90px;
+    padding: 46px 0 28px;
     background: #f4f4f4;
     color: #222;
 }
 
-footer .container {
+footer .footer-container {
     width: var(--page-w);
     max-width: 1800px;
+    margin: 0 auto;
     padding: 0;
 }
 
+/* Solda abunə, sağda 3 sütun (real saytdakı kimi) */
+
+footer .footer-grid {
+    display: grid;
+    grid-template-columns: 41.3% 20.4% 20.4% 20.4%;
+    align-items: start;
+}
+
 footer h5 {
-    margin-bottom: 20px;
-    color: #222;
-    font-size: 16px;
+    margin: 0 0 16px;
+    color: #111;
+    font-size: 15px;
     font-weight: 700;
+}
+
+footer .footer-subscribe h5 {
+    margin-bottom: 22px;
+    font-size: 17px;
 }
 
 footer p,
 footer a {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.9;
+    color: #444;
+    font-size: 16px;
 }
 
 footer a:hover {
@@ -1981,123 +1993,97 @@ footer a:hover {
 }
 
 footer ul {
-    list-style: none;
+    margin: 0;
     padding: 0;
-    margin: 0;
+    list-style: none;
 }
 
-footer li {
-    margin-bottom: 8px;
+footer ul li {
+    margin: 0 0 7px;
+    line-height: 22px;
 }
 
-/* Abunə bölməsi */
+/* Abunə forması */
 
-footer .newsletter {
+footer .subscribe-form {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding-bottom: 35px;
-    margin-bottom: 35px;
-    border-bottom: 1px solid #ddd;
-}
-
-footer .newsletter h5 {
-    margin: 0;
-    color: #222;
-    font-size: 20px;
-}
-
-footer .newsletter form {
-    display: flex;
-    flex: 1 1 320px;
-    max-width: 480px;
     gap: 10px;
+    max-width: 430px;
 }
 
-footer .newsletter input {
+footer .subscribe-form input {
+    flex: 1 1 260px;
+    min-width: 0;
+    height: 50px;
+    padding: 0 18px;
     background: #fff;
-    border: 1px solid #ddd;
+    border: 0;
     border-radius: 12px;
     color: #222;
     font-size: 14px;
+    outline: none;
 }
 
-footer .newsletter input::placeholder {
+footer .subscribe-form input::placeholder {
     color: #999;
 }
 
-footer .newsletter input:focus {
-    background: #fff;
-    border-color: var(--main-color);
-    color: #222;
-    box-shadow: none;
+footer .subscribe-form input:focus {
+    box-shadow: 0 0 0 2px rgba(227, 6, 19, 0.25);
 }
 
-footer .newsletter .btn {
+footer .subscribe-form button {
+    flex: 0 0 auto;
+    height: 50px;
+    padding: 0 30px;
     background: var(--main-color);
-    border-color: var(--main-color);
+    border: 0;
     border-radius: 12px;
     color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background 0.2s;
 }
 
-/* Sosial ikonlar + zəng mərkəzi (bir sətirdə) */
+footer .subscribe-form button:hover {
+    background: #c70511;
+}
+
+/* Sosial şəbəkələr */
 
 footer .social-title {
-    margin: 18px 0 0;
-    color: #222;
-    font-size: 16px;
+    margin: 34px 0 14px;
+    color: #111;
+    font-size: 15px;
     font-weight: 700;
-}
-
-footer .social-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 14px 60px;
-    margin-top: 14px;
 }
 
 footer .social-links {
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 14px 22px;
 }
 
 footer .social-links a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
-    padding: 0;
-    background: none;
-    border: 0;
-    border-radius: 0;
+    color: #333;
+    font-size: 23px;
     line-height: 1;
+    transition: color 0.2s, transform 0.2s;
 }
 
-footer .social-links a img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-    filter: brightness(0) opacity(0.5);
-    transition: 0.3s;
-}
-
-footer .social-links a:hover img {
-    filter: brightness(0) opacity(1);
+footer .social-links a:hover {
+    color: var(--main-color);
+    transform: translateY(-2px);
 }
 
 footer .footer-phone {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    margin-top: 18px;
     color: #222;
     font-size: 34px;
     font-weight: 700;
@@ -2105,39 +2091,41 @@ footer .footer-phone {
 }
 
 footer .footer-phone .bi {
-    font-size: 26px;
+    font-size: 30px;
 }
 
-footer .footer-phone:hover {
-    color: var(--main-color);
-}
-
-footer .app-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-footer .app-links img {
-    width: 130px;
-    height: auto;
-}
+/* Aşağı zolaq */
 
 footer .footer-bottom {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
-    margin-top: 35px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
+    flex-wrap: wrap;
+    gap: 16px 20px;
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid #e0e0e0;
 }
 
 footer .footer-bottom p {
     margin: 0;
+    font-size: 14px;
 }
 
+footer .footer-bottom > a {
+    font-size: 14px;
+}
+
+footer .app-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+footer .app-links img {
+    width: auto;
+    height: 48px;
+}
 
 /* ==============================
    12. ÇAT DÜYMƏSİ
@@ -2515,7 +2503,7 @@ body.dark footer h5,
 body.dark footer strong,
 body.dark footer .social-title,
 body.dark footer .footer-phone,
-body.dark footer .newsletter h5 {
+body.dark footer .footer-subscribe h5 {
     color: #fff;
 }
 
@@ -2529,27 +2517,29 @@ body.dark footer .footer-phone:hover {
     color: #fff;
 }
 
-body.dark footer .newsletter,
 body.dark footer .footer-bottom {
     border-color: #333;
 }
 
-body.dark footer .newsletter input {
+body.dark footer .subscribe-form input {
     background: #262626;
-    border-color: #3a3a3a;
     color: #fff;
 }
 
-body.dark footer .newsletter input::placeholder {
+body.dark footer .subscribe-form input::placeholder {
     color: #888;
 }
 
-body.dark footer .social-links a img {
-    filter: brightness(0) invert(1) opacity(0.6);
+body.dark footer .subscribe-form button {
+    color: #fff;
 }
 
-body.dark footer .social-links a:hover img {
-    filter: brightness(0) invert(1);
+body.dark footer .social-links a {
+    color: #aaa;
+}
+
+body.dark footer .social-links a:hover {
+    color: #fff;
 }
 
 /* Tema keçidi yumşaq olsun */
@@ -2658,7 +2648,21 @@ html.theme-transition *::after {
     /* Footer */
 
     footer {
-        padding: 45px 15px 25px;
+        margin-top: 60px;
+        padding: 40px 0 25px;
+    }
+
+    footer .footer-container {
+        padding: 0 15px;
+    }
+
+    footer .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px 20px;
+    }
+
+    footer .footer-subscribe {
+        grid-column: 1 / -1;
     }
 
     .chat-fab {
@@ -2892,47 +2896,55 @@ html.theme-transition *::after {
     /* Footer */
 
     footer {
-        padding: 35px 15px 20px;
         margin-top: 45px;
+        padding: 32px 0 20px;
     }
 
-    footer h5 {
-        font-size: 14px;
+    footer .footer-container {
+        padding: 0 12px;
+    }
+
+    footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 16px;
+    }
+
+    footer .footer-subscribe h5 {
+        font-size: 16px;
     }
 
     footer p,
     footer a {
-        font-size: 12px;
+        font-size: 14px;
     }
 
-    footer .newsletter h5 {
-        font-size: 17px;
-    }
-
-    footer .newsletter form {
-        flex-basis: 100%;
+    footer .subscribe-form {
         max-width: none;
+    }
+
+    footer .subscribe-form button {
+        padding: 0 20px;
+    }
+
+    footer .social-links {
+        gap: 14px 20px;
+    }
+
+    footer .social-links a {
+        font-size: 22px;
     }
 
     footer .footer-phone {
         font-size: 28px;
     }
 
-    footer .social-links {
-        gap: 18px;
-    }
-
-    footer .social-links a img {
-        width: 20px;
-        height: 20px;
-    }
-
     footer .app-links img {
-        width: 115px;
+        height: 42px;
     }
 
     footer .footer-bottom {
         flex-direction: column;
+        margin-top: 36px;
         text-align: center;
     }
 

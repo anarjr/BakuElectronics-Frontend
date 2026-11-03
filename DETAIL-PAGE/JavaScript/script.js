@@ -1,3 +1,4 @@
+"use strict"
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ==============================
@@ -768,7 +769,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Abunə formu
-    const newsletterForm = $(".newsletter form");
+    const newsletterForm = $(".subscribe-form");
 
     if (newsletterForm) {
         newsletterForm.addEventListener("submit", function (e) {
