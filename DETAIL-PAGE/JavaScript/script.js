@@ -1,4 +1,3 @@
-"use strict"
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ==============================
@@ -781,15 +780,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ==============================
-       8. OXŞAR MƏHSULLAR KARUSELİ
+       8. KARUSELLƏR (oxşar məhsullar + son baxdıqlarınız)
     ============================== */
 
-    const simTrack = $("#similarTrack");
-    const simViewport = $(".similar-viewport");
-    const simPrev = $(".sim-prev");
-    const simNext = $(".sim-next");
+    $$(".similar").forEach(function (section) {
+        const simTrack = $(".similar-track", section);
+        const simViewport = $(".similar-viewport", section);
+        const simPrev = $(".sim-prev", section);
+        const simNext = $(".sim-next", section);
 
-    if (simTrack && simViewport) {
+        if (!simTrack || !simViewport) return;
+
         const cards = $$(".product-card", simTrack);
         let simIndex = 0;
         let simOffset = 0;   // sürüşdürmə zamanı əlavə yerdəyişmə
@@ -890,6 +891,52 @@ document.addEventListener("DOMContentLoaded", function () {
         }, true);
 
         renderCarousel();
+    });
+
+
+    /* ==============================
+       9. AXTARIŞ PANELİ
+    ============================== */
+
+    const searchInput = $("#headerSearch input");
+    const searchPanel = $("#searchPanel");
+
+    if (searchInput && searchPanel) {
+        const searchBox = $("#headerSearch");
+
+        function openSearch() {
+            if (catalogPanel && catalogPanel.classList.contains("open")) {
+                catalogBtn.click();
+            }
+            searchPanel.classList.add("open");
+        }
+
+        function closeSearch() {
+            searchPanel.classList.remove("open");
+        }
+
+        searchInput.addEventListener("focus", openSearch);
+        searchInput.addEventListener("click", openSearch);
+
+        // Yazdıqca "Ən çox axtarılan" və "Kateqoriyalar" siyahısı süzülür
+        searchInput.addEventListener("input", function () {
+            const q = searchInput.value.trim().toLowerCase();
+            $$(".search-list li", searchPanel).forEach(function (li) {
+                li.style.display = !q || li.textContent.toLowerCase().includes(q) ? "" : "none";
+            });
+        });
+
+        if (catalogBtn) {
+            catalogBtn.addEventListener("click", closeSearch);
+        }
+
+        document.addEventListener("click", function (e) {
+            if (!searchPanel.contains(e.target) && !searchBox.contains(e.target)) closeSearch();
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") closeSearch();
+        });
     }
 
 });

@@ -103,7 +103,7 @@
                             <span>Kataloq</span>
                         </button>
 
-                        <form class="header-search">
+                        <form class="header-search" id="headerSearch" autocomplete="off">
                             <input class="form-control" type="search" placeholder="Məhsul axtar...">
                             <button type="submit" aria-label="Axtar">
                                 <i class="bi bi-search"></i>
@@ -141,6 +141,51 @@
                 </div>
 
             </nav>
+
+
+            <!-- Axtarış paneli -->
+            <div class="search-panel" id="searchPanel">
+                <div class="search-left">
+                    <h6>Ən çox axtarılan</h6>
+                    <ul class="search-list" id="searchTop">
+                        <li><a href="#"><i class="bi bi-search"></i><span>Smartfon Samsung Galaxy S26 FE 8GB/256GB</span></a></li>
+                        <li><a href="#"><i class="bi bi-search"></i><span>Smartfon Apple iPhone 17 Pro 256GB</span></a></li>
+                        <li><a href="#"><i class="bi bi-search"></i><span>Saç ütüsü Philips BHS510/00 with ThermoProtect</span></a></li>
+                    </ul>
+                    <h6>Kateqoriyalar</h6>
+                    <ul class="search-list" id="searchCats">
+                        <li><a href="#"><i class="bi bi-search"></i><span>Smartfonlar və planşetlər</span></a></li>
+                        <li><a href="#"><i class="bi bi-search"></i><span>Notbuklar</span></a></li>
+                        <li><a href="#"><i class="bi bi-search"></i><span>Soyuducular</span></a></li>
+                    </ul>
+                </div>
+                <div class="search-right">
+                    <div class="search-products">
+                        <h6>Məhsullar</h6>
+                        <a href="#" class="search-item">
+                            <span class="search-thumb"><img src="assets/image/other-product.image/Samsung_Galaxy_A57_8GB128GB_Gray_A576.webp" alt="" draggable="false"></span>
+                            <span class="search-info"><small>Smartfonlar</small><b>Smartfon Samsung Galaxy A57...</b></span>
+                            <span class="search-price"><s>1459.99 ₼</s><strong>1319.99 ₼</strong></span>
+                        </a>
+                        <a href="#" class="search-item">
+                            <span class="search-thumb"><img src="assets/image/other-product.image/simsiz-qulaqlq-apple-airpods-4-with-active-noise-cancellation-mxp93zea_1.webp" alt="" draggable="false"></span>
+                            <span class="search-info"><small>Qulaqlıqlar</small><b>Simsiz qulaqlıq Apple AirPods 4...</b></span>
+                            <span class="search-price"><s>559.99 ₼</s><strong>409.99 ₼</strong></span>
+                        </a>
+                        <a href="#" class="search-item">
+                            <span class="search-thumb"><img src="assets/image/other-product.image/Soyuducu_Xiaomi_Mijia_Cross_Door_MRC50ESSMPAEU_1.webp" alt="" draggable="false"></span>
+                            <span class="search-info"><small>Soyuducular</small><b>Soyuducu Xiaomi Mijia...</b></span>
+                            <span class="search-price"><s>1399.99 ₼</s><strong>1199.99 ₼</strong></span>
+                        </a>
+                    </div>
+                    <a href="#" class="search-banner">
+                        <span class="sb-small">Nağd alışda</span>
+                        <span class="sb-big">70%<em>-dək</em></span>
+                        <span class="sb-text">endirim</span>
+                        <span class="sb-right"><b>18</b><i>ayadək faizsiz<br>komissiyasız bölmə imkanı</i></span>
+                    </a>
+                </div>
+            </div>
 
             <!-- Kataloq mega-menyusu -->
             <div class="catalog-panel" id="catalogPanel">
@@ -760,7 +805,7 @@
                                 <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
                             </div>
                             <h5>Smart saat Xiaomi Redmi Watch 6 Active Midnight Black (BHR09CZGL)</h5>
-                            <div class="product-prices"><div class="price-main"><s class="old-price">119.99 ₼</s><strong class="price">99.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>5.86 ₼</strong></div></div>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">119.99 ₼</s><strong class="price">99.99 ₼</strong></div></div>
                             <div class="product-actions">
                                 <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
                                 <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
@@ -777,7 +822,7 @@
                                 <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
                             </div>
                             <h5>Power Bank Xiaomi PB1033MI 33W, 1000 mAh Integrated, Blue (BHR9341GL)</h5>
-                            <div class="product-prices"><div class="price-main"><s class="old-price">64.99 ₼</s><strong class="price">49.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>2.78 ₼</strong></div></div>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">64.99 ₼</s><strong class="price">49.99 ₼</strong></div></div>
                             <div class="product-actions">
                                 <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
                                 <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
@@ -794,7 +839,7 @@
                                 <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
                             </div>
                             <h5>Adapter Xiaomi 33W Nano USB-C EU (BHR087LEU)</h5>
-                            <div class="product-prices"><div class="price-main"><s class="old-price">29.99 ₼</s><strong class="price">26.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>1.5 ₼</strong></div></div>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">29.99 ₼</s><strong class="price">26.99 ₼</strong></div></div>
                             <div class="product-actions">
                                 <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
                                 <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
@@ -811,7 +856,7 @@
                                 <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
                             </div>
                             <h5>Soyuducu Xiaomi Mijia Cross Door MRC50ESSMPAEU</h5>
-                            <div class="product-prices"><div class="price-main"><s class="old-price">1999.99 ₼</s><strong class="price">1799.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>105.53 ₼</strong></div></div>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">1999.99 ₼</s><strong class="price">1799.99 ₼</strong></div></div>
                             <div class="product-actions">
                                 <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
                                 <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
@@ -828,7 +873,7 @@
                                 <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
                             </div>
                             <h5>Smart saat REDMI Watch 6 Lite, Black (BHR09CWGL)</h5>
-                            <div class="product-prices"><div class="price-main"><s class="old-price">169.99 ₼</s><strong class="price">149.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>9.44 ₼</strong></div></div>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">169.99 ₼</s><strong class="price">149.99 ₼</strong></div></div>
                             <div class="product-actions">
                                 <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
                                 <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
@@ -845,7 +890,7 @@
                                 <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
                             </div>
                             <h5>Smart saat REDMI Watch 6 Lite, Steel Gray (BHR09CVGL)</h5>
-                            <div class="product-prices"><div class="price-main"><s class="old-price">169.99 ₼</s><strong class="price">149.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>9.44 ₼</strong></div></div>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">169.99 ₼</s><strong class="price">149.99 ₼</strong></div></div>
                             <div class="product-actions">
                                 <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
                                 <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
@@ -862,7 +907,7 @@
                                 <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
                             </div>
                             <h5>Smart saat Xiaomi Smart Band 11 Active, Black (BHR09AEGL)</h5>
-                            <div class="product-prices"><div class="price-main"><s class="old-price">99.99 ₼</s><strong class="price">69.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>5.56 ₼</strong></div></div>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">99.99 ₼</s><strong class="price">69.99 ₼</strong></div></div>
                             <div class="product-actions">
                                 <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
                                 <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
@@ -879,7 +924,7 @@
                                 <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
                             </div>
                             <h5>Planşet Xiaomi Redmi Pad 2 8GB/256GB Wi-Fi Purple</h5>
-                            <div class="product-prices"><div class="price-main"><s class="old-price">629.99 ₼</s><strong class="price">569.99 ₼</strong></div><div class="price-installment"><span>18 ay</span><strong>35 ₼</strong></div></div>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">629.99 ₼</s><strong class="price">569.99 ₼</strong></div></div>
                             <div class="product-actions">
                                 <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
                                 <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
@@ -939,6 +984,129 @@
                     </div>
                 </div>
             </section>
+
+            <!-- ===== Son baxdıqlarınız ===== -->
+
+            <section class="similar recent" id="recent">
+                <div class="similar-head">
+                    <div>
+                        <span class="section-label">Son baxdıqlarınız</span>
+                        <h2 class="section-title">Bu məhsullara yenidən göz at!</h2>
+                    </div>
+                    <div class="similar-nav">
+                        <button class="sim-arrow sim-prev" type="button" aria-label="Əvvəlki"><i class="bi bi-chevron-left"></i></button>
+                        <button class="sim-arrow sim-next" type="button" aria-label="Növbəti"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="similar-viewport">
+                    <div class="similar-track" id="recentTrack">
+                        <div class="product-card">
+                            <div class="product-img">
+                                
+                                <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                                <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Crect x='20' y='20' width='160' height='100' rx='12' fill='%23e30613'/%3E%3Ctext x='100' y='78' font-family='Arial' font-size='34' font-weight='700' fill='%23fff' text-anchor='middle'%3E1000%3C/text%3E%3Ctext x='100' y='102' font-family='Arial' font-size='11' fill='%23fff' text-anchor='middle'%3EHədiyyə kartı%3C/text%3E%3C/svg%3E" alt="Baku Electronics Hədiyyə kartı 1000 AZN" loading="lazy" draggable="false">
+                            </div>
+                            <div class="product-rating">
+                                <span><i class="bi bi-star-fill"></i> 0</span>
+                                <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                            </div>
+                            <h5>Baku Electronics Hədiyyə kartı 1000 AZN</h5>
+                            <div class="product-prices"><div class="price-main"><strong class="price">1000 ₼</strong></div></div>
+                            <div class="product-actions">
+                                <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                                <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <span class="discount-badge">- 150 ₼</span>
+                                <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                                <img src="assets/image/other-product.image/simsiz-qulaqlq-apple-airpods-4-with-active-noise-cancellation-mxp93zea_1.webp" alt="Simsiz qulaqlıq Apple AirPods 4 with Active Noise Cancellation (MXP93ZE/A)" loading="lazy" draggable="false">
+                            </div>
+                            <div class="product-rating">
+                                <span><i class="bi bi-star-fill"></i> 0</span>
+                                <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                            </div>
+                            <h5>Simsiz qulaqlıq Apple AirPods 4 with Active Noise Cancellation (MXP93ZE/A)</h5>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">559.99 ₼</s><strong class="price">409.99 ₼</strong></div></div>
+                            <div class="product-actions">
+                                <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                                <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <span class="discount-badge">- 140 ₼</span>
+                                <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                                <img src="assets/image/other-product.image/Samsung_Galaxy_A57_8GB128GB_Gray_A576.webp" alt="Smartfon Samsung Galaxy A57 8GB/256GB Gray (A576)" loading="lazy" draggable="false">
+                            </div>
+                            <div class="product-rating">
+                                <span><i class="bi bi-star-fill"></i> 0</span>
+                                <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                            </div>
+                            <h5>Smartfon Samsung Galaxy A57 8GB/256GB Gray (A576)</h5>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">1459.99 ₼</s><strong class="price">1319.99 ₼</strong></div></div>
+                            <div class="product-actions">
+                                <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                                <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <span class="discount-badge">- 50 ₼</span>
+                                <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                                <img src="assets/image/other-product.image/Planşet_Redmi_Pad_2_8GB256GB_Purple_1.webp" alt="Planşet Xiaomi Redmi Pad 2 8GB/256GB Wi-Fi Purple" loading="lazy" draggable="false">
+                            </div>
+                            <div class="product-rating">
+                                <span><i class="bi bi-star-fill"></i> 0</span>
+                                <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                            </div>
+                            <h5>Planşet Xiaomi Redmi Pad 2 8GB/256GB Wi-Fi Purple</h5>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">449.99 ₼</s><strong class="price">399.99 ₼</strong></div></div>
+                            <div class="product-actions">
+                                <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                                <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <span class="discount-badge">- 200 ₼</span>
+                                <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                                <img src="assets/image/other-product.image/Soyuducu_Xiaomi_Mijia_Cross_Door_MRC50ESSMPAEU_1.webp" alt="Soyuducu Xiaomi Mijia Cross Door MRC50ESSMPAEU" loading="lazy" draggable="false">
+                            </div>
+                            <div class="product-rating">
+                                <span><i class="bi bi-star-fill"></i> 0</span>
+                                <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                            </div>
+                            <h5>Soyuducu Xiaomi Mijia Cross Door MRC50ESSMPAEU</h5>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">1399.99 ₼</s><strong class="price">1199.99 ₼</strong></div></div>
+                            <div class="product-actions">
+                                <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                                <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <span class="discount-badge">- 10 ₼</span>
+                                <button class="compare-btn" type="button" aria-label="Müqayisə et"><i class="bi bi-arrow-left-right"></i></button>
+                                <img src="assets/image/other-product.image/Smart_saat_REDMI_Watch_6_Lite_Black_BHR09CWGL_3.webp" alt="Smart saat REDMI Watch 6 Lite, Black (BHR09CWGL)" loading="lazy" draggable="false">
+                            </div>
+                            <div class="product-rating">
+                                <span><i class="bi bi-star-fill"></i> 0</span>
+                                <span class="rating-count"><i class="bi bi-chat-dots-fill"></i> 0 rəy</span>
+                            </div>
+                            <h5>Smart saat REDMI Watch 6 Lite, Black (BHR09CWGL)</h5>
+                            <div class="product-prices"><div class="price-main"><s class="old-price">99.99 ₼</s><strong class="price">89.99 ₼</strong></div></div>
+                            <div class="product-actions">
+                                <button class="btn-cart" type="button"><i class="bi bi-cart3"></i><span>Səbətə əlavə et</span></button>
+                                <button class="btn-fav" type="button" aria-label="Seçilmişlərə əlavə et"><i class="bi bi-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
         </div>
 
