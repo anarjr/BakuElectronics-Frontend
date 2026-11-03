@@ -1950,7 +1950,7 @@ body.dark .catalog-group li a {
 
 footer {
     margin-top: 90px;
-    padding: 46px 0 28px;
+    padding: 46px 0 32px;
     background: #f4f4f4;
     color: #222;
 }
@@ -1962,7 +1962,7 @@ footer .footer-container {
     padding: 0;
 }
 
-/* Solda abunə, sağda 3 sütun (real saytdakı kimi) */
+/* Yuxarı sıra: solda abunə, sağda 3 sütun (real saytdakı kimi) */
 
 footer .footer-grid {
     display: grid;
@@ -1979,17 +1979,6 @@ footer h5 {
 
 footer .footer-subscribe h5 {
     margin-bottom: 22px;
-    font-size: 17px;
-}
-
-footer p,
-footer a {
-    color: #444;
-    font-size: 16px;
-}
-
-footer a:hover {
-    color: var(--main-color);
 }
 
 footer ul {
@@ -2001,6 +1990,15 @@ footer ul {
 footer ul li {
     margin: 0 0 7px;
     line-height: 22px;
+}
+
+footer ul a {
+    color: #444;
+    font-size: 15px;
+}
+
+footer a:hover {
+    color: var(--main-color);
 }
 
 /* Abunə forması */
@@ -2029,14 +2027,14 @@ footer .subscribe-form input::placeholder {
 }
 
 footer .subscribe-form input:focus {
-    box-shadow: 0 0 0 2px rgba(227, 6, 19, 0.25);
+    box-shadow: 0 0 0 2px rgba(236, 34, 39, 0.25);
 }
 
 footer .subscribe-form button {
     flex: 0 0 auto;
     height: 50px;
-    padding: 0 30px;
-    background: var(--main-color);
+    padding: 0 24px;
+    background: #ec2227;
     border: 0;
     border-radius: 12px;
     color: #fff;
@@ -2046,30 +2044,46 @@ footer .subscribe-form button {
 }
 
 footer .subscribe-form button:hover {
-    background: #c70511;
+    background: #c8151a;
 }
 
-/* Sosial şəbəkələr */
+/* Orta sıra: sosial şəbəkələr + telefon (solda), tətbiqlər (sağda) */
+
+footer .footer-middle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 4px;
+}
 
 footer .social-title {
-    margin: 34px 0 14px;
+    margin: 0 0 20px;
     color: #111;
     font-size: 15px;
     font-weight: 700;
 }
 
+footer .social-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 77px;
+}
+
 footer .social-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px 22px;
+    gap: 12px 19px;
 }
 
 footer .social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #333;
-    font-size: 23px;
+    color: #777;
+    font-size: 19px;
     line-height: 1;
     transition: color 0.2s, transform 0.2s;
 }
@@ -2082,16 +2096,26 @@ footer .social-links a:hover {
 footer .footer-phone {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 18px;
+    gap: 8px;
     color: #222;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 700;
     line-height: 1;
 }
 
 footer .footer-phone .bi {
-    font-size: 30px;
+    font-size: 26px;
+}
+
+footer .app-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+footer .app-links img {
+    width: auto;
+    height: 38px;
 }
 
 /* Aşağı zolaq */
@@ -2101,30 +2125,26 @@ footer .footer-bottom {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px 20px;
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid #e0e0e0;
+    gap: 12px 20px;
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid #dcdcdc;
 }
 
 footer .footer-bottom p {
     margin: 0;
-    font-size: 14px;
+    color: #111;
+    font-size: 16px;
 }
 
-footer .footer-bottom > a {
-    font-size: 14px;
+footer .footer-bottom strong {
+    font-weight: 700;
 }
 
-footer .app-links {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-footer .app-links img {
-    width: auto;
-    height: 48px;
+footer .privacy-link {
+    color: #111;
+    font-size: 16px;
+    text-decoration: underline;
 }
 
 /* ==============================
@@ -2508,8 +2528,14 @@ body.dark footer .footer-subscribe h5 {
 }
 
 body.dark footer p,
-body.dark footer a {
+body.dark footer a,
+body.dark footer ul a {
     color: #aaa;
+}
+
+body.dark footer .footer-bottom p,
+body.dark footer .privacy-link {
+    color: #ddd;
 }
 
 body.dark footer a:hover,
@@ -2535,7 +2561,7 @@ body.dark footer .subscribe-form button {
 }
 
 body.dark footer .social-links a {
-    color: #aaa;
+    color: #888;
 }
 
 body.dark footer .social-links a:hover {
@@ -2913,8 +2939,7 @@ html.theme-transition *::after {
         font-size: 16px;
     }
 
-    footer p,
-    footer a {
+    footer ul a {
         font-size: 14px;
     }
 
@@ -2938,14 +2963,30 @@ html.theme-transition *::after {
         font-size: 28px;
     }
 
+    footer .footer-middle {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 26px;
+    }
+
+    footer .social-row {
+        gap: 14px 40px;
+    }
+
     footer .app-links img {
-        height: 42px;
+        height: 36px;
     }
 
     footer .footer-bottom {
         flex-direction: column;
-        margin-top: 36px;
-        text-align: center;
+        align-items: flex-start;
+        margin-top: 26px;
+        padding-top: 22px;
+    }
+
+    footer .footer-bottom p,
+    footer .privacy-link {
+        font-size: 14px;
     }
 
     .chat-fab {
