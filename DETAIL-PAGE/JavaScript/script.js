@@ -164,4 +164,103 @@ document.addEventListener("DOMContentLoaded", function () {
         }, true);
     }
 
+
+    /* ==============================
+       2. NİSYƏ KALKULYATORU
+    ============================== */
+
+    const priceCurrent = $("#priceCurrent");
+    const PRICE = priceCurrent ? parseFloat(priceCurrent.textContent) : 669.99;
+
+    const termButtons = $$(".term-btn");
+    const bankTabs = $$(".bank-tab");
+    const monthlyPay = $("#monthlyPay");
+    const totalPrice = $("#totalPrice");
+    const quickMonthly = $("#quickMonthly");
+    const downInput = $("#downPayment");
+    const downMinus = $("#downMinus");
+    const downPlus = $("#downPlus");
+
+    const DOWN_STEP = 50;
+    let months = 18;
+
+    // 12 aya qədər faizsizdir. Sonrakı aylar üçün artım nisbəti
+    // (18 ay = 707.99 ₼ yekun qiymət, saytdakı kimi)
+    function markupFor(m) {
+        if (m <= 12) return 0;
+        return (m - 12) * 0.0094517;
+    }
+
+    function readDown() {
+        let value = parseFloat(downInput.value);
+        if (isNaN(value) || value < 0) value = 0;
+        const max = Math.floor(PRICE) - 1;
+        if (value > max) value = max;
+        return value;
+    }
+
+    function moneyHtml(value) {
+        return fmt(value) + ' <i class="azn">₼</i>';
+    }
+
+    function calculate() {
+        const down = readDown();
+        const financed = PRICE - down;
+        const withMarkup = financed * (1 + markupFor(months));
+        const monthly = withMarkup / months;
+        const total = down + withMarkup;
+
+        monthlyPay.innerHTML = moneyHtml(monthly);
+        totalPrice.innerHTML = moneyHtml(total);
+        if (quickMonthly) quickMonthly.textContent = fmt(monthly) + " ₼ / " + months + " ay";
+
+        downMinus.disabled = down <= 0;
+        downPlus.disabled = down + DOWN_STEP > Math.floor(PRICE) - 1;
+    }
+
+    termButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            months = parseInt(btn.dataset.months, 10);
+            termButtons.forEach(function (b) { b.classList.toggle("active", b === btn); });
+            calculate();
+        });
+    });
+
+    bankTabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            bankTabs.forEach(function (t) { t.classList.toggle("active", t === tab); });
+        });
+    });
+
+    downMinus.addEventListener("click", function () {
+        downInput.value = Math.max(0, readDown() - DOWN_STEP);
+        calculate();
+    });
+
+    downPlus.addEventListener("click", function () {
+        downInput.value = Math.min(Math.floor(PRICE) - 1, readDown() + DOWN_STEP);
+        calculate();
+    });
+
+    downInput.addEventListener("input", calculate);
+    downInput.addEventListener("change", function () {
+        downInput.value = readDown();
+        calculate();
+    });
+
+    // "Hissə-hissə ödə" kartı kalkulyatora aparır
+    const installmentJump = $("#installmentJump");
+    const installmentBox = $("#installment");
+
+    if (installmentJump && installmentBox) {
+        installmentJump.addEventListener("click", function () {
+            installmentBox.scrollIntoView({ behavior: "smooth", block: "center" });
+            installmentBox.classList.remove("pulse");
+            void installmentBox.offsetWidth;
+            installmentBox.classList.add("pulse");
+        });
+    }
+
+    calculate();
+
 });
