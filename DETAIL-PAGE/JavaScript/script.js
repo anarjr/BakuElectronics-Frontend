@@ -1,6 +1,3 @@
-"use strict"
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ==============================
@@ -703,6 +700,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const THEME_KEY = "be_theme";
 
+    const themeToggle = $(".theme-toggle");
+
     function applyTheme(theme, animate) {
         const root = document.documentElement;
 
@@ -712,6 +711,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.body.classList.toggle("dark", theme === "dark");
+
+        if (themeToggle) {
+            const icon = $(".bi", themeToggle);
+            icon.classList.toggle("bi-brightness-high", theme !== "dark");
+            icon.classList.toggle("bi-moon-stars", theme === "dark");
+        }
 
         const themeColor = $('meta[name="theme-color"]');
         if (themeColor) {
@@ -725,6 +730,17 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (err) { /* ignore */ }
 
     applyTheme(savedTheme, false);
+
+    // Navbar-dakı gündüz / gecə düyməsi
+    if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+            const next = document.body.classList.contains("dark") ? "light" : "dark";
+            applyTheme(next, true);
+            try {
+                localStorage.setItem(THEME_KEY, next);
+            } catch (err) { /* ignore */ }
+        });
+    }
 
     // Başqa səhifədə / tabda tema dəyişəndə burada da dəyişsin
     window.addEventListener("storage", function (e) {

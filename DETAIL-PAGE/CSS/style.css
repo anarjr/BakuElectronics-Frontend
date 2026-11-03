@@ -15,7 +15,7 @@
     --text-color: #444;
     --light-color: #f7f7f7;
     --border-color: #e8e8e8;
-    --topbar-h: 30px;     /* yuxarı zolağın hündürlüyü (header bunun altında yapışır) */
+    --topbar-h: 34px;     /* yuxarı zolağın hündürlüyü (header bunun altında yapışır) */
     --sticky-top: 120px;  /* qalereyanın yapışma məsafəsi */
     --soft-bg: #f4f4f4;   /* boz kartların fonu */
 }
@@ -70,7 +70,7 @@ section {
     background: var(--main-color);
     color: #fff;
     text-align: center;
-    font-size: 16px;
+    font-size: 21px;
     line-height: 1.2;
 }
 
@@ -250,17 +250,17 @@ header {
 }
 
 header .navbar {
-    padding: 10px 0;
+    padding: 20px 0 12px;
 }
 
 header .navbar-brand img {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
 }
 
 header .btn-catalog,
 header .header-search input {
-    height: 52px;
+    height: 50px;
     border-radius: 16px;
     font-size: 16px;
 }
@@ -270,13 +270,147 @@ header .btn-catalog {
 }
 
 header .icon-btn {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     border-radius: 16px;
 }
 
 header .icon-btn .bi {
     font-size: 21px;
+}
+
+
+/* ==============================
+   3. NAVIGATION
+============================== */
+
+.main-navigation {
+    position: relative;
+    z-index: 1001;
+    background: #fff;
+}
+
+.main-navigation .container-fluid {
+    width: var(--page-w);
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.main-navigation .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    height: 54px;
+    margin-top: 0;
+    padding: 0 32px;
+    background: #f4f4f4;
+    border-radius: 30px;
+}
+
+.main-navigation .nav-links,
+.main-navigation .nav-tools {
+    display: flex;
+    align-items: center;
+}
+
+.main-navigation .nav-links {
+    gap: 44px;
+}
+
+.main-navigation .nav-tools {
+    gap: 22px;
+}
+
+.main-navigation a {
+    color: #777;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.main-navigation a:hover {
+    color: var(--main-color);
+}
+
+.main-navigation a.active {
+    color: #222;
+    font-weight: 700;
+}
+
+.main-navigation .lang-toggle {
+    color: #222;
+    font-weight: 700;
+}
+
+/* Açılan menyular */
+
+.main-navigation .dropdown-menu {
+    min-width: 170px;
+    padding: 6px 0;
+    margin-top: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.main-navigation .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.main-navigation .dropdown-item:hover {
+    background: #fff0f0;
+    color: var(--main-color);
+}
+
+/* Tema düyməsi (görünüş) */
+
+.main-navigation .theme-toggle {
+    position: relative;
+    width: 66px;
+    height: 38px;
+    padding: 0;
+    background: #111;
+    border: 0;
+    border-radius: 20px;
+}
+
+.main-navigation .theme-toggle .theme-knob {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.main-navigation .theme-toggle .bi {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+}
+
+
+.main-navigation .nav-links a:not(.dropdown-item) {
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: color 0.25s, background-color 0.25s;
+}
+
+.main-navigation .nav-links a:not(.dropdown-item):hover {
+    color: var(--main-color);
+    background: rgba(227, 6, 19, 0.08);
 }
 
 
@@ -521,9 +655,9 @@ body.dark .catalog-group li a {
     align-items: center;
     flex-wrap: wrap;
     gap: 8px;
-    padding: 18px 0 20px;
-    color: #888;
-    font-size: 13px;
+    padding: 20px 0 34px;
+    color: #777;
+    font-size: 12.5px;
 }
 
 .breadcrumbs a:hover {
@@ -531,11 +665,12 @@ body.dark .catalog-group li a {
 }
 
 .breadcrumbs .bi {
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .breadcrumbs span {
     color: #222;
+    font-weight: 500;
 }
 
 /* ==============================
@@ -2052,6 +2187,54 @@ body.dark .top-bar {
     background: #b30510;
 }
 
+body.dark .main-navigation {
+    background: #121212;
+}
+
+body.dark .main-navigation .nav {
+    background: #242424;
+    color: #eee;
+}
+
+body.dark .main-navigation a {
+    color: #aaa;
+}
+
+body.dark .main-navigation a.active,
+body.dark .main-navigation .lang-toggle {
+    color: #fff;
+}
+
+body.dark .main-navigation .nav-links a:not(.dropdown-item):hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+body.dark .main-navigation .theme-toggle {
+    background: #f1f1f1;
+}
+
+body.dark .main-navigation .theme-toggle .theme-knob {
+    left: 32px;
+    background: #111;
+}
+
+body.dark .main-navigation .theme-toggle .bi {
+    right: auto;
+    left: 10px;
+    color: #111;
+}
+
+body.dark .dropdown-item,
+body.dark .main-navigation .dropdown-item {
+    color: #eee;
+}
+
+body.dark .dropdown-item:hover,
+body.dark .main-navigation .dropdown-item:hover {
+    background: #2d2d2d;
+}
+
 /* Breadcrumb, qalereya */
 
 body.dark .breadcrumbs {
@@ -2388,6 +2571,22 @@ html.theme-transition *::after {
         min-width: 100%;
     }
 
+    .main-navigation .container-fluid {
+        padding: 0 15px;
+    }
+
+    .main-navigation .nav {
+        height: auto;
+        padding: 12px 20px;
+        border-radius: 22px;
+        overflow-x: auto;
+        gap: 22px;
+    }
+
+    .main-navigation .nav-links {
+        gap: 24px;
+    }
+
     /* Qalereya artıq yapışmır */
 
     .gallery {
@@ -2472,6 +2671,23 @@ html.theme-transition *::after {
         width: 48px;
         height: 48px;
         border-radius: 14px;
+    }
+
+    .main-navigation .container-fluid {
+        padding: 0 12px;
+    }
+
+    .main-navigation .nav {
+        padding: 12px 18px;
+        gap: 18px;
+    }
+
+    .main-navigation .nav-tools {
+        display: none;
+    }
+
+    .main-navigation a {
+        font-size: 13px;
     }
 
     .breadcrumbs {
