@@ -524,4 +524,145 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (err) { /* ignore */ }
 
 
+    /* ==============================
+       8. FİLTERLƏR (kateqoriya, qiymət, brend, rəng)
+    ============================== */
+
+    // "Daha çox" / "Daha az"
+    $$(".more-btn").forEach(function (btn) {
+        const target = $(btn.dataset.more);
+        const label = btn.firstChild;
+
+        btn.addEventListener("click", function () {
+            const open = target.classList.toggle("open");
+            btn.classList.toggle("open", open);
+            label.textContent = open ? "Daha az " : "Daha çox ";
+        });
+    });
+
+    // Kateqoriya (təkini seçmək olar, təkrar basanda ləğv olur)
+    $$(".filter-cat").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const same = state.cat === btn.dataset.cat;
+            state.cat = same ? "" : btn.dataset.cat;
+            $$(".filter-cat").forEach(function (b) {
+                b.classList.toggle("active", b.dataset.cat === state.cat);
+            });
+            render();
+        });
+    });
+
+    // Brend və rəng qutuları
+    function bindChecks(selector, set) {
+        $$(selector + " input").forEach(function (input) {
+            input.addEventListener("change", function () {
+                if (input.checked) set.add(input.value);
+                else set.delete(input.value);
+                render();
+            });
+        });
+    }
+
+    bindChecks("#brandList", state.brands);
+    bindChecks("#colorList", state.colors);
+
+    // Brend axtarışı
+    const brandSearch = $("#brandSearch");
+    const brandList = $("#brandList");
+
+    if (brandSearch && brandList) {
+        brandSearch.addEventListener("input", function () {
+            const q = brandSearch.value.trim().toLowerCase();
+
+            // axtarış zamanı gizli brendlər də tapılsın
+            brandList.classList.toggle("searching", q !== "");
+
+            $$(".brand-item", brandList).forEach(function (li) {
+                const name = li.textContent.toLowerCase();
+                li.classList.toggle("hidden", q !== "" && name.indexOf(q) === -1);
+            });
+        });
+    }
+
+    // Qiymət: iki sürüşdürücü + iki xana
+    const priceMin = $("#priceMin");
+    const priceMax = $("#priceMax");
+    const rangeMin = $("#rangeMin");
+    const rangeMax = $("#rangeMax");
+    const rangeFill = $("#rangeFill");
+
+    function clampNumber(value, fallback) {
+        const n = parseInt(value, 10);
+        return isNaN(n) ? fallback : Math.min(Math.max(n, PRICE_MIN), PRICE_MAX);
+    }
+
+    function paintRange() {
+        const span = PRICE_MAX - PRICE_MIN;
+        rangeFill.style.left = ((state.min - PRICE_MIN) / span * 100) + "%";
+        rangeFill.style.right = (100 - (state.max - PRICE_MIN) / span * 100) + "%";
+    }
+
+    function syncPrice(from) {
+        let min = clampNumber(from === "text" ? priceMin.value : rangeMin.value, PRICE_MIN);
+        let max = clampNumber(from === "text" ? priceMax.value : rangeMax.value, PRICE_MAX);
+
+        if (min > max) {
+            // əlində tutduğu sürüşdürücü o birini keçməsin
+            if (from === "rangeMin" || from === "text") min = max; else max = min;
+        }
+
+        state.min = min;
+        state.max = max;
+
+        if (from !== "text") {
+            priceMin.value = min;
+            priceMax.value = max;
+        }
+        rangeMin.value = min;
+        rangeMax.value = max;
+
+        paintRange();
+        render();
+    }
+
+    if (priceMin && rangeMin) {
+        rangeMin.addEventListener("input", function () { syncPrice("rangeMin"); });
+        rangeMax.addEventListener("input", function () { syncPrice("rangeMax"); });
+        priceMin.addEventListener("change", function () { syncPrice("text"); priceMin.value = state.min; });
+        priceMax.addEventListener("change", function () { syncPrice("text"); priceMax.value = state.max; });
+        paintRange();
+    }
+
+    // Hamısını sıfırla
+    function resetFilters() {
+        state.cat = "";
+        state.brands.clear();
+        state.colors.clear();
+        state.min = PRICE_MIN;
+        state.max = PRICE_MAX;
+
+        $$(".filter-cat").forEach(function (b) { b.classList.remove("active"); });
+        $$("#brandList input, #colorList input").forEach(function (i) { i.checked = false; });
+
+        if (priceMin) {
+            priceMin.value = PRICE_MIN;
+            priceMax.value = PRICE_MAX;
+            rangeMin.value = PRICE_MIN;
+            rangeMax.value = PRICE_MAX;
+            paintRange();
+        }
+        if (brandSearch) {
+            brandSearch.value = "";
+            brandSearch.dispatchEvent(new Event("input"));
+        }
+        render();
+    }
+
+    const filterReset = $("#filterReset");
+    const emptyReset = $("#emptyReset");
+
+    if (filterReset) filterReset.addEventListener("click", resetFilters);
+    if (emptyReset) emptyReset.addEventListener("click", resetFilters);
+
+
 });
