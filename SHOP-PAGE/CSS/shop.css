@@ -852,3 +852,142 @@ header .cart-clear {
 header {
     box-shadow: none;
 }
+
+
+
+/* ==============================
+   3. SƏHİFƏ KONTEYNERİ, BREADCRUMB, BAŞLIQ, SIRALAMA
+============================== */
+
+.page-container {
+    width: var(--page-w);
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 20px 0 34px;
+    color: #777;
+    font-size: 12.5px;
+}
+
+.breadcrumbs a:hover {
+    color: var(--main-color);
+}
+
+.breadcrumbs .bi {
+    font-size: 11px;
+}
+
+.breadcrumbs span {
+    color: #222;
+    font-weight: 500;
+}
+
+.breadcrumbs {
+    font-size: 11.5px;
+}
+
+.breadcrumbs span {
+    font-weight: 700;
+}
+
+
+.shop-page {
+    padding-bottom: 10px;
+}
+
+.shop-page .breadcrumbs {
+    padding: 20px 0 14px;
+}
+
+.shop-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+.shop-title {
+    margin: 0;
+    color: #222;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.shop-tools {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Sıralama zolağı */
+
+.sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 46px;
+    padding: 0 12px;
+    background: #f6f6f6;
+    border-radius: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.sort-btn {
+    padding: 8px 14px;
+    background: none;
+    border: 0;
+    border-radius: 18px;
+    color: #8a8a8a;
+    font-size: 13.5px;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.sort-btn:hover {
+    color: var(--main-color);
+}
+
+.sort-btn.active {
+    color: #111;
+    font-weight: 700;
+}
+
+/* Kart / siyahı görünüşü */
+
+.view-toggle {
+    display: flex;
+    gap: 8px;
+}
+
+.view-btn {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    color: #222;
+    font-size: 19px;
+    transition: background 0.2s;
+}
+
+.view-btn.active {
+    background: #ececec;
+    box-shadow: none;
+}
+
+.filter-open {
+    display: none;
+}
