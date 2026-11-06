@@ -766,4 +766,120 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    /* ==============================
+       10. SON BAXDIQLARINIZ KARUSELİ (düymə + tutub dartmaq)
+    ============================== */
+
+    $$(".similar").forEach(function (section) {
+        const simTrack = $(".similar-track", section);
+        const simViewport = $(".similar-viewport", section);
+        const simPrev = $(".sim-prev", section);
+        const simNext = $(".sim-next", section);
+
+        if (!simTrack || !simViewport) return;
+
+        const cards = $$(".product-card", simTrack);
+        let simIndex = 0;
+        let simOffset = 0;   // sürüşdürmə zamanı əlavə yerdəyişmə
+
+        function stepWidth() {
+            const gap = parseFloat(getComputedStyle(simTrack).columnGap) || 0;
+            return cards[0].getBoundingClientRect().width + gap;
+        }
+
+        // Bir ekranda neçə kart görünür (CSS-dəki --per-view)
+        function perView() {
+            const value = parseFloat(getComputedStyle(simTrack).getPropertyValue("--per-view"));
+            return value || 4;
+        }
+
+        function maxIndex() {
+            return Math.max(0, Math.ceil(cards.length - perView()));
+        }
+
+        function maxShift() {
+            return Math.max(0, simTrack.scrollWidth - simViewport.clientWidth);
+        }
+
+        function renderCarousel() {
+            // sonuncu kartdan sonra boşluq göstərməsin
+            const shift = Math.min(simIndex * stepWidth(), maxShift());
+            simTrack.style.transform = "translate3d(" + (-shift + simOffset) + "px,0,0)";
+            if (simPrev) simPrev.disabled = simIndex <= 0;
+            if (simNext) simNext.disabled = simIndex >= maxIndex();
+        }
+
+        function goTo(index) {
+            simIndex = Math.min(Math.max(index, 0), maxIndex());
+            simOffset = 0;
+            renderCarousel();
+        }
+
+        if (simPrev) simPrev.addEventListener("click", function () { goTo(simIndex - 1); });
+        if (simNext) simNext.addEventListener("click", function () { goTo(simIndex + 1); });
+
+        window.addEventListener("resize", function () { goTo(simIndex); });
+
+        // Tutub dartmaq (siçan + barmaq)
+        let startX = 0;
+        let down = false;
+        let moved = false;
+
+        simViewport.style.touchAction = "pan-y";
+
+        simViewport.addEventListener("dragstart", function (e) { e.preventDefault(); });
+
+        simViewport.addEventListener("pointerdown", function (e) {
+            if (e.pointerType === "mouse" && e.button !== 0) return;
+            down = true;
+            moved = false;
+            startX = e.clientX;
+        });
+
+        window.addEventListener("pointermove", function (e) {
+            if (!down) return;
+            const dx = e.clientX - startX;
+            if (Math.abs(dx) > 5) {
+                moved = true;
+                simTrack.classList.add("dragging");
+            }
+            if (!moved) return;
+            simOffset = dx;
+            renderCarousel();
+        });
+
+        function releaseCarousel(e) {
+            if (!down) return;
+            down = false;
+            simTrack.classList.remove("dragging");
+
+            const dx = e.clientX - startX;
+            const stepsMoved = Math.round(-dx / stepWidth());
+
+            if (moved && stepsMoved !== 0) {
+                goTo(simIndex + stepsMoved);
+            } else if (moved && Math.abs(dx) > 40) {
+                goTo(simIndex + (dx < 0 ? 1 : -1));
+            } else {
+                goTo(simIndex);
+            }
+        }
+
+        window.addEventListener("pointerup", releaseCarousel);
+        window.addEventListener("pointercancel", releaseCarousel);
+
+        // Dartdıqdan sonra təsadüfən düymə basılmasın
+        simViewport.addEventListener("click", function (e) {
+            if (moved) {
+                e.preventDefault();
+                e.stopPropagation();
+                moved = false;
+            }
+        }, true);
+
+        renderCarousel();
+    });
+
+
+
 });
