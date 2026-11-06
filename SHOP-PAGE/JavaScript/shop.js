@@ -417,4 +417,111 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCart();
 
 
+    /* ==============================
+       7. SIRALAMA, GÖRÜNÜŞ VƏ SÜZGƏC MƏNTİQİ
+    ============================== */
+
+    const grid = $("#productGrid");
+    const allCards = $$(".product-card", grid);
+    const emptyState = $("#emptyState");
+    const resultCount = $("#resultCount");
+    const applyCount = $("#applyCount");
+    const pagination = $("#pagination");
+
+    const PRICE_MIN = 2;
+    const PRICE_MAX = 17000;
+    const TOTAL_PRODUCTS = 833;   // real saytdakı ümumi say
+
+    // Bütün seçimlər burada saxlanır
+    const state = {
+        sort: "popular",
+        view: "grid",
+        cat: "",
+        min: PRICE_MIN,
+        max: PRICE_MAX,
+        brands: new Set(),
+        colors: new Set()
+    };
+
+    function filtersActive() {
+        return state.cat !== "" || state.brands.size > 0 || state.colors.size > 0 ||
+            state.min > PRICE_MIN || state.max < PRICE_MAX;
+    }
+
+    function matches(card) {
+        const d = card.dataset;
+        const price = parseFloat(d.price);
+
+        if (state.cat && d.cat !== state.cat) return false;
+        if (price < state.min || price > state.max) return false;
+        if (state.brands.size && !state.brands.has(d.brand)) return false;
+        if (state.colors.size && !state.colors.has(d.color)) return false;
+        return true;
+    }
+
+    function sortCards(list) {
+        const copy = list.slice();
+
+        if (state.sort === "discount") {
+            copy.sort(function (a, b) { return b.dataset.discount - a.dataset.discount; });
+        } else if (state.sort === "asc") {
+            copy.sort(function (a, b) { return a.dataset.price - b.dataset.price; });
+        } else if (state.sort === "desc") {
+            copy.sort(function (a, b) { return b.dataset.price - a.dataset.price; });
+        }
+        return copy;
+    }
+
+    function render() {
+        const visible = sortCards(allCards.filter(matches));
+
+        // Sıra dəyişir, uyğun gəlməyənlər gizlənir
+        visible.forEach(function (card) {
+            card.hidden = false;
+            grid.appendChild(card);
+        });
+        allCards.forEach(function (card) {
+            if (visible.indexOf(card) === -1) {
+                card.hidden = true;
+                grid.appendChild(card);
+            }
+        });
+
+        const count = filtersActive() ? visible.length : TOTAL_PRODUCTS;
+        if (resultCount) resultCount.textContent = count;
+        if (applyCount) applyCount.textContent = count;
+
+        const empty = visible.length === 0;
+        if (emptyState) emptyState.hidden = !empty;
+        if (pagination) pagination.hidden = empty;
+    }
+
+    // Sıralama düymələri
+    $$(".sort-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            state.sort = btn.dataset.sort;
+            $$(".sort-btn").forEach(function (b) { b.classList.toggle("active", b === btn); });
+            render();
+        });
+    });
+
+    // Kart / siyahı görünüşü
+    $$(".view-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            state.view = btn.dataset.view;
+            $$(".view-btn").forEach(function (b) { b.classList.toggle("active", b === btn); });
+            grid.classList.toggle("list-view", state.view === "list");
+            try { localStorage.setItem("be_shop_view", state.view); } catch (err) { /* ignore */ }
+        });
+    });
+
+    // Əvvəl seçilmiş görünüşü xatırla
+    try {
+        if (localStorage.getItem("be_shop_view") === "list") {
+            const listBtn = $('.view-btn[data-view="list"]');
+            if (listBtn) listBtn.click();
+        }
+    } catch (err) { /* ignore */ }
+
+
 });
