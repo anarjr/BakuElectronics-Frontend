@@ -1,3 +1,5 @@
+"use strict";
+
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ==============================
@@ -663,6 +665,105 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (filterReset) filterReset.addEventListener("click", resetFilters);
     if (emptyReset) emptyReset.addEventListener("click", resetFilters);
+
+
+    /* ==============================
+       9. SƏHİFƏLƏMƏ VƏ TELEFONDA FİLTER PANELİ
+    ============================== */
+
+    const LAST_PAGE = 47;
+    let currentPage = 1;
+
+    // Hansı nömrələr görünsün: 1 2 3 4 5 ... 47
+    function pageNumbers(page) {
+        if (page <= 4) return [1, 2, 3, 4, 5, "...", LAST_PAGE];
+        if (page >= LAST_PAGE - 3) return [1, "...", LAST_PAGE - 4, LAST_PAGE - 3, LAST_PAGE - 2, LAST_PAGE - 1, LAST_PAGE];
+        return [1, "...", page - 1, page, page + 1, "...", LAST_PAGE];
+    }
+
+    function renderPagination() {
+        if (!pagination) return;
+
+        pagination.textContent = "";
+
+        function makeButton(html, cls, disabled, onClick, label) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "page-btn " + cls;
+            btn.innerHTML = html;
+            btn.disabled = disabled;
+            if (label) btn.setAttribute("aria-label", label);
+            btn.addEventListener("click", onClick);
+            return btn;
+        }
+
+        pagination.appendChild(makeButton('<i class="bi bi-chevron-left"></i>', "page-prev",
+            currentPage === 1, function () { goToPage(currentPage - 1); }, "Əvvəlki"));
+
+        pageNumbers(currentPage).forEach(function (n) {
+            if (n === "...") {
+                const dots = document.createElement("span");
+                dots.className = "page-dots";
+                dots.textContent = "...";
+                pagination.appendChild(dots);
+                return;
+            }
+            pagination.appendChild(makeButton(n, n === currentPage ? "active" : "", false,
+                function () { goToPage(n); }));
+        });
+
+        pagination.appendChild(makeButton('<i class="bi bi-chevron-right"></i>', "page-next",
+            currentPage === LAST_PAGE, function () { goToPage(currentPage + 1); }, "Növbəti"));
+    }
+
+    function goToPage(page) {
+        currentPage = Math.min(Math.max(page, 1), LAST_PAGE);
+        renderPagination();
+
+        // Siyahının başına qayıt və qısa keçid effekti ver
+        const top = $(".shop-head").getBoundingClientRect().top + window.scrollY - 150;
+        window.scrollTo({ top: top, behavior: "smooth" });
+
+        grid.classList.add("page-fade");
+        setTimeout(function () { grid.classList.remove("page-fade"); }, 350);
+    }
+
+    renderPagination();
+
+    // Telefon / planşetdə filter paneli yandan açılır
+    const filtersPanel = $("#filters");
+    const filterBackdrop = $("#filterBackdrop");
+
+    function openFilters() {
+        filtersPanel.classList.add("open");
+        filterBackdrop.classList.add("show");
+        document.body.classList.add("no-scroll");
+    }
+
+    function closeFilters() {
+        filtersPanel.classList.remove("open");
+        filterBackdrop.classList.remove("show");
+        document.body.classList.remove("no-scroll");
+    }
+
+    const filterOpen = $("#filterOpen");
+    if (filterOpen) filterOpen.addEventListener("click", openFilters);
+    if (filterBackdrop) filterBackdrop.addEventListener("click", closeFilters);
+
+    const filterClose = $("#filterClose");
+    if (filterClose) filterClose.addEventListener("click", closeFilters);
+
+    const filterApply = $("#filterApply");
+    if (filterApply) filterApply.addEventListener("click", closeFilters);
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeFilters();
+    });
+
+    // Ekran böyüyəndə açıq qalmasın
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 991) closeFilters();
+    });
 
 
 });
