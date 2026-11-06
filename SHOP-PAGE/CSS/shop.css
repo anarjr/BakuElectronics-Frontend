@@ -1309,3 +1309,542 @@ header {
 .filter-list.searching li.extra {
     display: block;
 }
+
+
+/* ==============================
+   5. MƏHSUL KARTLARI, ŞƏBƏKƏ VƏ SİYAHI GÖRÜNÜŞÜ
+============================== */
+
+.btn-fav.active i {
+    color: var(--main-color);
+}
+
+.compare-btn.active {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.product-rating-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 15px;
+}
+
+.product-grid .product-card {
+    flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+    min-width: 0;
+}
+
+.product-grid .btn-cart span {
+    white-space: nowrap;
+}
+
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    padding: 0 25px 25px;
+    background: #f4f4f4;
+    border-radius: 40px;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    position: relative;
+    height: 272px;
+    margin: -48px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 30px;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    padding: 26px;
+    object-fit: contain;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    z-index: 2;
+    padding: 7px 12px;
+    background: #ec2227;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.compare-btn {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f6f6;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    transition: 0.3s;
+}
+
+.compare-btn:hover,
+.compare-btn.active,
+.btn-fav.active {
+    color: var(--main-color);
+}
+
+.compare-btn .bi {
+    font-size: 20px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 15px;
+}
+
+.product-rating span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.product-rating .bi-star-fill {
+    color: #ec2227;
+    font-size: 17px;
+}
+
+.product-rating .bi-chat-dots-fill {
+    color: #f4a5a8;
+    font-size: 17px;
+}
+
+.product-card h5 {
+    min-height: 46px;
+    margin: 0 0 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #222;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.product-prices {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: auto;
+    margin-bottom: 18px;
+}
+
+.product-prices .price-main,
+.product-prices .price-installment {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.product-prices .price-installment {
+    padding-left: 18px;
+    border-left: 1px solid #d6d6d6;
+}
+
+.product-prices .price-installment span {
+    color: #8a8a8a;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.product-prices .price-installment strong,
+.product-prices .price {
+    color: #222;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.old-price {
+    color: #8a8a8a;
+    font-size: 15px;
+    line-height: 1.2;
+    text-decoration: line-through;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-cart {
+    flex: 1;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-cart:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.btn-cart:disabled {
+    opacity: 0.8;
+}
+
+.btn-fav {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 16px;
+    color: #222;
+    transition: 0.3s;
+}
+
+.btn-fav:hover {
+    color: var(--main-color);
+}
+
+.product-card .bi {
+    font-size: 20px;
+}
+
+.product-card h5 {
+    min-height: calc(1.4em * 2);
+}
+
+.product-grid .product-card {
+    margin-top: 38px;
+    padding: 0 20px 19px;
+    border-radius: 36px;
+}
+
+.product-grid .product-img {
+    height: 218px;
+    margin: -38px 0 14px;
+    border-radius: 26px;
+}
+
+.product-grid .product-img img {
+    padding: 20px;
+}
+
+.product-grid .discount-badge {
+    top: 14px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.product-grid .compare-btn {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 14px;
+}
+
+.product-grid .compare-btn .bi {
+    font-size: 16px;
+}
+
+.product-grid .product-rating {
+    gap: 14px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.product-grid .product-rating .bi {
+    font-size: 14px;
+}
+
+.product-grid .product-card h5 {
+    min-height: 40px;
+    margin: 0 0 26px;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.product-grid .product-prices {
+    margin-bottom: 16px;
+}
+
+.product-grid .old-price {
+    font-size: 13px;
+}
+
+.product-grid .product-prices .price {
+    font-size: 22px;
+}
+
+.product-grid .product-actions {
+    gap: 8px;
+}
+
+.product-grid .btn-cart {
+    height: 45px;
+    gap: 14px;
+    border-radius: 13px;
+    font-size: 14px;
+}
+
+.product-grid .btn-fav {
+    width: 45px;
+    height: 45px;
+    flex: 0 0 45px;
+    border-radius: 13px;
+}
+
+.product-grid .product-card .bi {
+    font-size: 18px;
+}
+
+.product-grid .compare-btn .bi,
+.product-grid .product-rating .bi {
+    font-size: 15px;
+}
+
+
+.shop-products {
+    min-width: 0;
+}
+
+.result-count {
+    display: none;
+    margin: 0 0 14px;
+    color: #777;
+    font-size: 14px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 30px;
+}
+
+.product-grid .product-card {
+    margin-top: 38px;
+    padding: 0 20px 19px;
+    border-radius: 36px;
+}
+
+.product-grid .product-img {
+    height: 208px;
+    margin: -38px 0 14px;
+    border-radius: 26px;
+}
+
+.product-grid .product-card[hidden] {
+    display: none;
+}
+
+/* "18 ayadək faizsiz kredit" dairəsi */
+
+.credit-badge {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 35% 30%, #f3d6c8, #dfb8a6);
+    border-radius: 50%;
+    color: #6b3b2a;
+    line-height: 1.05;
+    text-align: center;
+}
+
+.credit-badge b {
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #555;
+    font-size: 11px;
+}
+
+.product-card .card-tag .bi {
+    color: #2d7be5;
+    font-size: 7px;
+}
+
+.product-grid .product-rating {
+    flex-wrap: wrap;
+    gap: 4px 14px;
+}
+
+.product-grid .product-card h5 {
+    min-height: 40px;
+    margin: 0 0 22px;
+    font-size: 14px;
+}
+
+.product-grid .product-prices {
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.product-grid .product-prices .price,
+.product-grid .product-prices .price-installment strong {
+    font-size: 20px;
+}
+
+.product-grid .product-prices .price-installment {
+    padding-left: 16px;
+}
+
+.product-grid .product-prices .price-installment span,
+.product-grid .old-price {
+    font-size: 13px;
+}
+
+/* Siyahı görünüşü */
+
+.product-grid.list-view {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+}
+
+.product-grid.list-view .product-card {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr) 300px;
+    grid-template-areas:
+        "img rating prices"
+        "img title  prices"
+        "img .      actions";
+    grid-template-rows: auto 1fr auto;
+    column-gap: 28px;
+    align-items: center;
+    margin-top: 0;
+    padding: 16px 24px 16px 16px;
+    border-radius: 30px;
+}
+
+.product-grid.list-view .product-img {
+    grid-area: img;
+    grid-row: 1 / 4;
+    height: 190px;
+    margin: 0;
+}
+
+.product-grid.list-view .product-rating {
+    grid-area: rating;
+    align-self: end;
+}
+
+.product-grid.list-view .product-card h5 {
+    grid-area: title;
+    align-self: start;
+    margin: 6px 0 0;
+    font-size: 16px;
+}
+
+.product-grid.list-view .product-prices {
+    grid-area: prices;
+    align-self: end;
+    margin: 0 0 14px;
+}
+
+.product-grid.list-view .product-actions {
+    grid-area: actions;
+}
+
+/* Səhifə dəyişəndə keçid effekti */
+
+.product-grid.page-fade {
+    animation: pageFade 0.35s ease;
+}
+
+@keyframes pageFade {
+    from { opacity: 0.3; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* Boş nəticə */
+
+.empty-state {
+    padding: 60px 20px;
+    text-align: center;
+    color: #777;
+}
+
+.empty-state[hidden] {
+    display: none;
+}
+
+.empty-state .bi {
+    font-size: 40px;
+    color: #c4c4c4;
+}
+
+.empty-state h4 {
+    margin: 12px 0 6px;
+    color: #222;
+    font-size: 20px;
+}
+
+.filters-reset {
+    padding: 10px 22px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    color: #222;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.filters-reset:hover {
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
