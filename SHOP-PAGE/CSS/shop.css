@@ -983,6 +983,10 @@ header {
     transition: background 0.2s;
 }
 
+.view-btn:hover:not(.active) {
+    background: #f4f4f4;
+}
+
 .view-btn.active {
     background: #ececec;
     box-shadow: none;
@@ -1282,6 +1286,10 @@ header {
 
 .filter-list label:hover .bn {
     color: var(--main-color);
+}
+
+.filter-list label:hover .box {
+    border-color: var(--main-color);
 }
 
 .filter-list em {
